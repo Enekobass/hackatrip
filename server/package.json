@@ -10,22 +10,22 @@
   "keywords": [],
   "authors": [
     {
-    "name":"Cristina Ufenast Sierra"
+      "name": "Cristina Ufenast Sierra"
     },
     {
-      "name":"Brais Bernárdez Eiján"
+      "name": "Brais Bernárdez Eiján"
     },
     {
-      "name":"Rubén Muñoz Pareja"
-    }, 
-    {
-      "name":"Eneko Celestino Pérez"
+      "name": "Rubén Muñoz Pareja"
     },
     {
-      "name":"Sara Gonzalez"
+      "name": "Eneko Celestino Pérez"
     },
     {
-      "name":"Francisco Jimenez Criado"
+      "name": "Sara Gonzalez"
+    },
+    {
+      "name": "Francisco Jimenez Criado"
     }
   ],
   "license": "ISC",
@@ -33,5 +33,11 @@
     "eslint": "^9.0.0",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
   }
 }
