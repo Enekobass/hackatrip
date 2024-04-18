@@ -8,7 +8,7 @@ import morgan from 'morgan';
 
 import { PORT, UPLOADS_DIR } from './env.js';
 
-//import routes from './src/routes/index.js';
+import routes from './src/routes/index.js';
 
 import {
     errorController,
@@ -27,7 +27,7 @@ app.use(cors());
 
 app.use(morgan('dev'));
 
-//app.use(routes);
+app.use(routes);
 
 app.use(notFoundController);
 
