@@ -5,7 +5,8 @@
   "description": "Proyecto que trata sobre una agencia de viajes online para gente que viaja sin acompañamiento y quiere conocer otros países en grupo, a su vez que conoce gente, o viajar con un grupo de amigos. En cada viaje, hay una figura de coordinador que acompaña al grupo de viajeros, proporcionando control del viaje y facilidades a los usuarios del servicio.",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon ./app.js"
+    "dev": "nodemon ./app.js",
+    "initDb": "node ./src/db/initDb.js"
   },
   "keywords": [],
   "authors": [
@@ -35,6 +36,7 @@
     "prettier": "^3.2.5"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
