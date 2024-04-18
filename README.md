@@ -5,7 +5,7 @@
 ### Base de datos
 Hackatrip utiliza MySQL como base de datos para almacenar información de viajes y usuarios. Asegúrese de seguir estos pasos para configurar la base de datos correctamente:
 
-Instale MySQL: si no tiene MySQL instalado, puede descargarlo desde [@el sitio web oficial] (https://www.mysql.com/downloads/) .
+Instale MySQL: si no tiene MySQL instalado, puede descargarlo desde [@el sitio web oficial](https://www.mysql.com/downloads/) .
 
 Cree una base de datos: cree una base de datos en MySQL que utilizará Hackatrip. El nombre de la base de datos debe coincidir con el especificado en el archivo de configuración .env. Puede utilizar una herramienta como MySQL Workbench o ejecutar comandos SQL para crearlo.
 
