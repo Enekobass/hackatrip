@@ -9,6 +9,7 @@ import { PORT } from './env.js';
 //import routes from './src/routes/index.js';
 
 import {
+    errorController,
     notFoundController,
 } from './src/controllers/errors/index.js';
 
@@ -23,6 +24,8 @@ app.use(morgan('dev'));
 //app.use(routes);
 
 app.use(notFoundController);
+
+app.use(errorController);
 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto http://localhost:${PORT}`);
