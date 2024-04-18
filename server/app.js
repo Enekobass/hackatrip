@@ -1,10 +1,12 @@
 import express from 'express';
 
+import fileUpload from 'express-fileupload';
+
 import cors from 'cors';
 
 import morgan from 'morgan';
 
-import { PORT } from './env.js';
+import { PORT, UPLOADS_DIR } from './env.js';
 
 //import routes from './src/routes/index.js';
 
@@ -16,6 +18,10 @@ import {
 const app = express();
 
 app.use(express.json());
+
+app.use(fileUpload());
+
+app.use(express.static(UPLOADS_DIR));
 
 app.use(cors());
 
