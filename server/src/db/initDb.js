@@ -1,9 +1,14 @@
 import getPool from './getPool.js';
-import {ADMIN_EMAIL, ADMIN_USERNAME, ADMIN_PASSWORD, ADMIN_ROLE} from '../../env.js';
+import {
+    ADMIN_EMAIL,
+    ADMIN_USERNAME,
+    ADMIN_PASSWORD,
+    ADMIN_ROLE,
+} from '../../env.js';
 import bcrypt from 'bcrypt';
 
 const createTables = async () => {
-    try { 
+    try {
         const hashedPass = await bcrypt.hash(ADMIN_PASSWORD, 10);
         const id = crypto.randomUUID();
 
@@ -32,11 +37,12 @@ const createTables = async () => {
                 modifiedAt DATETIME ON UPDATE CURRENT_TIMESTAMP
             )    
             `);
-            
-            await pool.query(`
-                INSERT INTO users (id, email, username, password, role) VALUES (?, ?, ?, ?, ?)`,
-                [id, ADMIN_EMAIL, ADMIN_USERNAME, hashedPass, ADMIN_ROLE],
-                );
+
+        await pool.query(
+            `
+                INSERT INTO users (id, email, username, password, role, active) VALUES (?, ?, ?, ?, ?, ?)`,
+            [id, ADMIN_EMAIL, ADMIN_USERNAME, hashedPass, ADMIN_ROLE, 1],
+        );
 
         await pool.query(`
             CREATE TABLE IF NOT EXISTS viajes (

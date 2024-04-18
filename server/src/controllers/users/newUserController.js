@@ -1,3 +1,5 @@
+import randomstring from 'randomstring';
+
 import insertUserModel from '../../models/users/insertUserModel.js';
 
 import validateSchemaUtil from '../../utils/validateSchemaUtil.js';
@@ -10,13 +12,16 @@ const newUserController = async (req, res, next) => {
 
         await validateSchemaUtil(newUserSchema, req.body);
 
+        const registrationCode = randomstring.generate(30);
+
         const id = crypto.randomUUID();
 
-        await insertUserModel(id, username, email, password);
+        await insertUserModel(id, username, email, password, registrationCode);
 
         res.status(201).send({
             status: 'ok',
-            message: 'User created.',
+            message:
+                'Usuario creado, verifica tu cuenta a través de correo electronico proporcionado.',
         });
     } catch (err) {
         next(err);
