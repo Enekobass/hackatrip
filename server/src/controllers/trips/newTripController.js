@@ -7,8 +7,14 @@ import validateSchema from '../../utils/validateSchemaUtil.js';
 
 import newTripSchema from '../../schemas/trips/newTripSchema.js';
 
+import { unauthorizedUserError } from '../../services/errorService.js';
+
 const newTripController = async (req, res, next) => {
     try {
+        if (req.user.role !== 'admin') {
+            unauthorizedUserError();
+        }
+
         await validateSchema(newTripSchema, Object.assign(req.body, req.files));
 
         const {
