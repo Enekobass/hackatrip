@@ -54,3 +54,19 @@ export const recoveryCodeError = () => {
         message: 'Código de recuperación incorrecto',
     };
 };
+
+export const notAuthenticatedError = () => {
+    throw {
+        httpStatus: 401, // Unauthorized
+        code: 'NOT_AUTHENTICATED',
+        message: `Debes enviar un token en el header 'Authorization'`,
+    };
+};
+
+export const invalidTokenError = () => {
+    throw {
+        httpStatus: 401, // Unauthorized
+        code: 'INVALID_TOKEN',
+        message: 'Token invalido',
+    };
+};
