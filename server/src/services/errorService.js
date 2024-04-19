@@ -70,3 +70,19 @@ export const invalidTokenError = () => {
         message: 'Token invalido',
     };
 };
+
+export const deleteFileError = () => {
+    throw {
+        httpStatus: 409, // Conflict
+        code: 'FILE_DELETED_FAILED',
+        message: 'Error al eliminar el archivo del disco',
+    };
+};
+
+export const saveFileError = () => {
+    throw {
+        httpStatus: 500, // Internal Server Error
+        code: 'FILE_SAVE_FAILED',
+        message: 'Error al guardar el archivo en el disco',
+    };
+};

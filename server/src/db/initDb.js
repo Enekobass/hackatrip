@@ -55,6 +55,7 @@ const createTables = async () => {
                 plazasMinimas INT UNSIGNED NOT NULL,
                 plazasMaximas INT UNSIGNED NOT NULL,
                 ruta VARCHAR(200) NOT NULL,
+                precio INT UNSIGNED NOT NULL,
                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP, 
                 modifiedAt DATETIME ON UPDATE CURRENT_TIMESTAMP
             )    
