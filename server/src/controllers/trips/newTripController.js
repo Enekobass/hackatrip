@@ -3,7 +3,7 @@ import insertPhotoModel from '../../models/trips/insertPhotoModel.js';
 
 import { savePhoto } from '../../services/photoService.js';
 
-import validateSchema from '../../utils/validateSchema.js';
+import validateSchema from '../../utils/validateSchemaUtil.js';
 
 import newTripSchema from '../../schemas/trips/newTripSchema.js';
 
@@ -23,7 +23,10 @@ const newTripController = async (req, res, next) => {
             precio,
         } = req.body;
 
-        const tripId = await insertTripModel(
+        const id = crypto.randomUUID();
+
+        await insertTripModel(
+            id,
             titulo,
             descripcion,
             destino,
@@ -44,7 +47,7 @@ const newTripController = async (req, res, next) => {
             for (const photo of photosArr) {
                 const photoName = await savePhoto(photo);
 
-                const photoId = await insertPhotoModel(photoName, tripId);
+                const photoId = await insertPhotoModel(photoName, id);
 
                 photos.push({
                     id: photoId,
@@ -58,7 +61,6 @@ const newTripController = async (req, res, next) => {
             message: 'Viaje creado',
             data: {
                 trip: {
-                    id: tripId,
                     titulo,
                     descripcion,
                     destino,
