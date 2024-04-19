@@ -40,16 +40,21 @@ const createTables = async () => {
 
         await pool.query(
             `
-                INSERT INTO users (id, email, username, password, role, active) VALUES (?, ?, ?, ?, ?, ?)`,
+            INSERT INTO users (id, email, username, password, role, active) VALUES (?, ?, ?, ?, ?, ?)`,
             [id, ADMIN_EMAIL, ADMIN_USERNAME, hashedPass, ADMIN_ROLE, 1],
         );
 
         await pool.query(`
             CREATE TABLE IF NOT EXISTS viajes (
                 id VARCHAR(100) PRIMARY KEY,
+                titulo VARCHAR(20) NOT NULL,
+                descripcion VARCHAR(250) NOT NULL,
                 destino VARCHAR(50) NOT NULL,
                 fechaDeInicio DATETIME NOT NULL,
                 fechaDeFin DATETIME NOT NULL,
+                plazasMinimas INT UNSIGNED NOT NULL,
+                plazasMaximas INT UNSIGNED NOT NULL,
+                ruta VARCHAR(200) NOT NULL,
                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP, 
                 modifiedAt DATETIME ON UPDATE CURRENT_TIMESTAMP
             )    
