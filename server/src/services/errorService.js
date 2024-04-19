@@ -29,3 +29,20 @@ export const sendEmailError = () => {
         message: 'Error al enviar email',
     };
 };
+
+export const invalidCredentialsError = () => {
+    throw {
+        httpStatus: 401, // Unauthorized
+        code: 'INVALID_CREDENTIALS',
+        message: 'Credenciales inválidas',
+    };
+};
+
+export const pendingActivationError = () => {
+    throw {
+        httpStatus: 403, // Forbidden
+        code: 'PENDING_ACTIVATION',
+        message:
+            'Usuario pendiente de activar. Por favor, verifica tu cuenta antes de continuar.',
+    };
+};
