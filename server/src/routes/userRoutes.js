@@ -5,6 +5,7 @@ import {
     validateUserController,
     loginUserController,
     sendRecoverPassController,
+    editUserPassController,
 } from '../controllers/users/index.js';
 
 const router = express.Router();
@@ -16,5 +17,7 @@ router.put('/users/validate/:registrationCode', validateUserController);
 router.post('/users/login', loginUserController);
 
 router.post('/users/password/recover', sendRecoverPassController);
+
+router.put('/users/password/edit', editUserPassController);
 
 export default router;

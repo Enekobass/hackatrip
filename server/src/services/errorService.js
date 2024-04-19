@@ -46,3 +46,11 @@ export const pendingActivationError = () => {
             'Usuario pendiente de activar. Por favor, verifica tu cuenta antes de continuar.',
     };
 };
+
+export const recoveryCodeError = () => {
+    throw {
+        httpStatus: 401, // Unauthorized
+        code: 'INVALID_RECOVERY_CODE',
+        message: 'Código de recuperación incorrecto',
+    };
+};
