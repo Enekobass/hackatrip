@@ -1,0 +1,82 @@
+import insertTripModel from '../../models/trips/insertTripModel.js';
+import insertPhotoModel from '../../models/trips/insertPhotoModel.js';
+
+import { savePhoto } from '../../services/photoService.js';
+
+import validateSchema from '../../utils/validateSchema.js';
+
+import newTripSchema from '../../schemas/trips/newTripSchema.js';
+
+const newTripController = async (req, res, next) => {
+    try {
+        await validateSchema(newTripSchema, Object.assign(req.body, req.files));
+
+        const {
+            titulo,
+            descripcion,
+            destino,
+            fechaDeInicio,
+            fechaDeFin,
+            plazasMinimas,
+            plazasMaximas,
+            ruta,
+            precio,
+        } = req.body;
+
+        const tripId = await insertTripModel(
+            titulo,
+            descripcion,
+            destino,
+            fechaDeInicio,
+            fechaDeFin,
+            plazasMinimas,
+            plazasMaximas,
+            ruta,
+            precio,
+            req.user.id,
+        );
+
+        const photos = [];
+
+        if (req.files) {
+            const photosArr = Object.values(req.files).slice(0, 3);
+
+            for (const photo of photosArr) {
+                const photoName = await savePhoto(photo);
+
+                const photoId = await insertPhotoModel(photoName, tripId);
+
+                photos.push({
+                    id: photoId,
+                    name: photoName,
+                });
+            }
+        }
+
+        res.status(201).send({
+            status: 'ok',
+            message: 'Viaje creado',
+            data: {
+                trip: {
+                    id: tripId,
+                    titulo,
+                    descripcion,
+                    destino,
+                    fechaDeInicio,
+                    fechaDeFin,
+                    plazasMinimas,
+                    plazasMaximas,
+                    ruta,
+                    precio,
+                    userId: req.user.id,
+                    photos,
+                    createdAt: new Date(),
+                },
+            },
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+export default newTripController;
