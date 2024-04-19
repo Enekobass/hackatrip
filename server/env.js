@@ -16,6 +16,7 @@ const {
     SMTP_USER,
     SMTP_PASS,
     CLIENT_URL,
+    SECRET,
 } = process.env;
 
 export {
@@ -34,4 +35,5 @@ export {
     SMTP_USER,
     SMTP_PASS,
     CLIENT_URL,
+    SECRET,
 };
