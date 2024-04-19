@@ -1,4 +1,4 @@
-import authUserController from './authUserController';
-import authUserOptionalController from './authUserOptionalController';
+import authUserController from './authUserController.js';
+import authUserOptionalController from './authUserOptionalController.js';
 
 export { authUserController, authUserOptionalController };

@@ -1,2 +1,2 @@
-import newTripController from "./newTripController";
-export {newTripController}
+import newTripController from './newTripController.js';
+export { newTripController };

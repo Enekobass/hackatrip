@@ -1,6 +1,7 @@
 import getPool from '../../db/getPool.js';
 
 const insertTripModel = async (
+    id,
     titulo,
     descripcion,
     destino,
@@ -13,9 +14,10 @@ const insertTripModel = async (
 ) => {
     const pool = await getPool();
 
-    const [trip] = await pool.query(
-        `INSERT INTO viajes (titulo, descripcion, destino, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, ruta, precio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    await pool.query(
+        `INSERT INTO viajes (id, titulo, descripcion, destino, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, ruta, precio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
+            id,
             titulo,
             descripcion,
             destino,
@@ -27,8 +29,6 @@ const insertTripModel = async (
             precio,
         ],
     );
-
-    return trip.insertId;
 };
 
 export default insertTripModel;
