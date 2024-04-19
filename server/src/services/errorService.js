@@ -86,3 +86,11 @@ export const saveFileError = () => {
         message: 'Error al guardar el archivo en el disco',
     };
 };
+
+export const unauthorizedUserError = () => {
+    throw {
+        httpStatus: 409, // Conflict
+        code: 'UNAUTHORIZED',
+        message: 'El usuario no está autorizado para hacer esta operación',
+    };
+};
