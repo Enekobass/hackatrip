@@ -1,5 +1,4 @@
 import insertTripModel from '../../models/trips/insertTripModel.js';
-import insertPhotoModel from '../../models/trips/insertPhotoModel.js';
 
 import { savePhoto } from '../../services/photoService.js';
 
