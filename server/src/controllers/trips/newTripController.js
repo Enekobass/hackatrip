@@ -27,7 +27,11 @@ const newTripController = async (req, res, next) => {
             plazasMaximas,
             ruta,
             precio,
+            activo,
+            confirmado,
         } = req.body;
+
+        const photoName = await savePhoto(req.files, 300);
 
         const id = crypto.randomUUID();
 
@@ -42,25 +46,11 @@ const newTripController = async (req, res, next) => {
             plazasMaximas,
             ruta,
             precio,
+            activo,
+            confirmado,
+            photoName,
             req.user.id,
         );
-
-        const photos = [];
-
-        if (req.files) {
-            const photosArr = Object.values(req.files).slice(0, 3);
-
-            for (const photo of photosArr) {
-                const photoName = await savePhoto(photo);
-
-                const photoId = await insertPhotoModel(photoName, id);
-
-                photos.push({
-                    id: photoId,
-                    name: photoName,
-                });
-            }
-        }
 
         res.status(201).send({
             status: 'ok',
@@ -77,7 +67,7 @@ const newTripController = async (req, res, next) => {
                     ruta,
                     precio,
                     userId: req.user.id,
-                    photos,
+                    photoName,
                     createdAt: new Date(),
                 },
             },

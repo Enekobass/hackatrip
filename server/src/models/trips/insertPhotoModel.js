@@ -1,14 +1,11 @@
 import getPool from '../../db/getPool.js';
 
-const insertPhotoModel = async (photoName, viajeId) => {
+const insertPhotoModel = async (photoName) => {
     const pool = await getPool();
 
-    const [photo] = await pool.query(
-        `INSERT INTO viajesphotos (name, viajeId) VALUES (?, ?)`,
-        [photoName, viajeId],
-    );
+    const [photo] = await pool.query(`SELECT imagen FROM viajes`);
 
-    return photo.insertId;
+    return photo[0];
 };
 
 export default insertPhotoModel;

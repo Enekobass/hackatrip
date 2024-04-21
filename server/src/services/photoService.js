@@ -16,7 +16,7 @@ export const savePhoto = async (file, width) => {
             await fs.mkdir(uploadsDir);
         }
 
-        const sharpImg = sharp(file.data);
+        const sharpImg = sharp(file.photo.data);
 
         sharpImg.resize(width);
 

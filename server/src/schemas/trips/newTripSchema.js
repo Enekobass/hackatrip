@@ -29,9 +29,9 @@ const newTripSchema = joi.object({
         .max(250)
         .required()
         .messages(joiErrorMessages),
-    photo1: imgSchema.optional(),
-    photo2: imgSchema.optional(),
-    photo3: imgSchema.optional(),
+    activo: joi.number().required().messages(joiErrorMessages),
+    confirmado: joi.number().required().messages(joiErrorMessages),
+    photo: imgSchema.required(),
 });
 
 export default newTripSchema;
