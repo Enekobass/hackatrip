@@ -10,6 +10,7 @@ import bcrypt from 'bcrypt';
 const createTables = async () => {
     try {
         const hashedPass = await bcrypt.hash(ADMIN_PASSWORD, 10);
+
         const id = crypto.randomUUID();
 
         const pool = await getPool();
@@ -17,7 +18,7 @@ const createTables = async () => {
         console.log('Dropping tables...');
 
         await pool.query(
-            'DROP TABLE IF EXISTS viajesVotes, viajesPhotos, viajes, users',
+            'DROP TABLE IF EXISTS viajesVotes, coordinadorVotes, viajesPhotos, viajesreservados, viajes, users',
         );
 
         console.log('Creating tables...');
@@ -56,8 +57,23 @@ const createTables = async () => {
                 plazasMaximas INT UNSIGNED NOT NULL,
                 ruta VARCHAR(200) NOT NULL,
                 precio INT UNSIGNED NOT NULL,
+                activo INT NOT NULL,
+                confirmado INT NOT NULL,
+                coordinadorvoluntario VARCHAR(30),
+                coordinadorconfirmado VARCHAR(30),
+                imagen VARCHAR(100) NOT NULL,
                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP, 
                 modifiedAt DATETIME ON UPDATE CURRENT_TIMESTAMP
+            )    
+            `);
+
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS viajesreservados (
+                id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+                userId VARCHAR(100) NOT NULL,
+                viajeId VARCHAR(100) NOT NULL,
+                FOREIGN KEY (userId) REFERENCES users(id),
+                FOREIGN KEY (viajeId) REFERENCES viajes(id)
             )    
             `);
 
@@ -69,6 +85,17 @@ const createTables = async () => {
                 viajeId VARCHAR(100) NOT NULL,
                 FOREIGN KEY (viajeId) REFERENCES viajes(id),
                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+            `);
+
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS coordinadorVotes (
+                id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+                value TINYINT UNSIGNED NOT NULL,
+                userId VARCHAR(100) NOT NULL,
+                viajeId VARCHAR(100) NOT NULL,
+                FOREIGN KEY (userId) REFERENCES users(id),
+                FOREIGN KEY (viajeId) REFERENCES viajes(id)
             )
             `);
 
