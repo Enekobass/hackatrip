@@ -14,9 +14,9 @@ const coordinadorTripController = async (req, res, next) => {
 
         await insertCoordinadorModel(username, viajeId);
 
-        await res.status(201).send({
+        res.status(201).send({
             status: 'ok',
-            message: 'hola',
+            message: 'Apuntado como coordinador. Espera la confirmacion',
         });
     } catch (err) {
         next(err);
