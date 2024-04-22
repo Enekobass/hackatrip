@@ -9,4 +9,4 @@ const insertCoordinadorConfirmadoModel = async (coordinador, viajeId) => {
     );
 };
 
-export default insertCoordinadorModel;
+export default insertCoordinadorConfirmadoModel;
