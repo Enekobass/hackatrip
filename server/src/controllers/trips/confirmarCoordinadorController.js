@@ -1,4 +1,7 @@
-import { unauthorizedUserError } from "../../services/errorService";
+import selectCordinador from '../../models/trips/selectCordinador.js';
+import deleteCoordinadorVoluntario from '../../models/trips/deleteCoordinadorVoluntario.js';
+import insertCoordinadorConfirmadoModel from '../../models/trips/insertCoordinadorConfirmadoModel.js';
+import { unauthorizedUserError } from "../../services/errorService.js";
 
 const confirmarCoordinadorController = async (req, res, next) => {
     try {
@@ -12,7 +15,7 @@ const confirmarCoordinadorController = async (req, res, next) => {
 
         await deleteCoordinadorVoluntario(viajeId);
 
-        await insertCoordinadorConfirmado(coordinador, viajeId);
+        await insertCoordinadorConfirmadoModel(coordinador.coordinadorvoluntario, viajeId);
 
         res.status(201).send({
             status: 'ok',
