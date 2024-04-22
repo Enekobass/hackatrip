@@ -4,6 +4,7 @@ import {
     newTripController,
     editTripController,
     coordinadorTripController,
+    confirmarCoordinadorController,
 } from '../controllers/trips/index.js';
 
 import { authUserController } from '../middlewares/index.js';
@@ -18,6 +19,12 @@ router.post(
     '/viajes/:viajeId/coordinador',
     authUserController,
     coordinadorTripController,
+);
+
+router.post(
+    '/viajes/:viajeId/confirmar/coordinador',
+    authUserController,
+    confirmarCoordinadorController,
 );
 
 export default router;
