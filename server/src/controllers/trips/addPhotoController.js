@@ -4,7 +4,7 @@ import { savePhoto } from '../../services/photoService.js';
 const addPhotoController = async (req, res, next) => {
     try {
         const { viajeId } = req.params;
-        const photo = req.files?.photo;
+        const photo = req.files;
         const photoName = await savePhoto(photo, 1000);
         const photoId = await insertPhotoModel(photoName, viajeId);
 
@@ -21,6 +21,6 @@ const addPhotoController = async (req, res, next) => {
     } catch (err) {
         next(err);
     }
-}
+};
 
 export default addPhotoController;
