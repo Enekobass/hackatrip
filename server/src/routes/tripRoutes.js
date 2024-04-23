@@ -7,7 +7,7 @@ import {
     confirmarCoordinadorController,
     bookCancelTripController,
     addPhotoController,
-    voteCoordinadorController
+    voteCoordinadorController,
 } from '../controllers/trips/index.js';
 
 import { authUserController } from '../middlewares/index.js';
@@ -37,15 +37,15 @@ router.post(
 );
 
 router.post(
+    '/viajes/:viajeId/coordinadorVotes',
+    authUserController,
+    voteCoordinadorController,
+);
+
+router.post(
     '/viajes/:viajeId/:coordinadorId',
     authUserController,
     coordinadorTripController,
 );
-
-router.post(
-    '/viajes/:viajeId/coordinadorVotes',
-    authUserController,
-    voteCoordinadorController, 
-)
 
 export default router;

@@ -20,7 +20,7 @@ const createTables = async () => {
         console.log('Dropping tables...');
 
         await pool.query(
-            'DROP TABLE IF EXISTS viajesVotes, coordinadorVotes, viajesPhotos, viajesreservados, viajes, users',
+            'DROP TABLE IF EXISTS viajesVotes, coordinadorVotes, viajesPhotos, viajesreservados, coordinadorviajes, viajes, users',
         );
 
         console.log('Creating tables...');

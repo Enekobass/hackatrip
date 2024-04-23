@@ -7,10 +7,10 @@ const insertCoordinadorVoteModel = async (value, viajeId) => {
         `SELECT userId FROM coordinadorviajes WHERE viajeId = ?`,
         [viajeId],
     );
-    
+
     await pool.query(
         `INSERT INTO coordinadorvotes (value, userId, viajeId) VALUES (?, ?, ?)`,
-        [value, coordinadorId, viajeId],
+        [value, coordinadorId[0].userId, viajeId],
     );
 };
 
