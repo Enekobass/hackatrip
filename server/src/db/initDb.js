@@ -1,10 +1,12 @@
 import getPool from './getPool.js';
+
 import {
     ADMIN_EMAIL,
     ADMIN_USERNAME,
     ADMIN_PASSWORD,
     ADMIN_ROLE,
 } from '../../env.js';
+
 import bcrypt from 'bcrypt';
 
 const createTables = async () => {
@@ -59,11 +61,20 @@ const createTables = async () => {
                 precio INT UNSIGNED NOT NULL,
                 activo VARCHAR(20) NOT NULL,
                 confirmado INT NOT NULL,
-                coordinadorvoluntario VARCHAR(30),
-                coordinadorconfirmado VARCHAR(30),
                 imagen VARCHAR(100) NOT NULL,
                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP, 
                 modifiedAt DATETIME ON UPDATE CURRENT_TIMESTAMP
+            )    
+            `);
+
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS coordinadorviajes (
+                id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+                userId VARCHAR(100) NOT NULL,
+                viajeId VARCHAR(100) NOT NULL,
+                confirmado INT,
+                FOREIGN KEY (userId) REFERENCES users(id),
+                FOREIGN KEY (viajeId) REFERENCES viajes(id)
             )    
             `);
 

@@ -6,7 +6,7 @@ import {
     coordinadorTripController,
     confirmarCoordinadorController,
     bookCancelTripController,
-    addPhotoController
+    addPhotoController,
 } from '../controllers/trips/index.js';
 
 import { authUserController } from '../middlewares/index.js';
@@ -15,19 +15,14 @@ const router = express.Router();
 
 router.post('/viajes', authUserController, newTripController);
 
-router.post('/viajes/:viajeId', authUserController, editTripController);
-
 router.post(
-    '/viajes/:viajeId/coordinador',
-    authUserController,
-    coordinadorTripController,
-);
-
-router.post(
-    '/viajes/:viajeId/confirmar/coordinador',
+    '/viajes/:userId/confirmar',
     authUserController,
     confirmarCoordinadorController,
 );
+
+router.post('/viajes/:viajeId', authUserController, editTripController);
+
 router.post(
     '/viajes/:viajeId/reservarycancelar',
     authUserController,
@@ -40,5 +35,10 @@ router.post(
     addPhotoController,
 );
 
+router.post(
+    '/viajes/:viajeId/:coordinadorId',
+    authUserController,
+    coordinadorTripController,
+);
 
 export default router;

@@ -1,12 +1,11 @@
 import getPool from '../../db/getPool.js';
 
-const insertCoordinadorModel = async (username, viajeId) => {
+const insertCoordinadorModel = async (coordinadorId, viajeId) => {
     const pool = await getPool();
 
-
     await pool.query(
-        `UPDATE viajes SET coordinadorvoluntario = ? WHERE id = ?`,
-        [username, viajeId],
+        `INSERT INTO coordinadorviajes (userId, viajeId) VALUES (?, ?)`,
+        [coordinadorId, viajeId],
     );
 };
 
