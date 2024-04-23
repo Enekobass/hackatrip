@@ -4,7 +4,7 @@ const reservarTripModel = async (username, viajeId) => {
     const pool = await getPool();
 
     await pool.query(
-        `INSERT into viajesreservados (userId, viajesId) VALUES (?, ?)`,
+        `INSERT into viajesreservados (userId, viajeId) VALUES (?, ?)`,
         [username, viajeId],
     );
 };
