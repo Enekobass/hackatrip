@@ -6,6 +6,7 @@ import {
     coordinadorTripController,
     confirmarCoordinadorController,
     bookCancelTripController,
+    addPhotoController
 } from '../controllers/trips/index.js';
 
 import { authUserController } from '../middlewares/index.js';
@@ -31,6 +32,12 @@ router.post(
     '/viajes/:viajeId/reservarycancelar',
     authUserController,
     bookCancelTripController,
+);
+
+router.post(
+    '/viajes/:viajeId/addfotos',
+    authUserController,
+    addPhotoController,
 );
 
 
