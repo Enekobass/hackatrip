@@ -5,5 +5,7 @@ import confirmarCoordinadorController from './confirmarCoordinadorController.js'
 import bookCancelTripController from './bookCancelTripController.js';
 import addPhotoController from './addPhotoController.js';
 import voteCoordinadorController from './voteCoordinadorController.js';
+import filterTripController from './filterTripController.js';
+import userViewTripController from './userViewTripController.js';
 
-export { voteCoordinadorController, newTripController, editTripController, coordinadorTripController, confirmarCoordinadorController, bookCancelTripController, addPhotoController };
+export { voteCoordinadorController, newTripController, editTripController, coordinadorTripController, confirmarCoordinadorController, bookCancelTripController, addPhotoController, filterTripController, userViewTripController };
