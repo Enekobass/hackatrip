@@ -14,7 +14,7 @@ const bookCancelTripController = async (req, res, next) => {
             });
         }
         if (cancelar) {
-            cancelarTripModel(req.user.id);
+            cancelarTripModel(req.user.id, viajeId);
             res.status(201).send({
                 status: 'ok',
                 message: 'Viaje cancelado',
