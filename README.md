@@ -24,7 +24,7 @@ database debe ser "" o el nombre de su base de datos MySQL.
 Abre la terminal y escribe:
 
 ```
-npm run migrate
+npm run initDb
 ```
 Este comando inicializa tablas en la base de datos usando Node.js. Cuando ejecuta este comando, se conecta a la base de datos y crea las tablas necesarias.Este comando debe ejecutarse solo una vez, antes de usar Hackatrip o si necesita reiniciar las tablas de la base de datos. Este comando ya crea la base de datos precargada con usuarios y envíos.
 
