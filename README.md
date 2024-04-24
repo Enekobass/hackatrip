@@ -24,7 +24,7 @@ database debe ser "" o el nombre de su base de datos MySQL.
 Abre la terminal y escribe:
 
 ```
-npm run migrate
+npm run initDb
 ```
 Este comando inicializa tablas en la base de datos usando Node.js. Cuando ejecuta este comando, se conecta a la base de datos y crea las tablas necesarias.Este comando debe ejecutarse solo una vez, antes de usar Hackatrip o si necesita reiniciar las tablas de la base de datos. Este comando ya crea la base de datos precargada con usuarios y envíos.
 
@@ -40,12 +40,45 @@ npm i
 Inicie: una vez instaladas las dependencias, puede iniciar con el siguiente comando:
 
 ```
-npm start
+npm run dev
 ```
 
 Debería estar escuchando en un puerto específico. Puedes acceder a él a través de las rutas definidas en los controladores.
 
 ### Endpoints
+
+#### User
+
+- `POST /users/register`: Registro de un nuevo usuario.
+
+- `PUT /users/validate/:registrationCode`: Validación del nuevo usuario.
+
+- `POST /users/login`: Logearse en la plataforma.
+
+- `POST /users/password/recover` : Recuperar la contraseña de usuario.
+
+- `PUT /users/password/edit`: Cambiar la contraseña de usuario.
+
+#### Trip
+
+- `GET /todosviajes`: Lista de viajes filtrados por título, localidad, imagen, fecha, precio, número reservas, reservada si/no, activa/desactiva y/o confirmada.
+
+- `POST /viajes`: Creación de un nuevo viaje por parte del admin.
+
+- `GET /viajes/:viajeId`: Visualización de todos los detalles de un viaje.
+
+-`POST /viajes/:userId/confirmar`: Confirmar el coordinador de un viaje por parte del admin.
+
+-`POST /viajes/:viajeId`: Editar la información de un viaje por parte del admin.
+
+-`POST /viajes/:viajeId/reservarycancelar`: Reservar y cancelar la reserva de un viaje por parte de un usuario.
+
+-`POST /viajes/:viajeId/addfotos`: Añadir fotos de un viaje por parte de un usuario.
+
+-`POST /viajes/:viajeId/coordinadorVotes`: Realizar una puntuación de un coordinador con el que has viajado.
+
+-`POST /viajes/:viajeId/:coordinadorId`: Apuntarse un coordinador a un viaje.
+
 
 ### Tech stack
 
@@ -65,10 +98,16 @@ Debería estar escuchando en un puerto específico. Puedes acceder a él a trav�
 
 - mysql2: un controlador MySQL para Node.js, utilizado para interactuar con la base de datos MySQL.
 
-- mysql2-promise: una biblioteca que proporciona funciones de promesa para trabajar con mysql2.
-
 - UUID: una biblioteca para generar identificadores únicos (UUID).
 
 - Vitest: un marco de prueba para aplicaciones Vue 3. Se utiliza para pruebas de proyectos.
 
 - Bcrypt: una biblioteca de hash especializada en seguridad de contraseñas para aplicaciones web.
+  
+- Express-fileupload: es un middleware para Express que simplifica la gestión de archivos subidos al servidor a través de formularios HTML.
+
+- Nodemailer: es un módulo de Node.js para enviar correos electrónicos desde una aplicación.
+
+- Randomstring: es un módulo de Node.js que genera cadenas de caracteres aleatorias. Es útil para crear tokens, contraseñas temporales y otros datos aleatorios en tu aplicación.
+
+- Sharp: es un módulo de Node.js para el procesamiento eficiente de imágenes.
