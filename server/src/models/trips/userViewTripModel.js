@@ -1,22 +1,33 @@
 import getPool from '../../db/getPool.js';
 
-const userViewTripModel = async (tripId) => {
+const userViewTripModel = async (viajeId, userId = '') => {
     const pool = await getPool();
 
-    // Consulta SQL para obtener la información del viaje y los usuarios inscritos
-    const query = `
-        SELECT v.id as viaje_id, v.titulo, v.descripcion, v.destino, v.fechaDeInicio, v.fechaDeFin, v.plazasMinimas, 
-               v.plazasMaximas, v.ruta as imagen, v.precio, v.activo, v.confirmado, u.avatar, u.email, u.username
-        FROM viajes v
-        INNER JOIN users u ON v.id = u.viaje_id
-        WHERE v.id = ?;
-    `;
+    const [viajes] = await pool.query(
+        ` 
+        SELECT
+            v.id,
+            v.titulo,
+            v.descripcion,
+            v.destino,
+            v.plazasMinimas,
+            v.plazasMaximas,
+            v.imagen,
+            v.fechaDeInicio,
+            v.precio,
+            v.activo,
+            v.confirmado,
+            COUNT(r.viajeId) AS numeroReservas,
+            BIT_OR(vr.userId = ?) AS reservedByMe
+        from viajes v
+        LEFT JOIN viajesreservados r ON r.viajeId = v.id
+        LEFT JOIN viajesreservados vr ON r.viajeId = vr.viajeId
+        WHERE v.id = ?
+       `,
+        [userId, viajeId],
+    );
 
-    // Ejecutar la consulta utilizando el pool de conexiones
-    const [rows, fields] = await pool.query(query, [tripId]);
-
-    // Devolver los resultados de la consulta
-    return rows;
+    return viajes;
 };
 
 export default userViewTripModel;

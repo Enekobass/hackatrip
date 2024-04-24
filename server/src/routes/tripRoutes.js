@@ -8,13 +8,22 @@ import {
     bookCancelTripController,
     addPhotoController,
     voteCoordinadorController,
+    filterTripController,
+    userViewTripController,
 } from '../controllers/trips/index.js';
 
-import { authUserController } from '../middlewares/index.js';
+import {
+    authUserController,
+    authUserOptionalController,
+} from '../middlewares/index.js';
 
 const router = express.Router();
 
+router.get('/todosviajes', authUserOptionalController, filterTripController);
+
 router.post('/viajes', authUserController, newTripController);
+
+router.get('/viajes/:viajeId', authUserController, userViewTripController);
 
 router.post(
     '/viajes/:userId/confirmar',

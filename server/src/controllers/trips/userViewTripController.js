@@ -1,15 +1,24 @@
-import userViewTripModel from '../models/userViewTripModel.js';
+import userViewTripModel from '../../models/trips/userViewTripModel.js';
 
-const userViewTripController = async (req, res) => {
+import selectInscritosModel from '../../models/trips/selectInscritosModel.js';
+
+const userViewTripController = async (req, res, next) => {
     try {
         // Obtener el ID del viaje desde los parámetros de la URL
-        const tripId = req.params.id;
+        const { viajeId } = req.params;
 
         // Llamar al modelo para obtener la información del viaje y los usuarios inscritos
-        const tripData = await userViewTripModel(tripId);
+        const tripData = await userViewTripModel(viajeId, req.user?.id);
 
-        // Devolver los datos del viaje como respuesta
-        res.json(tripData);
+        const inscritos = await selectInscritosModel(viajeId);
+
+        res.send({
+            status: 'ok',
+            data: {
+                tripData,
+                inscritos,
+            },
+        });
     } catch (err) {
         next(err);
     }

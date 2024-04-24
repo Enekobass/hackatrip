@@ -8,4 +8,14 @@ import voteCoordinadorController from './voteCoordinadorController.js';
 import filterTripController from './filterTripController.js';
 import userViewTripController from './userViewTripController.js';
 
-export { voteCoordinadorController, newTripController, editTripController, coordinadorTripController, confirmarCoordinadorController, bookCancelTripController, addPhotoController, filterTripController, userViewTripController };
+export {
+    voteCoordinadorController,
+    newTripController,
+    editTripController,
+    coordinadorTripController,
+    confirmarCoordinadorController,
+    bookCancelTripController,
+    addPhotoController,
+    filterTripController,
+    userViewTripController,
+};
