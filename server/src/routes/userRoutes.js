@@ -6,6 +6,7 @@ import {
     loginUserController,
     sendRecoverPassController,
     editUserPassController,
+    editUserRoleController,
 } from '../controllers/users/index.js';
 
 const router = express.Router();
@@ -19,5 +20,7 @@ router.post('/users/login', loginUserController);
 router.post('/users/password/recover', sendRecoverPassController);
 
 router.put('/users/password/edit', editUserPassController);
+
+router.put('/users/role/:userId', editUserRoleController);
 
 export default router;

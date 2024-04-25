@@ -28,7 +28,7 @@ const sendRecoverPassController = async (req, res, next) => {
 
         res.send({
             status: 'ok',
-            message: 'Recover password sent to email',
+            message: 'Recuperacion de contraseña enviada al email',
         });
     } catch (err) {
         next(err);
