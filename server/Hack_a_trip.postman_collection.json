@@ -153,6 +153,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Hacer usuario coordinador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/users/role/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"role",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -419,7 +446,7 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": []
+									"src": "/C:/Users/peric/Desktop/Curso Web/Clases Boost Academy/Next.js/primera-app-next/public/image/logonext.jpg"
 								}
 							]
 						},
