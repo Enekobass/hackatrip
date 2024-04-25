@@ -14,6 +14,7 @@ const filterTripModel = async (fecha = '', destino = '', userId = '') => {
             v.precio,
             v.activo,
             v.confirmado,
+            v.createdAt,
             COUNT(r.viajeId) AS numeroReservas,
             BIT_OR(vr.userId = ?) AS reservedByMe
         from viajes v
@@ -21,6 +22,7 @@ const filterTripModel = async (fecha = '', destino = '', userId = '') => {
         LEFT JOIN viajesreservados vr ON r.viajeId = vr.viajeId
         WHERE destino LIKE ? AND fechaDeInicio LIKE ?
         GROUP BY v.id
+        ORDER BY v.createdAt DESC
        `,
         [userId, `%${destino}%`, `%${fecha}%`],
     );

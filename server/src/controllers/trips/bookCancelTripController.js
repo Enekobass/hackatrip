@@ -1,9 +1,17 @@
 import reservarTripModel from '../../models/trips/reservarTripModel.js';
+
 import cancelarTripModel from '../../models/trips/cancelarTripModel.js';
+
+import validateSchema from '../../utils/validateSchemaUtil.js';
+
+import bookCancelSchema from '../../schemas/trips/bookCancelSchema.js';
 
 const bookCancelTripController = async (req, res, next) => {
     try {
+        await validateSchema(bookCancelSchema, req.body);
+
         const { reservar, cancelar } = req.body;
+
         const { viajeId } = req.params;
 
         if (reservar) {

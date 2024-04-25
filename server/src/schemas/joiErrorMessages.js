@@ -1,17 +1,18 @@
 const joiErrorMessages = {
-    'any.required': 'Field "{#key}" is required',
-    'string.base': 'Value of "{#key}" must be a string',
-    'string.empty': 'Field "{#key}" must not be empty',
-    'number.base': 'Value of "{#key}" must be a number',
-    'number.max': `File shouldn't be more than 5 MB`,
-    'object.base': 'Value of "{#key}" must be an object',
-    'any.only': 'Formato no válido. Solo se admiten las extensiones {#valids}',
-    'string.email': 'Must give a valid email for "{#key}"',
+    'any.required': 'El campo "{#key}" es requerido',
+    'string.base': 'El valor de "{#key}" debe ser una cadena',
+    'string.empty': 'El campo "{#key}" no debe estar vacío',
+    'number.base': 'El valor de "{#key}" debe ser un número',
+    'number.max': 'El archivo no debe exceder los 5 MB',
+    'object.base': 'El valor de "{#key}" debe ser un objeto',
+    'any.only': 'Solo se permiten fotos jpeg o png',
+    'string.email':
+        'Debe proporcionar un correo electrónico válido para "{#key}"',
     'string.pattern.base':
-        'The password must has one capital letter, one lowercase letter, one number and a simbol for "{#key}"',
-    'string.min': 'Field "{#key}" must have atleast {#limit} characters',
-    'string.max': 'Field "{#key}" must not exceed {#limit} characters',
-    'object.unknown': 'Not allowed to add extra fields on this object',
+        'La contraseña debe contener al menos una mayúscula, una minúscula, un número y un símbolo de puntuación para "{#key}"',
+    'string.min': 'El campo "{#key}" debe tener al menos {#limit} caracteres',
+    'string.max': 'El campo "{#key}" no debe exceder los {#limit} caracteres',
+    'object.unknown': 'No se permiten campos adicionales en este objeto',
 };
 
 export default joiErrorMessages;
