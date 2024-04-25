@@ -4,9 +4,9 @@ import { unauthorizedUserError } from '../../services/errorService.js';
 
 const coordinadorTripController = async (req, res, next) => {
     try {
-        // if (req.user.role !== 'coordinador') {
-        //     unauthorizedUserError();
-        // }
+        if (req.user.role !== 'coordinador') {
+            unauthorizedUserError();
+        }
 
         const { viajeId, coordinadorId } = req.params;
 
