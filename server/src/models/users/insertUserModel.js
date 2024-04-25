@@ -28,7 +28,7 @@ const insertUserModel = async (
         userAlreadyRegisteredError();
     }
 
-    const emailSubject = 'Activate your user at Yutub';
+    const emailSubject = 'Activa tu usuario en Hackatrip';
 
     const emailBody = `
             ¡Bienvenido ${username}!
