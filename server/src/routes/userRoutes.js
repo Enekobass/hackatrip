@@ -7,6 +7,7 @@ import {
     sendRecoverPassController,
     editUserPassController,
     editUserRoleController,
+    editUserController
 } from '../controllers/users/index.js';
 
 import { authAdminController } from '../middlewares/index.js';
@@ -22,6 +23,8 @@ router.post('/users/login', loginUserController);
 router.post('/users/password/recover', sendRecoverPassController);
 
 router.put('/users/password/edit', editUserPassController);
+
+router.put('/users/edit', editUserController);
 
 router.put('/users/role/:userId', authAdminController, editUserRoleController);
 
