@@ -1,43 +1,51 @@
 # HACKATRIP
+
 ## Descripción
+
 “Hackatrip” se trata de una agencia de viajes online para gente que viaja sola y quiere conocer otros países en grupo (y conocer gente) o apuntarse un grupo de amigos al mismo viaje. Además en cada viaje hay una figura de coordinador que acompaña al grupo de viajeros y hace las vacaciones mas sencillas y con todo controlado.
+
 ## Como usar HACKATRIP
+
 ### Base de datos
+
 Hackatrip utiliza MySQL como base de datos para almacenar información de viajes y usuarios. Asegúrese de seguir estos pasos para configurar la base de datos correctamente:
 
-Instale MySQL: si no tiene MySQL instalado, puede descargarlo desde [@el sitio web oficial](https://www.mysql.com/downloads/) .
-
-Cree una base de datos: cree una base de datos en MySQL que utilizará Hackatrip. El nombre de la base de datos debe coincidir con el especificado en el archivo de configuración .env. Puede utilizar una herramienta como MySQL Workbench o ejecutar comandos SQL para crearlo.
+Instale MySQL: si no tiene MySQL instalado, puede descargarlo desde [el sitio web oficial](https://www.mysql.com/downloads/) .
 
 Configuración en el Archivo .env:
 
-Asegúrese de que el archivo .env en la raíz de su proyecto contenga la configuración correcta para MySQL. Debería tener variables como DB_PORT y JWT SECRET (hay un archivo .env.example).
+Asegúrese de que el archivo .env de su proyecto contenga la configuración correcta para MySQL (hay un archivo .env.example).
 
-Cliente MySQL: Hackatrip utiliza un módulo llamado MySQLClient.js para administrar la conexión de la base de datos. Asegúrese de que este archivo esté configurado para usar las variables de entorno del archivo .env y los valores definidos en config.js:
-address debe ser "localhost" o la dirección de su base de datos MySQL.
-user debe ser "demo" o el usuario de su base de datos MySQL.
-password debe obtenerse de Process.env.DB_PASSWORD o usar "contraseña" si no se proporciona en el archivo .env.
-database debe ser "" o el nombre de su base de datos MySQL.
+Cliente MySQL: Hackatrip utiliza un módulo llamado getPool.js para administrar la conexión de la base de datos. Asegúrese de que este archivo esté configurado para usar las variables de entorno del archivo .env:
 
-### Crear tablas de la base de datos
+- `MYSQL_HOST` debe ser "localhost" o la dirección de su base de datos MySQL.
+- `MYSQL_USER` debe ser "root" o el usuario de su base de datos MySQL.
+- `MYSQL_PASS` debe ser su contraseña de MySQL.
+- `MYSQL_DB` puedes darle el nombre que prefieras.
 
-Abre la terminal y escribe:
+### Instalar dependencias
 
-```
-npm run initDb
-```
-Este comando inicializa tablas en la base de datos usando Node.js. Cuando ejecuta este comando, se conecta a la base de datos y crea las tablas necesarias.Este comando debe ejecutarse solo una vez, antes de usar Hackatrip o si necesita reiniciar las tablas de la base de datos. Este comando ya crea la base de datos precargada con usuarios y envíos.
-
-### Ejecutar
 Para ejecutar, siga estos pasos:
 
-Instalar dependencias: abra una terminal en la raíz de su proyecto y ejecute el siguiente comando para instalar dependencias:
+Instalar dependencias: abra una terminal en la ruta server del proyecto y ejecute el siguiente comando para instalar dependencias:
 
 ```
 npm i
 ```
 
-Inicie: una vez instaladas las dependencias, puede iniciar con el siguiente comando:
+### Crear tablas de la base de datos
+
+Abre la terminal en la ruta server y escribe:
+
+```
+npm run initDb
+```
+
+Este comando inicializa tablas en la base de datos usando Node.js. Cuando ejecuta este comando, se conecta a la base de datos y crea las tablas necesarias.Este comando debe ejecutarse solo una vez, antes de usar Hackatrip o si necesita reiniciar las tablas de la base de datos. Este comando ya crea la base de datos precargada con usuarios y envíos.
+
+### Iniciar proyecto
+
+Inicie: una vez instaladas las dependencias, puede iniciar con el siguiente comando estando en la ruta server:
 
 ```
 npm run dev
@@ -67,18 +75,17 @@ Debería estar escuchando en un puerto específico. Puedes acceder a él a trav�
 
 - `GET /viajes/:viajeId`: Visualización de todos los detalles de un viaje.
 
--`POST /viajes/:userId/confirmar`: Confirmar el coordinador de un viaje por parte del admin.
+- `POST /viajes/:userId/confirmar`: Confirmar el coordinador de un viaje por parte del admin.
 
--`POST /viajes/:viajeId`: Editar la información de un viaje por parte del admin.
+- `POST /viajes/:viajeId`: Editar la información de un viaje por parte del admin.
 
--`POST /viajes/:viajeId/reservarycancelar`: Reservar y cancelar la reserva de un viaje por parte de un usuario.
+- `POST /viajes/:viajeId/reservarycancelar`: Reservar y cancelar la reserva de un viaje por parte de un usuario.
 
--`POST /viajes/:viajeId/addfotos`: Añadir fotos de un viaje por parte de un usuario.
+- `POST /viajes/:viajeId/addfotos`: Añadir fotos de un viaje por parte de un usuario.
 
--`POST /viajes/:viajeId/coordinadorVotes`: Realizar una puntuación de un coordinador con el que has viajado.
+- `POST /viajes/:viajeId/coordinadorVotes`: Realizar una puntuación de un coordinador con el que has viajado.
 
--`POST /viajes/:viajeId/:coordinadorId`: Apuntarse un coordinador a un viaje.
-
+- `POST /viajes/:viajeId/:coordinadorId`: Apuntarse un coordinador a un viaje.
 
 ### Tech stack
 
@@ -98,12 +105,12 @@ Debería estar escuchando en un puerto específico. Puedes acceder a él a trav�
 
 - mysql2: un controlador MySQL para Node.js, utilizado para interactuar con la base de datos MySQL.
 
-- UUID: una biblioteca para generar identificadores únicos (UUID).
+- UUID: para generar identificadores únicos (UUID).
 
-- Vitest: un marco de prueba para aplicaciones Vue 3. Se utiliza para pruebas de proyectos.
+- Vite: un marco de prueba para aplicaciones Vue 3. Se utiliza para pruebas de proyectos.
 
 - Bcrypt: una biblioteca de hash especializada en seguridad de contraseñas para aplicaciones web.
-  
+
 - Express-fileupload: es un middleware para Express que simplifica la gestión de archivos subidos al servidor a través de formularios HTML.
 
 - Nodemailer: es un módulo de Node.js para enviar correos electrónicos desde una aplicación.
