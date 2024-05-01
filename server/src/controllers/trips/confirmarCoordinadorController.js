@@ -2,9 +2,9 @@ import insertCoordinadorConfirmadoModel from '../../models/trips/insertCoordinad
 
 const confirmarCoordinadorController = async (req, res, next) => {
     try {
-        const { userId } = req.params;
+        const { userId, viajeId } = req.params;
 
-        await insertCoordinadorConfirmadoModel(userId);
+        await insertCoordinadorConfirmadoModel(userId, viajeId);
 
         res.status(201).send({
             status: 'ok',

@@ -32,7 +32,7 @@ router.post(
 router.get('/viajes/:viajeId', authUserController, userViewTripController);
 
 router.post(
-    '/viajes/:userId/confirmar',
+    '/viajes/:userId/:viajeId/confirmar',
     authUserController,
     authAdminController,
     confirmarCoordinadorController,
