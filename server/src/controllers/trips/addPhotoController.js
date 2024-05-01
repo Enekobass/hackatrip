@@ -16,7 +16,7 @@ const addPhotoController = async (req, res, next) => {
 
         const photoName = await savePhoto(photo, 1000);
 
-        const photoId = await insertPhotoModel(photoName, viajeId);
+        const photoId = await insertPhotoModel(photoName, viajeId, req.user.id);
 
         res.status(201).send({
             status: 'ok',
