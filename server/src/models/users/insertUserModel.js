@@ -28,6 +28,12 @@ const insertUserModel = async (
         userAlreadyRegisteredError();
     }
 
+    [users] = await pool.query(`SELECT id FROM users WHERE email = ?`, [email]);
+
+    if (users.length > 0) {
+        emailAlreadyRegisteredError();
+    }
+
     const emailSubject = 'Activa tu usuario en Hackatrip';
 
     const emailBody = `
@@ -39,12 +45,6 @@ const insertUserModel = async (
         `;
 
     await sendMailUtil(email, emailSubject, emailBody);
-
-    [users] = await pool.query(`SELECT id FROM users WHERE email = ?`, [email]);
-
-    if (users.length > 0) {
-        emailAlreadyRegisteredError();
-    }
 
     const hashedPass = await bcrypt.hash(password, 10);
 
