@@ -27,7 +27,7 @@ router.post('/users/password/recover', sendRecoverPassController);
 
 router.put('/users/password/edit', editUserPassController);
 
-router.put('/users/edit', editUserController);
+router.put('/users/edit', authUserController, editUserController);
 
 router.put(
     '/users/role/:userId',
