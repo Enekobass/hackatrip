@@ -9,6 +9,8 @@ import {
     editUserRoleController,
 } from '../controllers/users/index.js';
 
+import { authAdminController } from '../middlewares/index.js';
+
 const router = express.Router();
 
 router.post('/users/register', newUserController);
@@ -21,6 +23,6 @@ router.post('/users/password/recover', sendRecoverPassController);
 
 router.put('/users/password/edit', editUserPassController);
 
-router.put('/users/role/:userId', editUserRoleController);
+router.put('/users/role/:userId', authAdminController, editUserRoleController);
 
 export default router;

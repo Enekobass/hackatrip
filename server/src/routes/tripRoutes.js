@@ -15,23 +15,24 @@ import {
 import {
     authUserController,
     authUserOptionalController,
+    authAdminController,
 } from '../middlewares/index.js';
 
 const router = express.Router();
 
 router.get('/todosviajes', authUserOptionalController, filterTripController);
 
-router.post('/viajes', authUserController, newTripController);
+router.post('/viajes', authAdminController, newTripController);
 
 router.get('/viajes/:viajeId', authUserController, userViewTripController);
 
 router.post(
     '/viajes/:userId/confirmar',
-    authUserController,
+    authAdminController,
     confirmarCoordinadorController,
 );
 
-router.post('/viajes/:viajeId', authUserController, editTripController);
+router.post('/viajes/:viajeId', authAdminController, editTripController);
 
 router.post(
     '/viajes/:viajeId/reservarycancelar',
