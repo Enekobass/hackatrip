@@ -22,17 +22,28 @@ const router = express.Router();
 
 router.get('/todosviajes', authUserOptionalController, filterTripController);
 
-router.post('/viajes', authAdminController, newTripController);
+router.post(
+    '/viajes',
+    authUserController,
+    authAdminController,
+    newTripController,
+);
 
 router.get('/viajes/:viajeId', authUserController, userViewTripController);
 
 router.post(
     '/viajes/:userId/confirmar',
+    authUserController,
     authAdminController,
     confirmarCoordinadorController,
 );
 
-router.post('/viajes/:viajeId', authAdminController, editTripController);
+router.post(
+    '/viajes/:viajeId',
+    authUserController,
+    authAdminController,
+    editTripController,
+);
 
 router.post(
     '/viajes/:viajeId/reservarycancelar',

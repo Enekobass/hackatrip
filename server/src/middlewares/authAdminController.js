@@ -2,7 +2,7 @@ import { unauthorizedUserError } from '../services/errorService.js';
 
 const authAdminController = async (req, res, next) => {
     try {
-        if (req.user.role !== 'coordinador') {
+        if (req.user.role !== 'admin') {
             unauthorizedUserError();
         }
 
