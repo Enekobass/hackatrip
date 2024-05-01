@@ -88,7 +88,6 @@ const createTables = async () => {
             )    
             `);
 
-        // Creamos la tabla de fotos.
         await pool.query(`
             CREATE TABLE IF NOT EXISTS viajesPhotos (
                 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -112,7 +111,6 @@ const createTables = async () => {
             )
             `);
 
-        // Tabla de votos.
         await pool.query(`
             CREATE TABLE IF NOT EXISTS viajesVotes (
                 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
