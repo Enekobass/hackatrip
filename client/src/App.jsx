@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
 
 const App = () => {
   return (
@@ -17,8 +18,12 @@ const App = () => {
         }}
       />
       <Routes>
-      <Route path='/register' element={<RegisterPage />} />
+        <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route
+          path='/users/validate/:registrationCode'
+          element={<ValidateUserPage />}
+        />
       </Routes>
       <Footer />
     </>
