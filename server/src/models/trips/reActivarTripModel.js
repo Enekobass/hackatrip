@@ -19,6 +19,18 @@ const reActivarTripModel = async (viajeId) => {
         [viajeId],
     );
 
+    const [coordinador] = await pool.query(
+        `
+            SELECT
+                u.id,
+                u.email
+            FROM users u
+            LEFT JOIN coordinadorviajes cv ON cv.userId = u.id
+            WHERE u.id = cv.userId AND cv.viajeId = ?
+        `,
+        [viajeId],
+    );
+
     const emailSubject = 'Viaje activo';
 
     const emailBody = `
@@ -27,8 +39,22 @@ const reActivarTripModel = async (viajeId) => {
             Hack a Trip.
         `;
 
+    const emailBodyCoordinador = `
+            Hemos decidido activar de nuevo el viaje al que estás apuntado como coordinador, pronto confirmaremos el viaje y te mandaremos más detalles.
+
+            Hack a Trip.
+        `;
+
     for (let i = 0; i < inscritos.length; i++) {
         await sendMailUtil(inscritos[i].email, emailSubject, emailBody);
+    }
+
+    for (let i = 0; i < coordinador.length; i++) {
+        await sendMailUtil(
+            coordinador[i].email,
+            emailSubject,
+            emailBodyCoordinador,
+        );
     }
 };
 
