@@ -8,6 +8,7 @@ import {
     editUserPassController,
     editUserRoleController,
     editUserController,
+    editUserAvatarController
 } from '../controllers/users/index.js';
 
 import {
@@ -28,6 +29,8 @@ router.post('/users/password/recover', sendRecoverPassController);
 router.put('/users/password/edit', editUserPassController);
 
 router.put('/users/edit', authUserController, editUserController);
+
+router.put('/users/avatar/edit', authUserController, editUserAvatarController);
 
 router.put(
     '/users/role/:userId',

@@ -11,7 +11,7 @@ const editUserController = async (req, res, next) => {
         await validateSchemaUtil(editUserSchema, req.body);
 
 
-        let { username, email } = req.body;
+        let { username, email, password } = req.body;
 
         const user = await selectUserByIdModel(req.user.id);
 
@@ -20,7 +20,11 @@ const editUserController = async (req, res, next) => {
         email = email === user.email ? null : email;
 
 
-        await updateUserModel(username, email, req.user.id);
+        if (password) {
+            await updateUserModel(username, email, password, req.user.id);
+        } else {
+            await updateUserModel(username, email, req.user.id);
+        }
 
 
         res.send({

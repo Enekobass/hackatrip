@@ -1,15 +1,7 @@
-import getPool from '../../db/getPool.js';
-
-import {
-    userAlreadyRegisteredError,
-    emailAlreadyRegisteredError,
-} from '../../services/errorService.js';
-
-const updateUserModel = async (username, email, userId) => {
+const updateUserModel = async (username, email, password, userId) => {
     const pool = await getPool();
 
     if (username) {
-
         const [users] = await pool.query(
             `SELECT id FROM users WHERE username = ?`,
             [username],
@@ -25,9 +17,7 @@ const updateUserModel = async (username, email, userId) => {
         ]);
     }
 
-
     if (email) {
-
         const [users] = await pool.query(
             `SELECT id FROM users WHERE email = ?`,
             [email],
@@ -39,6 +29,13 @@ const updateUserModel = async (username, email, userId) => {
 
         await pool.query(`UPDATE users SET email = ? WHERE id = ?`, [
             email,
+            userId,
+        ]);
+    }
+
+    if (password) {
+        await pool.query(`UPDATE users SET password = ? WHERE id = ?`, [
+            password,
             userId,
         ]);
     }
