@@ -112,3 +112,11 @@ export const cantVoteCoordinador = () => {
             'No puedes votar a un coordinador de un viaje en el que no has participado',
     };
 };
+
+export const cantBeCoordinador = () => {
+    throw {
+        httpStatus: 409, // Conflict
+        code: 'CANNOT_BE_COORDINADOR',
+        message: 'Ya estás apuntado como coordinador en este viaje',
+    };
+};
