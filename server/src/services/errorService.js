@@ -10,7 +10,7 @@ export const userAlreadyRegisteredError = () => {
     throw {
         httpStatus: 409, // Conflict
         code: 'USER_ALREADY_REGISTERED',
-        message: 'Username already registered',
+        message: 'Este nombre de usuario ya está registrado',
     };
 };
 
@@ -18,7 +18,7 @@ export const emailAlreadyRegisteredError = () => {
     throw {
         httpStatus: 409, // Conflict
         code: 'EMAIL_ALREADY_REGISTERED',
-        message: 'Email already registered',
+        message: 'Este email ya está registrado',
     };
 };
 
@@ -92,5 +92,14 @@ export const unauthorizedUserError = () => {
         httpStatus: 409, // Conflict
         code: 'UNAUTHORIZED',
         message: 'El usuario no está autorizado para hacer esta operación',
+    };
+};
+
+export const cantAddPhoto = () => {
+    throw {
+        httpStatus: 403, // Conflict
+        code: 'CANNOT_ADD_PHOTO',
+        message:
+            'No está permitido añadir una imagen a un viaje que no has participado',
     };
 };
