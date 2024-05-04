@@ -103,3 +103,12 @@ export const cantAddPhoto = () => {
             'No está permitido añadir una imagen a un viaje que no has participado',
     };
 };
+
+export const cantVoteCoordinador = () => {
+    throw {
+        httpStatus: 403, // Conflict
+        code: 'CANNOT_VOTE_COORDINADOR',
+        message:
+            'No puedes votar a un coordinador de un viaje en el que no has participado',
+    };
+};

@@ -12,7 +12,7 @@ const voteCoordinadorController = async (req, res, next) => {
 
         const { value } = req.body;
 
-        await insertCoordinadorVoteModel(value, viajeId);
+        await insertCoordinadorVoteModel(value, viajeId, req.user.id);
 
         res.status(201).send({
             status: 'ok',
