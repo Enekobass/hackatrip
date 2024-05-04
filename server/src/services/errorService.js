@@ -120,3 +120,11 @@ export const cantBeCoordinador = () => {
         message: 'Ya estás apuntado como coordinador en este viaje',
     };
 };
+
+export const cantJoinTrip = () => {
+    throw {
+        httpStatus: 409, // Conflict
+        code: 'CANNOT_JOIN_TRIP',
+        message: 'Ya estás apuntado en este viaje',
+    };
+};
