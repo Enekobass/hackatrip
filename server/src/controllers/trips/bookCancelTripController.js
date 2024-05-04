@@ -15,14 +15,14 @@ const bookCancelTripController = async (req, res, next) => {
         const { viajeId } = req.params;
 
         if (reservar) {
-            reservarTripModel(req.user.id, viajeId);
+            await reservarTripModel(req.user.id, viajeId);
             res.status(201).send({
                 status: 'ok',
                 message: 'Viaje reservado',
             });
         }
         if (cancelar) {
-            cancelarTripModel(req.user.id, viajeId);
+            await cancelarTripModel(req.user.id, viajeId);
             res.status(201).send({
                 status: 'ok',
                 message: 'Viaje cancelado',
