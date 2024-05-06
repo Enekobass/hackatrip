@@ -9,6 +9,7 @@ import {
   //getPrivateProfileService,
   signInService,
   signUpService,
+  recoverPassword,
 } from '../services/userService';
 
 export const AuthProvider = ({ children }) => {
@@ -76,6 +77,22 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const authRecoverPassword = async (email) => {
+    try {
+      setAuthLoading(true);
+
+      const message = await recoverPassword(email);
+
+      toast.success(message);
+
+      navigate('/');
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
   // Función de cerrar sesión.
   const authLogout = () => {
     setAuthUser(null);
@@ -94,6 +111,7 @@ export const AuthProvider = ({ children }) => {
         authLogin,
         authLogout,
         authLoading,
+        authRecoverPassword,
       }}
     >
       {children}

@@ -69,3 +69,23 @@ export const activateUserService = async (registrationCode) => {
 
 //   return body.data?.user;
 // };
+
+export const recoverPassword = async (email) => {
+  const res = await fetch(`${VITE_API_URL}/users/password/recover`, {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+    }),
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.message;
+};

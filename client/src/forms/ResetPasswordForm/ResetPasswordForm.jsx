@@ -1,8 +1,9 @@
-// PasswordResetForm.js
+// ResetPasswordForm.js
 import { useState } from 'react';
 import './ResetPasswordForm.css';
+import PropType from 'prop-types';
 
-const PasswordResetForm = () => {
+const ResetPasswordForm = ({ authRecoverPassword }) => {
   const [email, setEmail] = useState('');
 
   const handleEmailChange = (event) => {
@@ -12,28 +13,31 @@ const PasswordResetForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Aquí se puede agregar la lógica para enviar el correo de recuperación de contraseña
-    console.log('Enviar correo de recuperación de contraseña a:', email);
+    authRecoverPassword(email);
     // Aquí se puede agregar llamadas a API, etc.
   };
 
   return (
-    <div className="password-reset-form-container">
+    <div className='password-reset-form-container'>
       <h2>Recuperación de Contraseña</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label>
+        <div className='form-group'>
+          <label htmlFor='email'>Correo Electrónico:</label>
           <input
-            type="email"
-            id="email"
+            type='email'
+            id='email'
             value={email}
             onChange={handleEmailChange}
             required
           />
         </div>
-        <button type="submit">Enviar Correo de Recuperación</button>
+        <button type='submit'>Enviar Correo de Recuperación</button>
       </form>
     </div>
   );
 };
 
-export default PasswordResetForm;
+ResetPasswordForm.propTypes = {
+  authRecoverPassword: PropType.func.isRequired,
+};
+export default ResetPasswordForm;
