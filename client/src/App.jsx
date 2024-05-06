@@ -12,6 +12,8 @@ import ContactPage from './pages/ContactPage/ContactPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
+import React from 'react';
+import PasswordResetForm from './components/PasswordResetForm';
 
 const App = () => {
   return (
