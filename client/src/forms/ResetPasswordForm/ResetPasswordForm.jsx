@@ -1,6 +1,6 @@
 // PasswordResetForm.js
-import React, { useState } from 'react';
-import './PasswordResetForm.css';
+import { useState } from 'react';
+import './ResetPasswordForm.css';
 
 const PasswordResetForm = () => {
   const [email, setEmail] = useState('');
