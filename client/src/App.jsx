@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-import HomePage from '/';
-//import CountryPage from './pages/CountryPage/CountryPage';
+import HomePage from './pages/HomePage/HomePage';
+//import ViajePage from './pages/ViajePage/ViajePage';
 //import ComunityPage from './pages/ComunityPage/ComunityPage';
 //import LoadPostPage from './pages/LoadPostPage/LoadPostPage';
 //import ContactPage from './pages/ContactPage/ContactPage';
@@ -12,8 +12,7 @@ import HomePage from '/';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
-import React from 'react';
-import PasswordResetForm from './components/PasswordResetForm';
+import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 
 const App = () => {
   return (
@@ -27,18 +26,18 @@ const App = () => {
       />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/country' element={<CountryPage />} />
+        {/* <Route path='/viaje/:viajeId' element={<CountryPage />} />
         <Route path='/comunity' element={<ComunityPage />} />
         <Route path='/loadPost' element={<LoadPostPage />} />
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='/coordi' element={<CoordiPage />} />
+        <Route path='/coordi' element={<CoordiPage />} /> */}
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route
           path='/users/validate/:registrationCode'
           element={<ValidateUserPage />}
         />
-        <Route path='/passwordResetForm' element={<PasswordResetForm />} />
+        <Route path='/recover' element={<ResetPasswordPage />} />
       </Routes>
       <Footer />
     </>

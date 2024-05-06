@@ -6,7 +6,7 @@ export const AuthContext = createContext(null);
 
 import toast from 'react-hot-toast';
 import {
-  getPrivateProfileService,
+  //getPrivateProfileService,
   signInService,
   signUpService,
 } from '../services/userService';
@@ -22,25 +22,25 @@ export const AuthProvider = ({ children }) => {
 
   const [authLoading, setAuthLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        setAuthLoading(true);
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       setAuthLoading(true);
 
-        const user = await getPrivateProfileService(authToken);
+  //       const user = await getPrivateProfileService(authToken);
 
-        setAuthUser(user);
-      } catch (err) {
-        toast.error(err.message);
-      } finally {
-        setAuthLoading(false);
-      }
-    };
+  //       setAuthUser(user);
+  //     } catch (err) {
+  //       toast.error(err.message);
+  //     } finally {
+  //       setAuthLoading(false);
+  //     }
+  //   };
 
-    if (authToken) {
-      fetchUser();
-    }
-  }, [authToken]);
+  //   if (authToken) {
+  //     fetchUser();
+  //   }
+  // }, [authToken]);
 
   // Función de registro
   const authRegister = async (username, email, password) => {
