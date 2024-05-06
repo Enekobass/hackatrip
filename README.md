@@ -8,8 +8,8 @@
 
 ## 👩‍💻 Authors
 
-- [@BraisBernardez](https://github.com/braissgz): Full Stack Developer with a focus on FrontEnd.
-- [@CristinaUfenast](https://github.com/cristinaufenast): Full Stack Developer with a focus on BackEnd.
+- [@BraisBernardez](https://github.com/braissgz)
+- [@CristinaUfenast](https://github.com/cristinaufenast)
 - [@RubenMuñoz](https://github.com/rumupadev)
 - [@EnekoCelestino](https://github.com/Enekobass)
 - [@SaraGonzalez](https://github.com/SaraRamrez)
