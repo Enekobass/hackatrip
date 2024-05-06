@@ -1,8 +1,30 @@
-# React + Vite
+# ⚙ Inicialización
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Navegue hasta la carpeta ./client y abra la terminal.
 
-Currently, two official plugins are available:
+## Paquetes NPM requeridos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Primero debe instalar los módulos necesarios:
+
+```
+npm i
+```
+
+## Servidor
+
+-Configure el .env en su carpeta server, tiene un .env.example.
+-Para iniciar el servidor:
+
+```
+npm run dev
+```
+
+## Navegador
+
+-Puede hacer clic en el enlace proporcionado por el terminal para abrir el navegador.
+-Alternativamente, abra su navegador favorito e ingrese la dirección que se muestra en la terminal.
+-Por ejemplo:
+
+```
+http://localhost:8000/
+```
