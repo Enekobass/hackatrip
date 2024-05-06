@@ -25,76 +25,76 @@
 
 ### USUARIO NO REGISTRADO
 
-• Visualizar la landing con el listado de viajes.
-• Búsqueda / filtro por:
-o palabra (destino, título, descripción)
-o rango de fechas.
-• Ordenación experiencias (fecha, precio, número inscriptos, …).
-• Registro (con envío e-mail de validación)
-o e-mail
-o username
-o contraseña
-o tipo de usuario (viajero o coordinador).
-• Login con enlace de recuperación contraseña.
+- Visualizar la landing con el listado de viajes.
+- Búsqueda / filtro por:
+  - palabra (destino, título, descripción)
+  - rango de fechas.
+- Ordenación experiencias (fecha, precio, número inscriptos, …).
+- Registro (con envío e-mail de validación)
+  - e-mail
+  - username
+  - contraseña
+  - tipo de usuario (viajero o coordinador).
+- Login con enlace de recuperación contraseña.
 
 ### USUARIO VIAJERO
 
-• Visualizar la landing con el listado de viajes.
-• Búsqueda, filtro y ordenación como un usuario no registrado.
-• Acceder a la ficha de un viaje con todos los detalles.
-• Gestión del perfil (edición de datos)
-o e-mail
-o username
-o contraseña
-o nombre y apellidos
-o avatar.
-• Reservar un viaje.
-• Listado de los viajes reservados.
-• Cancelar una reserva hasta un límite mínimo.
-• Rating del coordinador del viaje después de disfrutarlo (1-5).
-• Listado de coordinadores con rating.
-• Añadir fotos del viaje después de disfrutarlo.
-• Dar like y comentar una foto de otro viajero.
+- Visualizar la landing con el listado de viajes.
+- Búsqueda, filtro y ordenación como un usuario no registrado.
+- Acceder a la ficha de un viaje con todos los detalles.
+- Gestión del perfil (edición de datos)
+  - e-mail
+  - username
+  - contraseña
+  - nombre y apellidos
+  - avatar.
+- Reservar un viaje.
+- Listado de los viajes reservados.
+- Cancelar una reserva hasta un límite mínimo.
+- Rating del coordinador del viaje después de disfrutarlo (1-5).
+- Listado de coordinadores con rating.
+- Añadir fotos del viaje después de disfrutarlo.
+- Dar like y comentar una foto de otro viajero.
 
 ### USUARIO COORDINADOR
 
-• Visualizar la landing con el listado de viajes.
-• Búsqueda, filtro y ordenación como un usuario no registrado.
-• Acceder a la ficha de un viaje con todos los detalles.
-• Gestión del perfil (edición de datos)
-o e-mail
-o username
-o contraseña
-o nombre y apellidos
-o biografía
-o avatar
-o valoración (automática, no modificable).
-• Apuntarse / desapuntarse como coordinador a un viaje.
-• Listado de viajes donde aparece como coordinador.
-• Listado de coordinadores con rating.
-• Dar like y comentar una foto de un viajero.
+- Visualizar la landing con el listado de viajes.
+- Búsqueda, filtro y ordenación como un usuario no registrado.
+- Acceder a la ficha de un viaje con todos los detalles.
+- Gestión del perfil (edición de datos)
+  - e-mail
+  - username
+  - contraseña
+  - nombre y apellidos
+  - biografía
+  - avatar
+  - valoración (automática, no modificable).
+- Apuntarse / desapuntarse como coordinador a un viaje.
+- Listado de viajes donde aparece como coordinador.
+- Listado de coordinadores con rating.
+- Dar like y comentar una foto de un viajero.
 ### USUARIO ADMINISTRADOR
 
-• Visualizar la landing con el listado de viajes.
-• Búsqueda, filtro y ordenación como un usuario no registrado.
-• Acceder a la ficha de un viaje con todos los detalles.
-• Gestión del perfil (edición de datos)
-o contraseña
-o avatar.
-• Crear y modificar un viaje:
-o título
-o descripción
-o destino
-o imagen
-o fecha
-o precio
-o número mínimo de plazas para realizar un viaje
-o número de plazas totales
-o ruta
-o …
-• Confirmar uno o más coordinadores, según el número de viajeros, al viaje con envío
+- Visualizar la landing con el listado de viajes.
+- Búsqueda, filtro y ordenación como un usuario no registrado.
+- Acceder a la ficha de un viaje con todos los detalles.
+- Gestión del perfil (edición de datos)
+  - contraseña
+  - avatar.
+- Crear y modificar un viaje:
+  - título
+  - descripción
+  - destino
+  - imagen
+  - fecha
+  - precio
+  - número mínimo de plazas para realizar un viaje
+  - número de plazas totales
+  - ruta
+  - …
+- Confirmar uno o más coordinadores, según el número de viajeros, al viaje con envío
 email.
-• Desactivar (ejemplo: no se llega al número mínimo de inscriptos, mal tiempo, …),
+- Desactivar (ejemplo: no se llega al número mínimo de inscriptos, mal tiempo, …),
 reactivar, confirmar un viaje con envío email a los inscriptos.
 
 ## ⚙ Inicialización
