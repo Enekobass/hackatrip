@@ -3,7 +3,7 @@
 “Hackatrip” se trata de una agencia de viajes online para gente que viaja sola y quiere conocer otros países en grupo (y conocer gente) o apuntarse un grupo de amigos al mismo viaje. Además en cada viaje hay una figura de coordinador que acompaña al grupo de viajeros y hace las vacaciones mas sencillas y con todo controlado.
 
 <div align="center">
-  <img src="./images/hackatrip.png" alt="hackatrip_home">
+  <img src="https://i.imgur.com/dfJ01Y6.png" alt="hackatrip_home">
 </div>
 
 ## 👩‍💻 Authors
@@ -73,6 +73,7 @@
 - Listado de viajes donde aparece como coordinador.
 - Listado de coordinadores con rating.
 - Dar like y comentar una foto de un viajero.
+
 ### USUARIO ADMINISTRADOR
 
 - Visualizar la landing con el listado de viajes.
@@ -93,9 +94,9 @@
   - ruta
   - …
 - Confirmar uno o más coordinadores, según el número de viajeros, al viaje con envío
-email.
+  email.
 - Desactivar (ejemplo: no se llega al número mínimo de inscriptos, mal tiempo, …),
-reactivar, confirmar un viaje con envío email a los inscriptos.
+  reactivar, confirmar un viaje con envío email a los inscriptos.
 
 ## ⚙ Inicialización
 
