@@ -22,7 +22,7 @@ const ResetPasswordForm = ({ authRecoverPassword }) => {
       <h2>Recuperación de Contraseña</h2>
       <form onSubmit={handleSubmit}>
         <div className='form-group'>
-          <label htmlFor='email'>Correo Electrónico:</label>
+          <label htmlFor='email'>Escribe tu correo electrónico:</label>
           <input
             type='email'
             id='email'
