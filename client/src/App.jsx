@@ -4,11 +4,11 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import HomePage from '/';
-import CountryPage from './pages/CountryPage/CountryPage';
-import ComunityPage from './pages/ComunityPage/ComunityPage';
-import LoadPostPage from './pages/LoadPostPage/LoadPostPage';
-import ContactPage from './pages/ContactPage/ContactPage';
-import CoordiPage from './pages/CoordiPage/CoordiPage';
+//import CountryPage from './pages/CountryPage/CountryPage';
+//import ComunityPage from './pages/ComunityPage/ComunityPage';
+//import LoadPostPage from './pages/LoadPostPage/LoadPostPage';
+//import ContactPage from './pages/ContactPage/ContactPage';
+//import CoordiPage from './pages/CoordiPage/CoordiPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
@@ -27,12 +27,18 @@ const App = () => {
       />
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/country' element={<CountryPage />} />
+        <Route path='/comunity' element={<ComunityPage />} />
+        <Route path='/loadPost' element={<LoadPostPage />} />
+        <Route path='/contact' element={<ContactPage />} />
+        <Route path='/coordi' element={<CoordiPage />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route
           path='/users/validate/:registrationCode'
           element={<ValidateUserPage />}
         />
+        <Route path='/passwordResetForm' element={<PasswordResetForm />} />
       </Routes>
       <Footer />
     </>
