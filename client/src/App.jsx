@@ -3,7 +3,12 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-import HomePage from './pages/HomePage/HomePage';
+import HomePage from '/';
+import ContinentPage from './pages/ContinentPage/ContinentPage';
+import CountryPage from './pages/CountryPage/CountryPage';
+import ComunityPage from './pages/ComunityPage/ComunityPage';
+import LoadPostPage from './pages/LoadPostPage/LoadPostPage';
+import ContactPage from './pages/ContactPage/ContactPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
