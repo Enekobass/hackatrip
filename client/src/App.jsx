@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import HomePage from './pages/HomePage/HomePage';
-//import ViajePage from './pages/ViajePage/ViajePage';
+//import TripPage from './pages/TripPage/TripPage';
 //import ComunityPage from './pages/ComunityPage/ComunityPage';
 //import LoadPostPage from './pages/LoadPostPage/LoadPostPage';
 //import ContactPage from './pages/ContactPage/ContactPage';
@@ -26,7 +26,7 @@ const App = () => {
       />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        {/* <Route path='/viaje/:viajeId' element={<CountryPage />} />
+        {/* <Route path='/viaje/:viajeId' element={<TripPage />} />
         <Route path='/comunity' element={<ComunityPage />} />
         <Route path='/loadPost' element={<LoadPostPage />} />
         <Route path='/contact' element={<ContactPage />} />
