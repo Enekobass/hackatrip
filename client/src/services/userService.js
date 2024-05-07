@@ -98,6 +98,9 @@ export const changePassword = async (
 ) => {
   const res = await fetch(`${VITE_API_URL}/users/password/edit`, {
     method: 'put',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
       email,
       newPass,
