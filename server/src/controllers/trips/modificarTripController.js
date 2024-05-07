@@ -3,11 +3,12 @@ import modifyTripModel from '../../models/trips/modifyTripModel.js';
 import validateSchema from '../../utils/validateSchemaUtil.js';
 
 import editTripSchema from '../../schemas/trips/editTripSchema.js';
-import selectUserByEmailModel from '../../models/users/selectUserByEmailModel.js';
+
+import userViewTripModel from '../../models/trips/userViewTripModel.js';
 
 const modifyTripController = async (req, res, next) => {
     try {
-        await validateSchema(editTripSchema, Object.assign(req.body, req.files));
+        await validateSchema(editTripSchema, Object.assign(req.body));
 
         let {
             titulo,
@@ -20,11 +21,12 @@ const modifyTripController = async (req, res, next) => {
             ruta,
             precio,
             activo,
-            confirmado,
-            imagen
+            confirmado
         } = req.body;
 
-        const user = await selectUserByEmailModel(req.user.role.admin);
+        let {viajeId} = req.params;
+
+        const viajes = await userViewTripModel(viajeId);
 
         // Proporciona el cambio de los valores.  Si "titulo" es igual a "viajes.titulo", 
         // devuelve null, de lo contrario, actualiza el valor de "titulo".
@@ -40,14 +42,10 @@ const modifyTripController = async (req, res, next) => {
         precio = precio === viajes.precio ? null : precio;
         activo = activo === viajes.activo ? null : activo;
         confirmado = confirmado === viajes.confirmado ? null : confirmado;
-        imagen = imagen === viajes.imagen ? null : imagen;
-            
+        
 
-        // Condicional que permite realizar cambios si eres admin o no.
-
-        if (user.role.admin) {
-            await modifyTripModel(
-                titulo,
+        await modifyTripModel(
+            titulo,
             descripcion,
             destino,
             fechaDeInicio,
@@ -58,24 +56,9 @@ const modifyTripController = async (req, res, next) => {
             precio,
             activo,
             confirmado,
-            imagen
+            viajesId
         );
-        } else {
-            await modifyTripModel(
-                titulo,
-                descripcion,
-                destino,
-                fechaDeInicio,
-                fechaDeFin,
-                plazasMinimas,
-                plazasMaximas,
-                ruta,
-                precio,
-                activo,
-                confirmado,
-                imagen
-            );
-        }
+        
 
         res.send({
             status: 'ok',
@@ -91,7 +74,7 @@ const modifyTripController = async (req, res, next) => {
                     plazasMaximas,
                     ruta,
                     precio,
-                    imagen,
+                    viajeId,
                     modifiedAt: new Date(),
                 },
             },
