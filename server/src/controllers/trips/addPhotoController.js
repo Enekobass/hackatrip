@@ -2,17 +2,19 @@ import insertPhotoModel from '../../models/trips/insertPhotoModels.js';
 
 import { savePhoto } from '../../services/photoService.js';
 
-import validateSchema from '../../utils/validateSchemaUtil.js';
+import validateSchemaUtil from '../../utils/validateSchemaUtil.js';
 
 import voteTripSchema from '../../schemas/trips/voteTripSchema.js';
 
 const addPhotoController = async (req, res, next) => {
     try {
-        await validateSchema(voteTripSchema, req.files);
+        await validateSchemaUtil(voteTripSchema, Object.assign(req.files, req.body));
 
         const { viajeId } = req.params;
 
         const { value, title, description } = req.body;
+
+        console.log(req.user.id);
 
         const photo = req.files;
 
