@@ -10,6 +10,7 @@ import {
   signInService,
   signUpService,
   recoverPassword,
+  changePassword,
 } from '../services/userService';
 
 export const AuthProvider = ({ children }) => {
@@ -85,7 +86,23 @@ export const AuthProvider = ({ children }) => {
 
       toast.success(message);
 
-      navigate('/');
+      navigate('/changepassword');
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const authChangePassword = async (email, newPass, recoverPassCode) => {
+    try {
+      setAuthLoading(true);
+
+      const message = await changePassword(email, newPass, recoverPassCode);
+
+      toast.success(message);
+
+      navigate('/login');
     } catch (err) {
       toast.error(err.message);
     } finally {
@@ -112,6 +129,7 @@ export const AuthProvider = ({ children }) => {
         authLogout,
         authLoading,
         authRecoverPassword,
+        authChangePassword,
       }}
     >
       {children}
