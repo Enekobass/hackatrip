@@ -91,7 +91,9 @@ const createTables = async () => {
         await pool.query(`
             CREATE TABLE IF NOT EXISTS viajesPhotos (
                 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-                name VARCHAR(100) NOT NULL,
+                value TINYINT UNSIGNED NOT NULL,
+                title VARCHAR(50) NOT NULL,
+                description TEXT NOT NULL,
                 userId VARCHAR(100) NOT NULL,
                 viajeId VARCHAR(100) NOT NULL,
                 FOREIGN KEY (userId) REFERENCES users(id),
