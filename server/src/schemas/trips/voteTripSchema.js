@@ -6,12 +6,11 @@ import joiErrorMessages from '../joiErrorMessages.js';
 
 const voteTripSchema = joi.object({
     photo: imgSchema.required(),
-    title: joi
-        .string()
-        .required()
-        .messages(joiErrorMessages),
+    title: joi.string().min(3).max(50).required().messages(joiErrorMessages),
     description: joi
         .string()
+        .min(5)
+        .max(250)
         .required()
         .messages(joiErrorMessages),
     value: joi

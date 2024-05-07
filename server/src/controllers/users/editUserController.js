@@ -1,4 +1,3 @@
-import selectUserByIdModel from '../../models/users/selectUserByIdModel.js';
 import updateUserModel from '../../models/users/updateUserModel.js';
 
 import validateSchemaUtil from '../../utils/validateSchemaUtil.js';
@@ -7,25 +6,11 @@ import editUserSchema from '../../schemas/users/editUserSchema.js';
 
 const editUserController = async (req, res, next) => {
     try {
-
         await validateSchemaUtil(editUserSchema, req.body);
 
+        const { username, email, password } = req.body;
 
-        let { username, email, password } = req.body;
-
-        const user = await selectUserByIdModel(req.user.id);
-
-
-        username = username === user.username ? null : username;
-        email = email === user.email ? null : email;
-
-
-        if (password) {
-            await updateUserModel(username, email, password, req.user.id);
-        } else {
-            await updateUserModel(username, email, req.user.id);
-        }
-
+        await updateUserModel(username, email, password, req.user.id);
 
         res.send({
             status: 'ok',

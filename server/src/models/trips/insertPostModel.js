@@ -2,7 +2,7 @@ import getPool from '../../db/getPool.js';
 
 import { cantAddPhoto } from '../../services/errorService.js';
 
-const insertPhotoModels = async (
+const insertPostModel = async (
     photoName,
     viajeId,
     userId,
@@ -26,11 +26,11 @@ const insertPhotoModels = async (
     }
 
     const [photo] = await pool.query(
-        `INSERT INTO viajesPhotos (userId, viajeId, value, title, description, name) VALUES (?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO viajesposts (userId, viajeId, value, title, description, name) VALUES (?, ?, ?, ?, ?, ?)`,
         [userId, viajeId, value, title, description, photoName],
     );
 
     return photo.insertId;
 };
 
-export default insertPhotoModels;
+export default insertPostModel;

@@ -3,7 +3,7 @@ import joi from 'joi';
 import joiErrorMessages from '../joiErrorMessages.js';
 
 const newUserSchema = joi.object({
-    username: joi.string().required().messages(joiErrorMessages),
+    username: joi.string().min(3).max(30).required().messages(joiErrorMessages),
     password: joi
         .string()
         .pattern(
