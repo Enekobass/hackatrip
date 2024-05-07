@@ -72,8 +72,8 @@ router.post(
 
 router.put(
     '/viajes/:viajeId/modificarViaje',
-    authAdminController,
-    editTripController,
+   // authAdminController,
+    modifyTripController
 );
 
 export default router;
