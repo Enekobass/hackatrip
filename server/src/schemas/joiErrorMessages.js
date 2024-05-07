@@ -9,7 +9,7 @@ const joiErrorMessages = {
     'string.email':
         'Debe proporcionar un correo electrónico válido para "{#key}"',
     'string.pattern.base':
-        'La contraseña debe contener al menos una mayúscula, una minúscula, un número y un símbolo de puntuación para "{#key}"',
+        'La contraseña debe contener mínimo 8 caracteres, al menos una mayúscula, una minúscula, un número y un símbolo de puntuación.',
     'string.min': 'El campo "{#key}" debe tener al menos {#limit} caracteres',
     'string.max': 'El campo "{#key}" no debe exceder los {#limit} caracteres',
     'object.unknown': 'No se permiten campos adicionales en este objeto',

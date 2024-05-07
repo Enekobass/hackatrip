@@ -10,6 +10,7 @@ import {
     voteCoordinadorController,
     filterTripController,
     userViewTripController,
+    modifyTripController
 } from '../controllers/trips/index.js';
 
 import {
@@ -63,6 +64,12 @@ router.post(
     '/viajes/:viajeId/:coordinadorId',
     authUserController,
     coordinadorTripController,
+);
+
+router.put(
+    '/viajes/:viajeId/modificarViaje',
+   // authAdminController,
+    modifyTripController
 );
 
 export default router;
