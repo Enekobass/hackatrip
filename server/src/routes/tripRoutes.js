@@ -10,7 +10,7 @@ import {
     voteCoordinadorController,
     filterTripController,
     userViewTripController,
-    modificarTripController
+    modifyTripController
 } from '../controllers/trips/index.js';
 
 import {
