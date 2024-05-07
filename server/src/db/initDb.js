@@ -20,7 +20,7 @@ const createTables = async () => {
         console.log('Dropping tables...');
 
         await pool.query(
-            'DROP TABLE IF EXISTS viajesVotes, coordinadorVotes, viajesPhotos, viajesreservados, coordinadorviajes, viajes, users',
+            'DROP TABLE IF EXISTS coordinadorvotes, viajesposts, viajesreservados, coordinadorviajes, viajes, users',
         );
 
         console.log('Creating tables...');
@@ -59,7 +59,7 @@ const createTables = async () => {
                 plazasMaximas INT UNSIGNED NOT NULL,
                 ruta VARCHAR(200) NOT NULL,
                 precio INT UNSIGNED NOT NULL,
-                activo VARCHAR(20) NOT NULL,
+                activo INT NOT NULL,
                 confirmado INT NOT NULL,
                 imagen VARCHAR(100) NOT NULL,
                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP, 
@@ -89,9 +89,12 @@ const createTables = async () => {
             `);
 
         await pool.query(`
-            CREATE TABLE IF NOT EXISTS viajesPhotos (
+            CREATE TABLE IF NOT EXISTS viajesposts (
                 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-                name VARCHAR(100) NOT NULL,
+                value TINYINT UNSIGNED NOT NULL,
+                title VARCHAR(50) NOT NULL,
+                description VARCHAR(250) NOT NULL,
+                name VARCHAR(50) NOT NULL,
                 userId VARCHAR(100) NOT NULL,
                 viajeId VARCHAR(100) NOT NULL,
                 FOREIGN KEY (userId) REFERENCES users(id),
@@ -101,23 +104,11 @@ const createTables = async () => {
             `);
 
         await pool.query(`
-            CREATE TABLE IF NOT EXISTS coordinadorVotes (
+            CREATE TABLE IF NOT EXISTS coordinadorvotes (
                 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
                 value TINYINT UNSIGNED NOT NULL,
                 userId VARCHAR(100) NOT NULL,
                 viajeId VARCHAR(100) NOT NULL,
-                FOREIGN KEY (userId) REFERENCES users(id),
-                FOREIGN KEY (viajeId) REFERENCES viajes(id)
-            )
-            `);
-
-        await pool.query(`
-            CREATE TABLE IF NOT EXISTS viajesVotes (
-                id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-                value TINYINT UNSIGNED NOT NULL,
-                userId VARCHAR(100) NOT NULL,
-                viajeId VARCHAR(100) NOT NULL,
-                createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (userId) REFERENCES users(id),
                 FOREIGN KEY (viajeId) REFERENCES viajes(id)
             )

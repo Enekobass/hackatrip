@@ -13,6 +13,7 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
+import ChangePasswordPage from './pages/ChangePasswordPage/ChangePasswordPage';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path='/loadPost' element={<LoadPostPage />} />
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/coordi' element={<CoordiPage />} /> */}
+        <Route path='/changepassword' element={<ChangePasswordPage />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route

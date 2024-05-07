@@ -5,8 +5,8 @@ import {
     editTripController,
     coordinadorTripController,
     confirmarCoordinadorController,
-    bookCancelTripController,
-    addPhotoController,
+    bookTripController,
+    addPostController,
     voteCoordinadorController,
     filterTripController,
     userViewTripController,
@@ -49,14 +49,10 @@ router.post(
 router.post(
     '/viajes/:viajeId/reservarycancelar',
     authUserController,
-    bookCancelTripController,
+    bookTripController,
 );
 
-router.post(
-    '/viajes/:viajeId/addfotos',
-    authUserController,
-    addPhotoController,
-);
+router.post('/viajes/:viajeId/addpost', authUserController, addPostController);
 
 router.post(
     '/viajes/:viajeId/coordinadorVotes',

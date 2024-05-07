@@ -5,7 +5,7 @@ import ResetPasswordForm from '../../forms/ResetPasswordForm/ResetPasswordForm';
 const ResetPasswordPage = () => {
   const { authRecoverPassword } = useContext(AuthContext);
   return (
-    <main>
+    <main className='recover'>
       <ResetPasswordForm authRecoverPassword={authRecoverPassword} />
     </main>
   );
