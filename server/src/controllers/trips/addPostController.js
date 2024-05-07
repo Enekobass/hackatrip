@@ -1,4 +1,4 @@
-import insertPhotoModel from '../../models/trips/insertPhotoModels.js';
+import insertPostModel from '../../models/trips/insertPostModel.js';
 
 import { savePhoto } from '../../services/photoService.js';
 
@@ -6,7 +6,7 @@ import validateSchemaUtil from '../../utils/validateSchemaUtil.js';
 
 import voteTripSchema from '../../schemas/trips/voteTripSchema.js';
 
-const addPhotoController = async (req, res, next) => {
+const addPostController = async (req, res, next) => {
     try {
         await validateSchemaUtil(
             voteTripSchema,
@@ -17,13 +17,11 @@ const addPhotoController = async (req, res, next) => {
 
         const { viajeId } = req.params;
 
-        console.log(req.user.id);
-
         const photo = req.files;
 
         const photoName = await savePhoto(photo, 1000);
 
-        const photoId = await insertPhotoModel(
+        const photoId = await insertPostModel(
             photoName,
             viajeId,
             req.user.id,
@@ -34,11 +32,14 @@ const addPhotoController = async (req, res, next) => {
 
         res.status(201).send({
             status: 'ok',
-            message: 'Foto guardada',
+            message: 'Post subido',
             data: {
-                photo: {
+                post: {
                     id: photoId,
-                    name: photoName,
+                    photoName: photoName,
+                    title: title,
+                    description: description,
+                    value: value,
                 },
             },
         });
@@ -47,4 +48,4 @@ const addPhotoController = async (req, res, next) => {
     }
 };
 
-export default addPhotoController;
+export default addPostController;

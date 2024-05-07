@@ -90,12 +90,7 @@ export const recoverPassword = async (email) => {
   return body.message;
 };
 
-
-export const changePassword = async (
-  email,
-  newPass,
-  recoverPassCode
-) => {
+export const changePassword = async (email, newPass, recoverPassCode) => {
   const res = await fetch(`${VITE_API_URL}/users/password/edit`, {
     method: 'put',
     headers: {
@@ -104,7 +99,7 @@ export const changePassword = async (
     body: JSON.stringify({
       email,
       newPass,
-      recoverPassCode
+      recoverPassCode,
     }),
   });
 
