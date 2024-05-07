@@ -7,6 +7,7 @@ import addPhotoController from './addPhotoController.js';
 import voteCoordinadorController from './voteCoordinadorController.js';
 import filterTripController from './filterTripController.js';
 import userViewTripController from './userViewTripController.js';
+import modificarTripController from './modificarTripController.js';
 
 export {
     voteCoordinadorController,
@@ -18,4 +19,5 @@ export {
     addPhotoController,
     filterTripController,
     userViewTripController,
+    modificarTripController
 };

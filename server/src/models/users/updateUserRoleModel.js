@@ -5,8 +5,7 @@ const updateUserRoleModel = async (userId) => {
 
     await pool.query(`UPDATE users SET role = ? WHERE id = ?`, [
         'coordinador',
-        userId,
-    ]);
+        userId]);
 };
 
 export default updateUserRoleModel;
