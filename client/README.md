@@ -31,11 +31,13 @@ http://localhost:8000/
 
 ## Tech Stack
 
-Vite: es una herramienta de desarrollo frontend rápida y eficiente que se enfoca en la velocidad. Ofrece tiempos de arranque instantáneos y compila solo lo necesario.
-React: es una biblioteca de JavaScript utilizada para construir interfaces de usuario interactivas y dinámicas en aplicaciones web. Se enfoca en la creación de componentes reutilizables que gestionan su propio estado y se actualizan automáticamente cuando cambian los datos.
-ESLint: es una herramienta de linting para JavaScript que ayuda a identificar y corregir errores, mantener un código consistente y aplicar buenas prácticas de codificación en un proyecto. Utiliza reglas configurables y puede integrarse fácilmente en flujos de trabajo de desarrollo para mejorar la calidad del código.
+-Vite: es una herramienta de desarrollo frontend rápida y eficiente que se enfoca en la velocidad. Ofrece tiempos de arranque instantáneos y compila solo lo necesario.
+
+-React: es una biblioteca de JavaScript utilizada para construir interfaces de usuario interactivas y dinámicas en aplicaciones web. Se enfoca en la creación de componentes reutilizables que gestionan su propio estado y se actualizan automáticamente cuando cambian los datos.
+
+-ESLint: es una herramienta de linting para JavaScript que ayuda a identificar y corregir errores, mantener un código consistente y aplicar buenas prácticas de codificación en un proyecto. Utiliza reglas configurables y puede integrarse fácilmente en flujos de trabajo de desarrollo para mejorar la calidad del código.
 
 <p align="center">
-    <img src="https://skillicons.dev/icons?i=vite,react,ESLint" />
+    <img src="https://skillicons.dev/icons?i=vite,react,eslint" />
 </p>
 
