@@ -10,8 +10,9 @@ const selectRatedCoordinadorModel = async () => {
         FROM users u
         LEFT JOIN coordinadorviajes c ON c.userId = u.id
         LEFT JOIN coordinadorvotes cv ON c.viajeId = cv.viajeId
+        WHERE cv.userId = u.id
         GROUP BY u.id
-        `
+        `,
     );
 
     return coordinadores;
