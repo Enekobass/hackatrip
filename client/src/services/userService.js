@@ -58,17 +58,17 @@ export const activateUserService = async (registrationCode) => {
   }
 };
 
-// export const getPrivateProfileService = async (authToken) => {
-//   const res = await fetch(`${VITE_API_URL}/users`, {
-//     headers: {
-//       Authorization: authToken,
-//     },
-//   });
+export const getPrivateProfileService = async (authToken) => {
+  const res = await fetch(`${VITE_API_URL}/users`, {
+    headers: {
+      Authorization: authToken,
+    },
+  });
 
-//   const body = await res.json();
+  const body = await res.json();
 
-//   return body.data?.user;
-// };
+  return body.data?.user;
+};
 
 export const recoverPassword = async (email) => {
   const res = await fetch(`${VITE_API_URL}/users/password/recover`, {

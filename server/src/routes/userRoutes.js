@@ -8,7 +8,8 @@ import {
     editUserPassController,
     editUserRoleController,
     editUserController,
-    editUserAvatarController
+    editUserAvatarController,
+    getOwnUserController,
 } from '../controllers/users/index.js';
 
 import {
@@ -23,6 +24,8 @@ router.post('/users/register', newUserController);
 router.put('/users/validate/:registrationCode', validateUserController);
 
 router.post('/users/login', loginUserController);
+
+router.get('/users', authUserController, getOwnUserController);
 
 router.post('/users/password/recover', sendRecoverPassController);
 
