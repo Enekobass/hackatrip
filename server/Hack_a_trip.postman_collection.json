@@ -158,7 +158,13 @@
 					"name": "Hacer usuario coordinador",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8000/users/role/:userId",
 							"protocol": "http",
@@ -180,6 +186,103 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Editar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/users/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar avatar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/users/avatar/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"avatar",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Datos del usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -193,7 +296,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
@@ -277,19 +380,19 @@
 					"response": []
 				},
 				{
-					"name": "Desactivar, Activar o confirmar viaje",
+					"name": "Desactivar o Activar viaje",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    // enviar confirmar, desactivar o reactivar\r\n    \"\": true\r\n}",
+							"raw": "{\r\n    // enviar desactivar o reactivar\r\n    \"\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -324,7 +427,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
@@ -361,12 +464,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/viajes/:userId/confirmar",
+							"raw": "http://localhost:8000/viajes/:userId/:viajeId/confirmar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -375,11 +478,16 @@
 							"path": [
 								"viajes",
 								":userId",
+								":viajeId",
 								"confirmar"
 							],
 							"variable": [
 								{
 									"key": "userId",
+									"value": ""
+								},
+								{
+									"key": "viajeId",
 									"value": ""
 								}
 							]
@@ -388,19 +496,19 @@
 					"response": []
 				},
 				{
-					"name": "Reservar o Cancelar",
+					"name": "Reservar viaje",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    // enviar reservar o cancelar\r\n    \"\": true\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -430,13 +538,13 @@
 					"response": []
 				},
 				{
-					"name": "Añadir foto",
+					"name": "Añadir post",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
@@ -446,12 +554,27 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/C:/Users/peric/Desktop/Curso Web/Clases Boost Academy/Next.js/primera-app-next/public/image/logonext.jpg"
+									"src": []
+								},
+								{
+									"key": "value",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8000/viajes/:viajeId/addfotos",
+							"raw": "http://localhost:8000/viajes/:viajeId/addpost",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -460,7 +583,7 @@
 							"path": [
 								"viajes",
 								":viajeId",
-								"addfotos"
+								"addpost"
 							],
 							"variable": [
 								{
@@ -479,13 +602,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"value\": \"\"\r\n}",
+							"raw": "{\r\n    //enviar entre 1 y 5\r\n    \"value\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -521,7 +644,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
@@ -556,7 +679,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token_user_1}}",
+								"value": "",
 								"type": "text"
 							}
 						],
@@ -576,6 +699,98 @@
 									"key": "viajeId",
 									"value": ""
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar viaje",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // enviar el campo a modificar\r\n    \"\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/viajes/:viajeId/modificarviaje",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"viajes",
+								":viajeId",
+								"modificarviaje"
+							],
+							"variable": [
+								{
+									"key": "viajeId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Viajes confirmados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/todosviajesconfirmados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todosviajesconfirmados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Coordinadores con rating",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/ratedcoordinadores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"ratedcoordinadores"
 							]
 						}
 					},
@@ -611,6 +826,18 @@
 			"key": "token_user_1",
 			"value": "",
 			"type": "string"
+		},
+		{
+			"key": "token_user_2",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "token_user_3",
+			"value": "",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
