@@ -11,6 +11,7 @@ import {
     filterTripController,
     userViewTripController,
     modifyTripController,
+    confirmedTripsController,
 } from '../controllers/trips/index.js';
 
 import {
@@ -22,6 +23,12 @@ import {
 const router = express.Router();
 
 router.get('/todosviajes', authUserOptionalController, filterTripController);
+
+router.get(
+    '/todosviajesconfirmados',
+    authUserController,
+    confirmedTripsController,
+);
 
 router.post(
     '/viajes',
