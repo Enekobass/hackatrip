@@ -8,6 +8,7 @@ import voteCoordinadorController from './voteCoordinadorController.js';
 import filterTripController from './filterTripController.js';
 import userViewTripController from './userViewTripController.js';
 import modifyTripController from './modifyTripController.js';
+import confirmedTripsController from './confirmedTripsController.js';
 
 export {
     voteCoordinadorController,
@@ -20,4 +21,5 @@ export {
     filterTripController,
     userViewTripController,
     modifyTripController,
+    confirmedTripsController,
 };
