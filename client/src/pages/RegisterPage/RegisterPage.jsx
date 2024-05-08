@@ -11,8 +11,8 @@ const RegisterPage = () => {
   }
 
   return (
-    <main>
-      <h2>Registro</h2>
+    <main className='register'>
+      <h1>Crear una cuenta</h1>
 
       <RegisterForm authRegister={authRegister} authLoading={authLoading} />
     </main>

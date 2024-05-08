@@ -31,7 +31,9 @@ const ResetPasswordForm = ({ authRecoverPassword }) => {
             required
           />
         </div>
-        <button type='submit'>Enviar Correo de Recuperación</button>
+        <button className='resetbutton' type='submit'>
+          Enviar Correo de Recuperación
+        </button>
       </form>
     </div>
   );
