@@ -12,6 +12,7 @@ import {
     userViewTripController,
     modifyTripController,
     confirmedTripsController,
+    selectRatedCoordinador,
 } from '../controllers/trips/index.js';
 
 import {
@@ -23,6 +24,8 @@ import {
 const router = express.Router();
 
 router.get('/todosviajes', authUserOptionalController, filterTripController);
+
+router.get('/ratedcoordinadores', authUserController, selectRatedCoordinador);
 
 router.get(
     '/todosviajesconfirmados',
