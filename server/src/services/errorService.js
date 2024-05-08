@@ -113,6 +113,14 @@ export const cantVoteCoordinador = () => {
     };
 };
 
+export const cantVoteCoordinadorAgain = () => {
+    throw {
+        httpStatus: 403, // Conflict
+        code: 'CANNOT_VOTE_COORDINADOR',
+        message: 'No puedes votar a un coordinador de nuevo',
+    };
+};
+
 export const cantBeCoordinador = () => {
     throw {
         httpStatus: 409, // Conflict

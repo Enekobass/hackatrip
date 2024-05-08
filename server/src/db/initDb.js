@@ -107,8 +107,9 @@ const createTables = async () => {
             CREATE TABLE IF NOT EXISTS coordinadorvotes (
                 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
                 value TINYINT UNSIGNED NOT NULL,
-                userId VARCHAR(100) NOT NULL,
+                coordinadorId VARCHAR(100) NOT NULL,
                 viajeId VARCHAR(100) NOT NULL,
+                userId VARCHAR(100) NOT NULL,
                 FOREIGN KEY (userId) REFERENCES users(id),
                 FOREIGN KEY (viajeId) REFERENCES viajes(id)
             )
