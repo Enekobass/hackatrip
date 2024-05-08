@@ -1,5 +1,5 @@
 import newTripController from './newTripController.js';
-import editTripController from './editTripController.js';
+import activateOrDesactivateTripController from './activateOrDesactivateTripController.js';
 import coordinadorTripController from './coordinadorTripController.js';
 import confirmarCoordinadorController from './confirmarCoordinadorController.js';
 import bookTripController from './bookTripController.js';
@@ -12,12 +12,12 @@ import modifyTripController from './modifyTripController.js';
 export {
     voteCoordinadorController,
     newTripController,
-    editTripController,
+    activateOrDesactivateTripController,
     coordinadorTripController,
     confirmarCoordinadorController,
     bookTripController,
     addPostController,
     filterTripController,
     userViewTripController,
-    modifyTripController
+    modifyTripController,
 };
