@@ -18,8 +18,6 @@ const CreateUpdateTripForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Aquí puedes realizar validaciones adicionales si es necesario
-
     // Llama a la función onSubmit pasando los datos del formulario
     onSubmit({
       titulo,

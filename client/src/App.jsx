@@ -14,6 +14,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ChangePasswordPage from './pages/ChangePasswordPage/ChangePasswordPage';
+import AdminPage from './pages/AdminPage/AdminPage';
 
 const App = () => {
   return (
@@ -40,6 +41,8 @@ const App = () => {
           element={<ValidateUserPage />}
         />
         <Route path='/recover' element={<ResetPasswordPage />} />
+        {/* Agrega la ruta para la página de administrador */}
+        <Route path='/admin' element={<AdminPage />} />
       </Routes>
       <Footer />
     </>
