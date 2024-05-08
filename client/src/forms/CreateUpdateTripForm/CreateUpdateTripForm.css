@@ -1,0 +1,44 @@
+/* Estilos para CreateUpdateTripForm */
+.create-update-trip-form {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ff0000; /* Borde rojo */
+    border-radius: 8px;
+    width: 300px; /* Ancho del formulario */
+    margin: 0 auto; /* Centra el formulario */
+  }
+  
+  .create-update-trip-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .create-update-trip-form input[type="text"],
+  .create-update-trip-form input[type="date"],
+  .create-update-trip-form input[type="number"],
+  .create-update-trip-form input[type="email"],
+  .create-update-trip-form textarea,
+  .create-update-trip-form select,
+  .create-update-trip-form button {
+    width: 100%; /* Ancho completo del contenedor */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff0000; /* Borde rojo */
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+  }
+  
+  .create-update-trip-form button {
+    background-color: #ff0000; /* Fondo rojo */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-update-trip-form button:hover {
+    background-color: #cc0000; /* Color de fondo más oscuro al pasar el ratón */
+  }
+  
