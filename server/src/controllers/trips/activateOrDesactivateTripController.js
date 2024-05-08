@@ -6,7 +6,7 @@ import validateSchema from '../../utils/validateSchemaUtil.js';
 
 import editTripSchema from '../../schemas/trips/editTripSchema.js';
 
-const editTripController = async (req, res, next) => {
+const activateOrDesactivateTripController = async (req, res, next) => {
     try {
         await validateSchema(editTripSchema, req.body);
 
@@ -34,4 +34,4 @@ const editTripController = async (req, res, next) => {
     }
 };
 
-export default editTripController;
+export default activateOrDesactivateTripController;

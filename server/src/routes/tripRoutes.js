@@ -2,7 +2,7 @@ import express from 'express';
 
 import {
     newTripController,
-    editTripController,
+    activateOrDesactivateTripController,
     coordinadorTripController,
     confirmarCoordinadorController,
     bookTripController,
@@ -10,7 +10,7 @@ import {
     voteCoordinadorController,
     filterTripController,
     userViewTripController,
-    modifyTripController
+    modifyTripController,
 } from '../controllers/trips/index.js';
 
 import {
@@ -43,7 +43,7 @@ router.post(
     '/viajes/:viajeId',
     authUserController,
     authAdminController,
-    editTripController,
+    activateOrDesactivateTripController,
 );
 
 router.post(
@@ -67,9 +67,10 @@ router.post(
 );
 
 router.put(
-    '/viajes/:viajeId/modificarViaje',
-   // authAdminController,
-    modifyTripController
+    '/viajes/:viajeId/modificarviaje',
+    authUserController,
+    authAdminController,
+    modifyTripController,
 );
 
 export default router;
