@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const CreateUpdateTripForm = ({ CreateTripService, authToken }) => {
+const CreateUpdateTripForm = ({ createTripService, authToken }) => {
+
   const navigate = useNavigate();
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
@@ -23,7 +24,7 @@ const CreateUpdateTripForm = ({ CreateTripService, authToken }) => {
     e.preventDefault();
 
     // Llama a la función onSubmit pasando los datos del formulario
-    const message = await CreateTripService({
+    const message = await createTripService({
       titulo,
       descripcion,
       destino,
@@ -38,6 +39,7 @@ const CreateUpdateTripForm = ({ CreateTripService, authToken }) => {
       photo,
       authToken,
   });
+
   toast.success(message);
    navigate('/');
   } catch(error){
@@ -75,18 +77,15 @@ const CreateUpdateTripForm = ({ CreateTripService, authToken }) => {
       <label htmlFor="precio">Precio:</label>
       <input type="number" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />
 
-      <label htmlFor="activo">Activo:</label>
-      <select id="activo" value={activo} onChange={(e) => setActivo(e.target.value)} required>
-        <option value="Si">Si</option>
-        <option value="No">No</option>
-      </select>
+      <label htmlFor="activo">activo:</label>
+      <input type="number" id="activo" value={activo} onChange={(e) => setActivo(parseInt(e.target.value))} required />
 
       <label htmlFor="confirmado">Confirmado:</label>
       <input type="number" id="confirmado" value={confirmado} onChange={(e) => setConfirmado(parseInt(e.target.value))} required />
 
       <input
       type='file'
-      onChange={(e) => setPhoto(e.target.value)}
+      onChange={(e) => setPhoto(e.target.files)}
       accept='image/png, image/jpeg'
       required
   />
@@ -97,7 +96,7 @@ const CreateUpdateTripForm = ({ CreateTripService, authToken }) => {
 };
 
 CreateUpdateTripForm.propTypes = {
-  CreateTripService: PropTypes.func.isRequired,
+  createTripService: PropTypes.func.isRequired,
   authToken: PropTypes.string.isRequired,
 };
 
