@@ -1,26 +1,21 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
+import { Navigate } from 'react-router-dom';
 import CreateUpdateTripForm from '../../forms/CreateUpdateTripForm/CreateUpdateTripForm';
-
+import { createTripService } from '../../services/tripService.js';
 const AdminPage = () => {
-  const { authUser } = useContext(AuthContext);
-  
-  // Define la función handleSubmit para manejar el envío del formulario en AdminPage
-  const handleSubmit = () => {
-    // Muestra un mensaje de alerta indicando que el usuario no es administrador
-    alert('No es admin');
-  };
+  const { authUser, authToken } = useContext(AuthContext);
+
+  if (!authUser) {
+    // Si no hay un usuario autenticado, redirige a la página de inicio de sesión
+    return <Navigate to='/login' />;
+  }
 
   return (
     <main>
-      <h2>Página de Administrador</h2>
+      <h2>Panel de Administración</h2>
 
-      {/* Verifica si el usuario está autenticado antes de mostrar el formulario */}
-      {authUser && (
-        <CreateUpdateTripForm onSubmit={handleSubmit} />
-      )}
-      
-      {/* Aquí puedes agregar otros componentes o funcionalidades de administrador */}
+      <CreateUpdateTripForm createTripService = {createTripService} authToken = {authToken}/>
     </main>
   );
 };

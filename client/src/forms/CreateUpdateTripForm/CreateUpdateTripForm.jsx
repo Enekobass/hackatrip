@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
-const CreateUpdateTripForm = ({ onSubmit }) => {
+const CreateUpdateTripForm = ({ CreateTripService, authToken }) => {
+  const navigate = useNavigate();
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [destino, setDestino] = useState('');
@@ -13,13 +16,14 @@ const CreateUpdateTripForm = ({ onSubmit }) => {
   const [precio, setPrecio] = useState(0);
   const [activo, setActivo] = useState('');
   const [confirmado, setConfirmado] = useState(0);
-  const [imagen, setImagen] = useState('');
+  const [photo, setPhoto] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    try{
     e.preventDefault();
 
     // Llama a la función onSubmit pasando los datos del formulario
-    onSubmit({
+    const message = await CreateTripService({
       titulo,
       descripcion,
       destino,
@@ -31,9 +35,16 @@ const CreateUpdateTripForm = ({ onSubmit }) => {
       precio,
       activo,
       confirmado,
-      imagen
-    });
-  };
+      photo,
+      authToken,
+  });
+  toast.success(message);
+   navigate('/');
+  } catch(error){
+    toast.error(error.message);
+  }
+};
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -73,8 +84,12 @@ const CreateUpdateTripForm = ({ onSubmit }) => {
       <label htmlFor="confirmado">Confirmado:</label>
       <input type="number" id="confirmado" value={confirmado} onChange={(e) => setConfirmado(parseInt(e.target.value))} required />
 
-      <label htmlFor="imagen">Imagen:</label>
-      <input type="text" id="imagen" value={imagen} onChange={(e) => setImagen(e.target.value)} required />
+      <input
+      type='file'
+      onChange={(e) => setPhoto(e.target.value)}
+      accept='image/png, image/jpeg'
+      required
+  />
 
       <button type="submit">Enviar</button>
     </form>
@@ -82,7 +97,8 @@ const CreateUpdateTripForm = ({ onSubmit }) => {
 };
 
 CreateUpdateTripForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  CreateTripService: PropTypes.func.isRequired,
+  authToken: PropTypes.string.isRequired,
 };
 
 export default CreateUpdateTripForm;
