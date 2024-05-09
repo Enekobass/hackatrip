@@ -797,6 +797,44 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Lectura de recurso estatico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/4d102015-0b51-40e6-95bf-235a37fe424c.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"4d102015-0b51-40e6-95bf-235a37fe424c.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagina Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/pruebapruebaprueba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pruebapruebaprueba"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
