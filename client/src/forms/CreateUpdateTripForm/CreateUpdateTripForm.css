@@ -30,15 +30,3 @@
     background-color: black; /* Fondo negro */
     color: white; /* Texto blanco */
   }
-  
-  .create-update-trip-form button {
-    background-color: #ff0000; /* Fondo rojo */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .create-update-trip-form button:hover {
-    background-color: #cc0000; /* Color de fondo más oscuro al pasar el ratón */
-  }
-  

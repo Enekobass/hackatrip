@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import './CreateUpdateTripForm.css';
 
 const CreateUpdateTripForm = ({ createTripService, authToken }) => {
 
