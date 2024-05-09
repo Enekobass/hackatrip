@@ -10,7 +10,7 @@ const editUserSchema = joi.object({
         .pattern(
             /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[¡!$%^&*()_+|~=`{}:";'<>¿?,.])[a-zA-Z0-9¡!$%^&*()_+|~=`{}:";'<>¿?,.]{8,}$/,
         )
-        .required()
+        .optional()
         .messages(joiErrorMessages),
 });
 
