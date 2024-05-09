@@ -27,7 +27,7 @@ const insertCoordinadorVoteModel = async (value, viajeId, userId) => {
         [viajeId],
     );
 
-    if (user) {
+    if (user[0]) {
         cantVoteCoordinadorAgain();
     }
 
