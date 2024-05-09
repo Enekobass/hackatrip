@@ -23,7 +23,7 @@ const insertCoordinadorVoteModel = async (value, viajeId, userId) => {
     );
 
     [user] = await pool.query(
-        `SELECT userId FROM coordinadorviajes WHERE viajeId = ?`,
+        `SELECT userId FROM coordinadorvotes WHERE viajeId = ?`,
         [viajeId],
     );
 
