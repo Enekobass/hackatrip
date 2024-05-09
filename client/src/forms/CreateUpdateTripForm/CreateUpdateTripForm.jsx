@@ -50,7 +50,9 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
 
 
   return (
+    <div className='create-update-trip-form-container'>
     <form onSubmit={handleSubmit}>
+    <div className='create-update-trip-form'>
       <label htmlFor="titulo">Título:</label>
       <input type="text" id="titulo" value={titulo} onChange={(e) => setTitulo(e.target.value)} required />
 
@@ -84,15 +86,17 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
       <label htmlFor="confirmado">Confirmado:</label>
       <input type="number" id="confirmado" value={confirmado} onChange={(e) => setConfirmado(parseInt(e.target.value))} required />
 
+      <label htmlFor="Imagen">Portada del viaje:</label>
       <input
       type='file'
       onChange={(e) => setPhoto(e.target.files)}
       accept='image/png, image/jpeg'
       required
   />
-
-      <button type="submit">Enviar</button>
+  </div>
+      <button className='boton-admin' type="submit">Enviar</button>
     </form>
+    </div>
   );
 };
 
