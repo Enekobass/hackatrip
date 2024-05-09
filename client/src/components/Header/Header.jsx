@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink } from 'react-router-dom';
+import './Header.css'
 
 const Header = () => {
   const { authUser, authLogout } = useContext(AuthContext);
@@ -15,9 +16,8 @@ const Header = () => {
 
       <nav>
         <label htmlFor='show-menu'>
-          <img src='/menu-icon.png' alt='Icono de menú' />
+          <img className= "logo" src='./public/Logos/Logo Color (sombra interior).png' alt='Icono de menú'/>
         </label>
-        <input type='checkbox' id='show-menu' />
 
         <ul className='nav-links'>
           {!authUser ? (
