@@ -29,6 +29,7 @@ main.register h1 {
 .signup-form {
   max-width: 300px;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .signup-form h2 {
