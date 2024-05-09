@@ -34,7 +34,7 @@ const LoginForm = ({ authLogin, authLoading }) => {
             required
           />
         </div>
-        <button disabled={authLoading}>Login</button>
+        <button className='boton-login' disabled={authLoading}>Login</button>
       </form>
     </div>
   );

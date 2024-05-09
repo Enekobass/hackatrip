@@ -46,7 +46,7 @@ const RegisterForm = ({ authRegister, authLoading }) => {
             required
           />
         </div>
-        <button disabled={authLoading}>Registrarse</button>
+        <button className='boton-register' disabled={authLoading}>Registrarse</button>
       </form>
     </div>
   );

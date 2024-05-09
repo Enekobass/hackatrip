@@ -42,9 +42,7 @@ main.login h1 {
   background: white;
 }
 
-.subtitulo {
-  display: flex;
-  justify-content: center;
+.boton-login {
+  margin-left: 75%;
 }
-
 

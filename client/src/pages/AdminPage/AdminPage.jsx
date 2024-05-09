@@ -6,8 +6,8 @@ const AdminPage = () => {
   const { authUser, authToken } = useContext(AuthContext);
 
   return (
-    <main>
-      <h2>Panel de Administración</h2>
+    <main className='admin'>
+      <h1>Panel de Administración</h1>
 
       {authUser && (
         <CreateUpdateTripForm createTripService={createTripService} authToken={authToken} />
