@@ -44,3 +44,8 @@ main.register h1 {
   border: 1px solid #ccc;
   border-radius: 10px;
 }
+
+.subtitulo {
+  display: flex;
+  justify-content: center;
+}
