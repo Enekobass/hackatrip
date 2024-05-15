@@ -1,13 +1,17 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink } from 'react-router-dom';
-import './Header.css'
+import './Header.css';
 
 const Header = () => {
   const { authUser, authLogout } = useContext(AuthContext);
 
   return (
     <header>
+      <div className='portadaHome'>
+        <img src='../../Fotos/Home.jpg' alt='Paisaje para la cabecera' />
+      </div>
+
       {authUser && (
         <div className='user-data'>
           <span>@{authUser.username}</span>
@@ -16,8 +20,14 @@ const Header = () => {
 
       <nav>
         <label htmlFor='show-menu'>
-          <img className= "logo" src='./public/Logos/Logo Color (sombra interior).png' alt='Icono de menú'/>
+          <img
+            className='logo1'
+            src='./public/Logos/Logo Blanco (sombra interior).png'
+            alt='Logotipo'
+          />
         </label>
+
+        <p className='frasePortada'>Frase inspiracional aleatoria</p>
 
         <ul className='nav-links'>
           {!authUser ? (

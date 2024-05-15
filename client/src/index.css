@@ -6,43 +6,49 @@
   box-sizing: border-box;
 }
 
+:root {
+  --Turqoise: #80f4dc;
+  --Blue: #00c2ff;
+  --Red: #f44336;
+}
+
 div#root {
   min-height: 100vh;
 }
 
-h1{
-    font-family: "Jomhuria", serif;
-    font-size: 60px;
-    font-weight: 200;
-    font-style: normal;
+h1 {
+  font-family: 'Jomhuria', serif;
+  font-size: 80px;
+  font-weight: 200;
+  font-style: normal;
 }
 
-h2{
-  font-family: "Jomhuria", serif;
-  font-size: 40px;
+h2 {
+  font-family: 'Jomhuria', serif;
+  font-size: 60px;
   font-weight: 200;
   font-style: normal;
 }
 
 body {
+  font-family: 'Martel Sans', sans-serif;
   min-height: 100vh;
-  font-family: "Martel Sans", sans-serif;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #f44336;
+  background-color: var(--Red);
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  font-family: "Martel Sans", sans-serif;
-  font-weight: 200;
+  font-family: 'Martel Sans', sans-serif;
+  font-weight: 300;
   font-style: normal;
 }
 

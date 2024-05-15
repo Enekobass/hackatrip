@@ -1,3 +1,37 @@
-.logo {
-    max-width: 300px;
+.portadaHome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo1 {
+  position: absolute;
+  max-width: 350px;
+  z-index: 1; /* Asegura que el logo esté por encima de la foto de fondo */
+  top: 20px;
+  left: 20px;
+}
+
+.frasePortada {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.nav-links {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  left: 90%;
+  z-index: 1;
+  color: white;
+  background-color: var(--Red);
+  font-size: 20px;
 }
