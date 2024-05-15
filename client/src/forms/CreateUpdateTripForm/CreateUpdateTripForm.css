@@ -30,3 +30,51 @@
   background-color: black; /* Fondo negro */
   color: white; /* Texto blanco */
 }
+
+.boton-admin {
+  margin-top: 10px;
+  margin-left: 80%;
+  background-color: #00C2FF;
+  
+
+}/* Estilos para CreateUpdateTripForm */
+
+.boton-admin:hover {
+  background-color: #80F4DC;
+}
+.create-update-trip-form {
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-weight: bold;
+  }
+  
+.create-update-trip-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+main.admin h1 {
+  display: flex;
+  justify-content: center;
+}
+
+main.admin {
+  background-image: linear-gradient(#ffffff, #F44336);
+  /*background-image: linear-gradient(#ffffff, #F44336);*/
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  /*background: url('./Fondos/Fondo3.jpg');*/
+  background-size: cover; /* Ajusta el tamaño de la imagen para que cubra toda la pantalla */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat;
+}
+
