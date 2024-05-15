@@ -1,5 +1,5 @@
 main.register {
-  background-image: linear-gradient(#ffffff, #00C2FF);
+  background-image: linear-gradient(#ffffff, var(--Blue));
   /*background-image: linear-gradient(#ffffff, #F44336);*/
   justify-content: center;
   align-items: center;
@@ -50,6 +50,3 @@ main.register h1 {
   justify-content: center;
 }
 
-.boton-register {
-margin-left: 65%;
-}

@@ -1,0 +1,45 @@
+.botonesHome {
+  display: flex;
+  justify-content: center;
+}
+
+.botonDonde,
+.botonCuando {
+  display: inline-block;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.botonDonde:hover,
+.botonCuando:hover {
+  background-image: linear-gradient(var(--red), var(--red));
+  color: white;
+}
+
+.botonDonde {
+  background-color: white;
+  color: black;
+}
+
+.botonCuando {
+  background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
+  color: black;
+}
+
+.textoIdeas {
+  margin: 100px 100px 10px 100px;
+}
+
+.ideas {
+  display: flex;
+  max-width: 70%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.botonFoto {
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+}

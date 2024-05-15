@@ -1,47 +1,32 @@
-.boton-admin {
-  margin-top: 10px;
-  margin-left: 80%;
-  background-color: #00C2FF;
-  
-
-}/* Estilos para CreateUpdateTripForm */
-
-.boton-admin:hover {
-  background-color: #80F4DC;
-}
+/* Estilos para CreateUpdateTripForm */
 .create-update-trip-form {
-  max-width: 300px;
-  margin: 0 auto;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  font-weight: bold;
-  }
-  
-.create-update-trip-form-container {
-  max-width: 500px;
-  margin: 0 auto;
+  background-color: white;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0000001a;
+  border: 2px solid #ff0000; /* Borde rojo */
+  border-radius: 8px;
+  width: 300px; /* Ancho del formulario */
+  margin: 0 auto; /* Centra el formulario */
 }
 
-main.admin h1 {
-  display: flex;
-  justify-content: center;
+.create-update-trip-form label {
+  display: block;
+  margin-bottom: 10px;
 }
 
-main.admin {
-  background-image: linear-gradient(#ffffff, #F44336);
-  /*background-image: linear-gradient(#ffffff, #F44336);*/
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
-  /*background: url('./Fondos/Fondo3.jpg');*/
-  background-size: cover; /* Ajusta el tamaño de la imagen para que cubra toda la pantalla */
-  background-position: center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat;
+.create-update-trip-form input[type='text'],
+.create-update-trip-form input[type='date'],
+.create-update-trip-form input[type='number'],
+.create-update-trip-form input[type='email'],
+.create-update-trip-form textarea,
+.create-update-trip-form select,
+.create-update-trip-form button {
+  width: 100%; /* Ancho completo del contenedor */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ff0000; /* Borde rojo */
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
 }
-

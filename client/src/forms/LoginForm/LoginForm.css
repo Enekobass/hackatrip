@@ -1,5 +1,5 @@
 main.login {
-  background-image: linear-gradient(#ffffff, #80F4DC);
+  background-image: linear-gradient(#ffffff, var(--Turqoise));
   /*background-image: linear-gradient(#ffffff, #F44336);*/
   justify-content: center;
   align-items: center;
@@ -42,7 +42,4 @@ main.login h1 {
   background: white;
 }
 
-.boton-login {
-  margin-left: 75%;
-}
 
