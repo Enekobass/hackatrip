@@ -1,6 +1,6 @@
 import getPool from '../../db/getPool.js';
 
-import { cantAddPhoto } from '../../services/errorService.js';
+import { cantAddPost, cantAddPostAgain } from '../../services/errorService.js';
 
 const insertPostModel = async (
     photoName,
@@ -12,7 +12,7 @@ const insertPostModel = async (
 ) => {
     const pool = await getPool();
 
-    const [user] = await pool.query(
+    let [user] = await pool.query(
         `            
         SELECT
             vr.userId
@@ -22,7 +22,16 @@ const insertPostModel = async (
     );
 
     if (!user[0]) {
-        cantAddPhoto();
+        cantAddPost();
+    }
+
+    [user] = await pool.query(
+        `SELECT userId FROM viajesposts WHERE viajeId = ?`,
+        [viajeId],
+    );
+
+    if (user[0]) {
+        cantAddPostAgain();
     }
 
     const [photo] = await pool.query(
