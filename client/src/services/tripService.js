@@ -59,6 +59,17 @@ export const createTripService = async ({
   return body.message; // Suponiendo que tu backend devuelve los datos del nuevo viaje creado
 };
 
+export const selectTripByIdService = async (viajeId) => {
+  const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}`);
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.data;
+};
+
 // //export const updateTripService = async (tripId, tripData) => {
 //   const res = await fetch(`${VITE_API_URL}/update-trip-endpoint/${tripId}`, {
 //     method: 'put',

@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import HomePage from './pages/HomePage/HomePage';
-//import TripPage from './pages/TripPage/TripPage';
+import TripPage from './pages/TripPage/TripPage';
 //import ComunityPage from './pages/ComunityPage/ComunityPage';
 //import LoadPostPage from './pages/LoadPostPage/LoadPostPage';
 //import ContactPage from './pages/ContactPage/ContactPage';
@@ -43,6 +43,7 @@ const App = () => {
         <Route path='/recover' element={<ResetPasswordPage />} />
         {/* Agrega la ruta para la página de administrador */}
         <Route path='/admin' element={<AdminPage />} />
+        <Route path='/trippage/:viajeId' element={<TripPage />} />
       </Routes>
       <Footer />
     </>
