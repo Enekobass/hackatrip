@@ -8,7 +8,7 @@ const selectUserByIdModel = async (userId) => {
     const pool = await getPool();
 
     const [users] = await pool.query(
-        `SELECT id, username, avatar, email FROM users WHERE id = ?`,
+        `SELECT id, username, avatar, role, email FROM users WHERE id = ?`,
         [userId],
     );
 
