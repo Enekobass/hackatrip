@@ -34,12 +34,12 @@ const insertPostModel = async (
         cantAddPostAgain();
     }
 
-    const [photo] = await pool.query(
+    const [post] = await pool.query(
         `INSERT INTO viajesposts (userId, viajeId, value, title, description, name) VALUES (?, ?, ?, ?, ?, ?)`,
         [userId, viajeId, value, title, description, photoName],
     );
 
-    return photo.insertId;
+    return post.insertId;
 };
 
 export default insertPostModel;
