@@ -9,10 +9,8 @@ const TripPage = () => {
 
     const { viajeId } = useParams();
 
-    const { trip } =
-        useTrip(viajeId);
+    const { trip } = useTrip(viajeId);
 
-        console.log(trip);
     return (
         <main>
             {trip && (
