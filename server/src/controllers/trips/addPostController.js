@@ -21,7 +21,7 @@ const addPostController = async (req, res, next) => {
 
         const photoName = await savePhoto(photo, 1000);
 
-        const photoId = await insertPostModel(
+        const postId = await insertPostModel(
             photoName,
             viajeId,
             req.user.id,
@@ -35,7 +35,7 @@ const addPostController = async (req, res, next) => {
             message: 'Post subido',
             data: {
                 post: {
-                    id: photoId,
+                    id: postId,
                     photoName: photoName,
                     title: title,
                     description: description,
