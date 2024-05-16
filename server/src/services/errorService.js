@@ -95,12 +95,20 @@ export const unauthorizedUserError = () => {
     };
 };
 
-export const cantAddPhoto = () => {
+export const cantAddPost = () => {
     throw {
         httpStatus: 403, // Conflict
-        code: 'CANNOT_ADD_PHOTO',
+        code: 'CANNOT_ADD_POST',
         message:
-            'No está permitido añadir una imagen a un viaje que no has participado',
+            'No está permitido añadir un post a un viaje que no has participado',
+    };
+};
+
+export const cantAddPostAgain = () => {
+    throw {
+        httpStatus: 403, // Conflict
+        code: 'CANNOT_ADD_POST',
+        message: 'No puedes añadir un post sobre este viaje de nuevo',
     };
 };
 
@@ -109,7 +117,7 @@ export const cantVoteCoordinador = () => {
         httpStatus: 403, // Conflict
         code: 'CANNOT_VOTE_COORDINADOR',
         message:
-            'No puedes votar a un coordinador de un viaje en el que no has participado',
+            'No está permitido votar a un coordinador de un viaje en el que no has participado',
     };
 };
 
