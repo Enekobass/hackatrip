@@ -40,7 +40,7 @@ router.post(
     newTripController,
 );
 
-router.get('/viajes/:viajeId', authUserController, userViewTripController);
+router.get('/viajes/:viajeId', authUserOptionalController, userViewTripController);
 
 router.post(
     '/viajes/:userId/:viajeId/confirmar',
