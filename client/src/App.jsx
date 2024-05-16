@@ -15,6 +15,7 @@ import ValidateUserPage from './pages/ValidateUserPage/ValidateUserPage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ChangePasswordPage from './pages/ChangePasswordPage/ChangePasswordPage';
 import AdminPage from './pages/AdminPage/AdminPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
   return (
@@ -44,6 +45,8 @@ const App = () => {
         {/* Agrega la ruta para la página de administrador */}
         <Route path='/admin' element={<AdminPage />} />
         <Route path='/trippage/:viajeId' element={<TripPage />} />
+        <Route path='*' element={<NotFoundPage />}
+        />
       </Routes>
       <Footer />
     </>
