@@ -1,22 +1,37 @@
+import useTrips from '../../hooks/useTrips';
+
+import SearchForm from '../../forms/SearchForm/SearchForm';
+
+import TripListItem from '../../components/TripListItem/TripListItem';
+
 import './HomePage.css';
 
 const HomePage = () => {
+
+  const {
+    trips,
+    setSearchParams,
+    loading,
+} = useTrips();
+
+
   return (
     <main>
-      <div className='botonesHome'>
-        <button className='botonDonde'>¿Donde quieres ir?</button>
-        <button className='botonCuando'>¿Cuando quieres salir?</button>
-      </div>
+
+      <SearchForm setSearchParams={setSearchParams} loading={loading} />
 
       <h2 className='textoIdeas'>TE DAMOS IDEAS:</h2>
-      <div className='ideas'>
-        <button className='botonFoto'>Viaje 1</button>
-        <button className='botonFoto'>Viaje 2</button>
-        <button className='botonFoto'>Viaje 3</button>
-        <button className='botonFoto'>Viaje 4</button>
-        <button className='botonFoto'>Viaje 5</button>
-        <button className='botonFoto'>Viaje 6</button>
-      </div>
+      <ul className='trip-list'>
+                {trips.length < 1 && loading ? (
+                    <p>Cargando</p>
+                ) : trips.length === 0 ? (
+                    <li>¡No se ha encontrado ningún resultado!</li>
+                ) : (
+                    trips.map((trip) => {
+                        return <TripListItem key={trip.id} trip={trip} />;
+                    })
+                )}
+            </ul>
     </main>
   );
 };
