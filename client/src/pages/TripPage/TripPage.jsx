@@ -1,15 +1,24 @@
+import { useContext } from 'react';
+
 import { useParams } from 'react-router-dom';
+
 import useTrip from '../../hooks/useTrip.js';
 
-import EntryTripInfo from '../../components/entryTripInfo/EntryTripInfo.jsx';
+import TripInfo from '../../components/entryTripInfo/EntryTripInfo.jsx';
 
-// import { selectTripByIdService } from '../../services/tripService';
+import AddVoteForm from '../../forms/AddVoteForm/AddVoteForm';
+
+import { AuthContext } from '../../contexts/AuthContext';
+
+import { insertTripVoteService } from '../../services/tripService.js';
 
 const TripPage = () => {
 
+    const { authUser, authToken } = useContext(AuthContext);
+
     const { viajeId } = useParams();
 
-    const { trip } = useTrip(viajeId);
+    const { trip, addTripVote } = useTrip(viajeId);
 
     return (
         <main>
@@ -17,7 +26,7 @@ const TripPage = () => {
                 <>
                     <h2>{trip.titulo}</h2>
 
-                    <EntryTripInfo
+                    <TripInfo
                         destino={trip.tripData[0].destino}
                         titulo={trip.tripData[0].titulo}
                         descripcion={trip.tripData[0].descripcion}
@@ -31,6 +40,15 @@ const TripPage = () => {
                         activo={trip.tripData[0].activo}
                         confirmado={trip.tripData[0].confirmado}
 
+                    />
+
+                    <AddVoteForm
+                        insertTripVoteService={insertTripVoteService}
+                        addTripVote={addTripVote}
+                        votes={trip.coordinador?.media}
+                        tripId={trip.tripData[0].id}
+                        authUser={authUser}
+                        authToken={authToken}
                     />
 
                 </>

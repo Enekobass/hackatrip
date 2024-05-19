@@ -2,9 +2,9 @@ import PropType from 'prop-types';
 
 const { VITE_API_URL } = import.meta.env;
 
-const EntryTripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, ruta, precio, photo, activo, confirmado }) => {
+const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, ruta, precio, photo, activo, confirmado }) => {
     return (
-        <ul className='entry-details'>
+        <ul className='trip-details'>
             <li>
                 <img
                     src={`${VITE_API_URL}/${photo}`}
@@ -48,7 +48,7 @@ const EntryTripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin
     );
 };
 
-EntryTripInfo.propTypes = {
+TripInfo.propTypes = {
     destino: PropType.string.isRequired,
     descripcion: PropType.string.isRequired,
     titulo: PropType.string.isRequired,
@@ -63,4 +63,4 @@ EntryTripInfo.propTypes = {
     confirmado: PropType.number.isRequired,
 };
 
-export default EntryTripInfo;
+export default TripInfo;

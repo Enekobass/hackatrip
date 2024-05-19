@@ -17,7 +17,6 @@ const Stars = ({ votesAvg, handleAddVote }) => {
 };
 
 Stars.propTypes = {
-    votesAvg: PropType.number.isRequired,
     handleAddVote: PropType.func.isRequired,
 };
 

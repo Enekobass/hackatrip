@@ -61,6 +61,7 @@ export const createTripService = async ({
 
 export const selectTripByIdService = async (viajeId) => {
   const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}`);
+
   const body = await res.json();
 
   if (body.status === 'error') {
@@ -99,4 +100,31 @@ export const selectAllTripsService = async (searchParams) => {
   }
 
   return body.data.viajesFiltrados;
+};
+
+export const insertTripVoteService = async (value, viajeId, authToken) => {
+  const res = await fetch(
+    `${VITE_API_URL}/viajes/${viajeId}/coordinadorvotes`,
+    {
+      method: 'post',
+      headers: {
+        Authorization: authToken,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        value: Number(value),
+      }),
+    }
+  );
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return {
+    message: body.message,
+    votes: body.data.trip.votes,
+  };
 };

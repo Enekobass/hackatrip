@@ -35,6 +35,13 @@ const insertCoordinadorVoteModel = async (value, viajeId, userId) => {
         `INSERT INTO coordinadorvotes (value, coordinadorId, viajeId, userId) VALUES (?, ?, ?, ?)`,
         [value, coordinadorId[0].userId, viajeId, userId],
     );
+
+    const [votesAvg] = await pool.query(
+        `SELECT AVG(value) AS avg FROM coordinadorvotes WHERE viajeId = ?`,
+        [viajeId],
+    );
+
+    return Number(votesAvg[0].avg);
 };
 
 export default insertCoordinadorVoteModel;
