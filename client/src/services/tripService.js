@@ -88,3 +88,15 @@ export const selectTripByIdService = async (viajeId) => {
 
 //   return body.data; // Suponiendo que tu backend devuelve los datos del viaje actualizado
 // };//
+
+export const selectAllTripsService = async (searchParams) => {
+  const res = await fetch(`${VITE_API_URL}/todosviajes?${searchParams}`);
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.data.viajesFiltrados;
+};
