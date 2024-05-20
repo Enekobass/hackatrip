@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 import { selectAllTripsService } from '../services/tripService';
 
-const useTrips = () => {
+const useTrips = (setTripsFiltrados) => {
   const [trips, setTrips] = useState([]);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,6 +19,10 @@ const useTrips = () => {
 
         const trips = await selectAllTripsService(searchParams);
 
+        if (searchParams.get('keyword')) {
+          setTripsFiltrados(true);
+        }
+
         setTrips(trips);
       } catch (err) {
         toast.error(err.message);
@@ -27,7 +31,7 @@ const useTrips = () => {
       }
     };
     fetchTrips();
-  }, [searchParams]);
+  }, [searchParams, setTripsFiltrados]);
 
   return {
     trips,
