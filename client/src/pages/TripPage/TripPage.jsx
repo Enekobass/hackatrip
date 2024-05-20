@@ -20,8 +20,6 @@ const TripPage = () => {
 
     const { trip, addTripVote } = useTrip(viajeId);
 
-    console.log(trip);
-
     return (
         <main>
             {trip && (
@@ -47,9 +45,9 @@ const TripPage = () => {
                     <AddVoteForm
                         insertTripVoteService={insertTripVoteService}
                         addTripVote={addTripVote}
-                        votes={trip.coordinador?.media}
                         tripId={trip.tripData[0].id}
                         coordinador={trip.coordinador}
+                        avgValue={trip.avgValue}
                         authUser={authUser}
                         authToken={authToken}
                     />

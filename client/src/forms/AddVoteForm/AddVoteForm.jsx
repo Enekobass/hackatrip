@@ -9,14 +9,14 @@ import Stars from '../../components/Stars/Stars';
 const AddVoteForm = ({
     insertTripVoteService,
     addTripVote,
-    votes,
     tripId,
     coordinador,
+    avgValue,
     authUser,
     authToken,
 }) => {
-    console.log(coordinador);
-    const [votesAvg, setVotesAvg] = useState(votes);
+
+    const [votesAvg, setVotesAvg] = useState(avgValue.media);
 
     const handleAddVote = async (vote) => {
         try {
@@ -29,7 +29,7 @@ const AddVoteForm = ({
                 
                 addTripVote(newVotesAvg.votes);
 
-                setVotesAvg(newVotesAvg.votes);
+                setVotesAvg(avgValue.media);
 
                 toast.success(newVotesAvg.message);
             }
@@ -49,7 +49,7 @@ const AddVoteForm = ({
                     </div>
                     <div className='stars-vote'>
                         <Stars votesAvg={votesAvg} handleAddVote={handleAddVote} />
-                        <span>{votes} estrellas</span>
+                        <span>{votesAvg} estrellas</span>
                     </div>
                 </>
             )}
@@ -63,6 +63,7 @@ AddVoteForm.propTypes = {
     votes: PropType.string,
     tripId: PropType.string.isRequired,
     coordinador: PropType.object,
+    avgValue: PropType.object,
     authUser: PropType.object.isRequired,
     authToken: PropType.string.isRequired,
 };

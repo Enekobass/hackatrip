@@ -4,6 +4,8 @@ import selectInscritosModel from '../../models/trips/selectInscritosModel.js';
 
 import selectCoordinadorModel from '../../models/trips/selectCoordinadorModel.js';
 
+import selectAvgValueCoordinadorModel from '../../models/trips/selectAvgValueCoordinadorModel.js';
+
 const userViewTripController = async (req, res, next) => {
     try {
         const { viajeId } = req.params;
@@ -14,12 +16,15 @@ const userViewTripController = async (req, res, next) => {
 
         const coordinador = await selectCoordinadorModel(viajeId);
 
+        const avgValue = await selectAvgValueCoordinadorModel();
+
         res.send({
             status: 'ok',
             data: {
                 tripData,
                 inscritos,
                 coordinador,
+                avgValue,
             },
         });
     } catch (err) {
