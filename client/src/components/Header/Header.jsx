@@ -20,7 +20,7 @@ const Header = () => {
         <label htmlFor='show-menu'>
           <img
             className='logo1'
-            src='./public/Logos/Logo Blanco (sombra interior).png'
+            src='/Logos/Logo Blanco (sombra interior).png'
             alt='Logotipo'
           />
         </label>
