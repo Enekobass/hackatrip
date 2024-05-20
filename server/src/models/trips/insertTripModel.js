@@ -30,7 +30,7 @@ const insertTripModel = async (
             ruta,
             precio,
             activo,
-            1,
+            0,
             photoId,
         ],
     );
