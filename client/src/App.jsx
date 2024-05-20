@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
@@ -18,6 +19,7 @@ import AdminPage from './pages/AdminPage/AdminPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
 const App = () => {
+  const [tripsFiltrados, setTripsFiltrados] = useState(false)
   return (
     <>
       <ErrorBoundary>
@@ -29,7 +31,7 @@ const App = () => {
         }}
       />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage setTripsFiltrados={setTripsFiltrados} tripsFiltrados={tripsFiltrados} />} />
         {/* <Route path='/viaje/:viajeId' element={<TripPage />} />
         <Route path='/comunity' element={<ComunityPage />} />
         <Route path='/loadPost' element={<LoadPostPage />} />

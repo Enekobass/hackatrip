@@ -4,12 +4,14 @@ import { useState } from 'react';
 
 import './SearchForm.css';
 
-const SearchForm = ({ setSearchParams, loading }) => {
+const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
     const [destino, setDestino] = useState('');
     const [fecha, setFecha] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        setTripsFiltrados(true);
 
         setSearchParams(
             new URLSearchParams({
@@ -49,6 +51,7 @@ const SearchForm = ({ setSearchParams, loading }) => {
 SearchForm.propTypes = {
     setSearchParams: PropType.func.isRequired,
     loading: PropType.bool.isRequired,
+    setTripsFiltrados: PropType.func.isRequired,
 };
 
 export default SearchForm;
