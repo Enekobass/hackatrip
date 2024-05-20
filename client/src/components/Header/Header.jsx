@@ -7,10 +7,8 @@ const Header = () => {
   const { authUser, authLogout } = useContext(AuthContext);
 
   return (
-    <header>
-      <div className='portadaHome'>
-        <img src='../../Fotos/Home.jpg' alt='Paisaje para la cabecera' />
-      </div>
+    <header className='header'>
+      
 
       {authUser && (
         <div className='user-data'>
