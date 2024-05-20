@@ -23,7 +23,7 @@ const Header = () => {
           />
         </label>
 
-        <p className='frasePortada'>Frase inspiracional aleatoria</p>
+        <p className='frasePortada'>Viajar es la única cosa que compras y te hace más rico</p>
 
         <ul className='nav-links'>
           {!authUser ? (
