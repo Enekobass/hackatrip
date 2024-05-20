@@ -20,7 +20,6 @@ const newTripSchema = joi.object({
         .required()
         .messages(joiErrorMessages),
     activo: joi.number().required().messages(joiErrorMessages),
-    confirmado: joi.number().required().messages(joiErrorMessages),
     photo: imgSchema.required(),
 });
 
