@@ -20,6 +20,13 @@ const TripPage = () => {
 
     const { trip, addTripVote } = useTrip(viajeId);
 
+    const formatDate = (dateString) => {
+        const options = { day: 'numeric', month: 'short' };
+        return new Date(dateString).toLocaleDateString('es-ES', options);
+    };
+
+    const today = new Date();
+
     return (
         <main>
             {trip && (
@@ -42,6 +49,8 @@ const TripPage = () => {
 
                     />
 
+                    {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
+                    
                     <AddVoteForm
                         insertTripVoteService={insertTripVoteService}
                         addTripVote={addTripVote}
@@ -50,7 +59,12 @@ const TripPage = () => {
                         avgValue={trip.avgValue}
                         authUser={authUser}
                         authToken={authToken}
-                    />
+                    /> 
+                    : 
+                    <div>
+                        <p>¡Cuando acabe el viaje podrás votar aquí al coordinador del viaje!</p>
+                    </div>
+                    }
 
                 </>
             )}

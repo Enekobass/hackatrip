@@ -34,6 +34,10 @@ const LoginForm = ({ authLogin, authLoading }) => {
             required
           />
         </div>
+        <div className='remember-forgot'>
+            <label><input type="checkbox" />Recordarme</label>
+            <a href="/recover">¿Has olvidado la contraseña?</a>
+        </div>
         <button className='boton-login' disabled={authLoading}>Login</button>
       </form>
     </div>
