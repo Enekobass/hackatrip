@@ -22,7 +22,7 @@ const SearchForm = ({ setSearchParams, loading }) => {
     return (
         <form onSubmit={handleSubmit} className='botonesHome'>
             <div className='botonDonde'>
-                <label htmlFor='destino'>Destino:</label>
+                <label htmlFor='destino'>¿A donde quieres ir?</label>
                 <input
                     type='text'
                     id='destino'
@@ -32,7 +32,7 @@ const SearchForm = ({ setSearchParams, loading }) => {
             </div>
 
             <div className='botonCuando'>
-                <label htmlFor='fecha'>Fecha:</label>
+                <label htmlFor='fecha'>¿Cuando quieres salir?</label>
                 <input
                     type='text'
                     id='fecha'
