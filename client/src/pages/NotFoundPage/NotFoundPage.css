@@ -1,37 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Red: #f44336;
+  --Turqoise: #80f4dc;
+  --Blue: #00c2ff;
+}
+
+body {
+  font-family: 'Martel Sans', sans-serif;
+  min-height: 100vh;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Jomhuria', serif;
+  font-size: 32px;
+  font-weight: 200;
+  font-style: normal;
+  color: var(--Red);
+}
+
+p {
+  font-size: 16px;
+  color: var(--Blue);
+}
+
 .not-found-container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .gif-container {
-    margin-top: 30px;
-    position: relative;
-    width: 80%;
-    max-width: 600px; 
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .gif-container::before {
-    content: "";
-    display: block;
-    padding-top: 56.25%; 
-    background-image: url("https://i.gifer.com/60s.gif");
-    background-size: cover;
-  }
-  
-  .gif-container p {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-  
+  text-align: center;
+  margin-top: 50px;
+}
+
+.gif-container {
+  margin-top: 30px;
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gif-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  background-image: url("https://i.gifer.com/60s.gif");
+  background-size: cover;
+}
+
+.gif-container p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+a{
+  text-decoration: none;
+  color: var(--Turqoise);
+}
+
+/**** Estilos general para Tablet ****/
+
+@media screen and (min-width: 768px) {
   h1 {
-    font-size: 36px;
-    color: #333;
+    font-size: 48px; 
   }
-  
+
   p {
-    font-size: 18px;
-    color: #666;
+    font-size: 18px; 
   }
-  
+
+  .gif-container p {
+    font-size: 14px; 
+  }
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  h1 {
+    font-size: 56px; 
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .gif-container p {
+    font-size: 16px;
+  }
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 80px; 
+  }
+
+  p {
+    font-size: 18px; 
+  }
+
+  .gif-container p {
+    font-size: 16px;
+  }
+}
