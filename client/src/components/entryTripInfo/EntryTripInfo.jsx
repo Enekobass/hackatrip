@@ -3,35 +3,43 @@ import './EntryTripInfo.css';
 
 const { VITE_API_URL } = import.meta.env;
 
+const formatDate = (dateString) => {
+    const options = { day: 'numeric', month: 'short' };
+    return new Date(dateString).toLocaleDateString('es-ES', options);
+};
+
 const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, ruta, precio, photo, activo, confirmado }) => {
 
     return (
         <div>
             <div className="entry-header">
+                {/* Contenedor para el título */}
+                <div className="title-container">
+                    <h1 className="title">{titulo}</h1>
+                </div>
+                {/* Imagen debajo del título */}
                 <img
                     src={`${VITE_API_URL}/${photo}`}
                     alt={`Foto de ${destino}`}
+                    className="entry-image"
                 />
                 <div className="place-overlay">
-                    <strong>Lugar:</strong> {destino}
+                    <strong></strong> {destino}
                 </div>
                 <div className="dates-overlay">
-                    <span className="fecha-in">{fechaDeInicio}</span>
+                    <span className="fecha-in">{formatDate(fechaDeInicio)}</span>
                     <span>-</span>
-                    <span className="fecha-fin">{fechaDeFin}</span>
+                    <span className="fecha-fin">{formatDate(fechaDeFin)}</span>
                 </div>
             </div>
             <ul className='entry-details'>
-                <li className="title">
-                    <strong>Título:</strong> {titulo}
-                </li>
                 <li className="description">
-                    <strong>Descripción:</strong> {descripcion}
+                    <strong></strong> {descripcion}
                 </li>
                 <li className="itinerary">
                     <h2>Itinerario</h2>
                     <div className="route">
-                        <strong>Ruta:</strong> {ruta}
+                        <strong></strong> {ruta}
                     </div>
                 </li>
                 <li className="hidden">
@@ -40,16 +48,22 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
                 <li className="hidden">
                     <strong>Plazas máximas:</strong> {plazasMaximas}
                 </li>
-                <li>
+                <li className='price-overlay'>
                     <strong>Precio:</strong> {precio}
                 </li>
-                <li>
-                    <strong>Activo:</strong> {activo}
+                <li className='hidden'>
+                    <strong></strong> {activo}
                 </li>
-                <li>
-                    <strong>Confirmado:</strong> {confirmado}
+                <li className='hidden'>
+                    <strong></strong> {confirmado}
                 </li>
             </ul>
+
+            {/* Botón para apuntarse */}
+            <div className="button-container">
+    <button className="signup-button">Apuntarme</button>
+</div>
+
         </div>
     );
 };
