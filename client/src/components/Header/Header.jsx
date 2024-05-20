@@ -1,27 +1,33 @@
+import PropType from 'prop-types';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
+const Header = ({setTripsFiltrados}) => {
   const { authUser, authLogout } = useContext(AuthContext);
+
+  const navigate = useNavigate()
+
+  const goToHome = () => {
+
+    setTripsFiltrados(false)
+    navigate("/")
+
+}
 
   return (
     <header className='header'>
-      {authUser && (
-        <div className='user-data'>
-          <span>@{authUser.username}</span>
-        </div>
-      )}
 
       <nav>
-        <label htmlFor='show-menu'>
+        <div htmlFor='show-menu'>
           <img
+            onClick={goToHome}
             className='logo1'
             src='/Logos/Logo Blanco (sombra interior).png'
             alt='Logotipo'
           />
-        </label>
+        </div>
 
         <p className='frasePortada'>Viajar es la única cosa que compras y te hace más rico</p>
 
@@ -40,6 +46,10 @@ const Header = () => {
             <>
               {/* Si estamos logueados (si existe usuario) mostramos el botón de cerrar sesión. */}
 
+              <div className='user-data'>
+                <span>@{authUser.username}</span>
+              </div>
+
               <li>
                 <button onClick={authLogout}>Cerrar sesión</button>
               </li>
@@ -50,5 +60,10 @@ const Header = () => {
     </header>
   );
 };
+
+Header.propTypes = {
+  setTripsFiltrados: PropType.func.isRequired,
+};
+
 
 export default Header;
