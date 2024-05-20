@@ -8,8 +8,6 @@ const Header = () => {
 
   return (
     <header className='header'>
-      
-
       {authUser && (
         <div className='user-data'>
           <span>@{authUser.username}</span>
