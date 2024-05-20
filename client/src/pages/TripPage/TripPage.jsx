@@ -20,6 +20,8 @@ const TripPage = () => {
 
     const { trip, addTripVote } = useTrip(viajeId);
 
+    console.log(trip);
+
     return (
         <main>
             {trip && (
@@ -47,6 +49,7 @@ const TripPage = () => {
                         addTripVote={addTripVote}
                         votes={trip.coordinador?.media}
                         tripId={trip.tripData[0].id}
+                        coordinador={trip.coordinador}
                         authUser={authUser}
                         authToken={authToken}
                     />
