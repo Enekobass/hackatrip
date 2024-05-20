@@ -54,7 +54,7 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
     );
 };
 
-EntryTripInfo.propTypes = {
+TripInfo.propTypes = {
     destino: PropTypes.string.isRequired,
     descripcion: PropTypes.string.isRequired,
     titulo: PropTypes.string.isRequired,
