@@ -50,14 +50,14 @@ const createTables = async () => {
         await pool.query(`
             CREATE TABLE IF NOT EXISTS viajes (
                 id VARCHAR(100) PRIMARY KEY,
-                titulo VARCHAR(20) NOT NULL,
-                descripcion VARCHAR(250) NOT NULL,
+                titulo VARCHAR(100) NOT NULL,
+                descripcion VARCHAR(2500) NOT NULL,
                 destino VARCHAR(50) NOT NULL,
                 fechaDeInicio DATE NOT NULL,
                 fechaDeFin DATE NOT NULL,
                 plazasMinimas INT UNSIGNED NOT NULL,
                 plazasMaximas INT UNSIGNED NOT NULL,
-                ruta VARCHAR(200) NOT NULL,
+                ruta VARCHAR(2000) NOT NULL,
                 precio INT UNSIGNED NOT NULL,
                 activo INT NOT NULL,
                 confirmado INT NOT NULL,
