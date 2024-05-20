@@ -13,6 +13,10 @@
   left: 20px;
 }
 
+.logo1:hover {
+  cursor: pointer;
+}
+
 .frasePortada {
   position: absolute;
   display: flex;

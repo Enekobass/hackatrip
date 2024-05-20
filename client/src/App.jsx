@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       <ErrorBoundary>
-      <Header />
+      <Header setTripsFiltrados={setTripsFiltrados} />
       <Toaster
         position='top-center'
         toastOptions={{
