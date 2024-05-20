@@ -64,8 +64,8 @@ AddVoteForm.propTypes = {
     tripId: PropType.string.isRequired,
     coordinador: PropType.object,
     avgValue: PropType.object,
-    authUser: PropType.object.isRequired,
-    authToken: PropType.string.isRequired,
+    authUser: PropType.object,
+    authToken: PropType.string,
 };
 
 export default AddVoteForm;
