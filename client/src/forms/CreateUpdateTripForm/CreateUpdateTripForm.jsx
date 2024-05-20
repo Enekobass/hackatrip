@@ -17,7 +17,6 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
   const [ruta, setRuta] = useState('');
   const [precio, setPrecio] = useState(0);
   const [activo, setActivo] = useState('');
-  const [confirmado, setConfirmado] = useState(0);
   const [photo, setPhoto] = useState('');
 
   const handleSubmit = async (e) => {
@@ -36,7 +35,6 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
       ruta,
       precio,
       activo,
-      confirmado,
       photo,
       authToken,
   });
@@ -82,9 +80,6 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
 
       <label htmlFor="activo">activo:</label>
       <input type="number" id="activo" value={activo} onChange={(e) => setActivo(parseInt(e.target.value))} required />
-
-      <label htmlFor="confirmado">Confirmado:</label>
-      <input type="number" id="confirmado" value={confirmado} onChange={(e) => setConfirmado(parseInt(e.target.value))} required />
 
       <label htmlFor="Imagen">Portada del viaje:</label>
       <input

@@ -12,7 +12,6 @@ const insertTripModel = async (
     ruta,
     precio,
     activo,
-    confirmado,
     photoId,
 ) => {
     const pool = await getPool();
@@ -31,7 +30,7 @@ const insertTripModel = async (
             ruta,
             precio,
             activo,
-            confirmado,
+            1,
             photoId,
         ],
     );

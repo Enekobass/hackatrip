@@ -21,7 +21,6 @@ const newTripController = async (req, res, next) => {
             ruta,
             precio,
             activo,
-            confirmado,
         } = req.body;
 
         const photoName = await savePhoto(req.files, 300);
@@ -40,7 +39,6 @@ const newTripController = async (req, res, next) => {
             ruta,
             precio,
             activo,
-            confirmado,
             photoName,
             req.user.id,
         );

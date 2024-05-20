@@ -12,7 +12,6 @@ export const createTripService = async ({
   precio,
   photo,
   activo,
-  confirmado,
   authToken,
 }) => {
   const formData = new FormData();
@@ -38,8 +37,6 @@ export const createTripService = async ({
   formData.append('photo', photo[0]);
 
   formData.append('activo', activo);
-
-  formData.append('confirmado', confirmado);
 
   const res = await fetch(`${VITE_API_URL}/viajes`, {
     method: 'post',
