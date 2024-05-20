@@ -15,8 +15,6 @@ const selectRatedCoordinadorModel = async () => {
         `,
     );
 
-    console.log(coordinadores);
-
     return coordinadores;
 };
 
