@@ -12,11 +12,20 @@ const voteCoordinadorController = async (req, res, next) => {
 
         const { value } = req.body;
 
-        await insertCoordinadorVoteModel(value, viajeId, req.user.id);
+        const votesAvg = await insertCoordinadorVoteModel(
+            value,
+            viajeId,
+            req.user.id,
+        );
 
         res.status(201).send({
             status: 'ok',
             message: 'Coordinador Votado',
+            data: {
+                trip: {
+                    votes: votesAvg,
+                },
+            },
         });
     } catch (err) {
         next(err);

@@ -6,7 +6,7 @@ const selectCoordinadorModel = async (viajeId) => {
     const [coordinador] = await pool.query(
         `
         SELECT 
-            username, avatar, AVG(cv.value)
+            username, avatar, AVG(cv.value) as media
         FROM users u
         LEFT JOIN coordinadorviajes c ON c.userId = u.id
         LEFT JOIN coordinadorvotes cv ON c.viajeId = cv.viajeId

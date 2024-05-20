@@ -5,26 +5,30 @@ import toast from 'react-hot-toast';
 import { selectTripByIdService } from '../services/tripService';
 
 const useTrip = (viajeId) => {
-    const [trip, setTrip] = useState(null);
+  const [trip, setTrip] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
+    const fetchTrip = async () => {
+      try {
+        const trip = await selectTripByIdService(viajeId);
 
-        const fetchTrip = async () => {
-            try {
-                const trip = await selectTripByIdService(viajeId);
+        setTrip(trip);
+      } catch (err) {
+        toast.error(err.message);
+      }
+    };
 
-                setTrip(trip);
-            } catch (err) {
-                toast.error(err.message);
-            }
-        };
+    fetchTrip();
+  }, [viajeId]);
 
-        fetchTrip();
-    }, [viajeId]);
+  const addTripVote = (votesAvg) => {
+    setTrip({
+      ...trip,
+      votes: votesAvg,
+    });
+  };
 
-    
-    // Retornamos los valores deseados.
-    return { trip };
+  return { trip, addTripVote };
 };
 
 export default useTrip;

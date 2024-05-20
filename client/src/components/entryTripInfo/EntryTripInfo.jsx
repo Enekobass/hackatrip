@@ -69,4 +69,4 @@ TripInfo.propTypes = {
     confirmado: PropTypes.number.isRequired,
 };
 
-export default EntryTripInfo;
+export default TripInfo;
