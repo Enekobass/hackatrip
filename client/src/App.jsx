@@ -16,10 +16,11 @@ import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ChangePasswordPage from './pages/ChangePasswordPage/ChangePasswordPage';
 import AdminPage from './pages/AdminPage/AdminPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-
+import ErrorBoundary from './components/ErrorBoundary';
 const App = () => {
   return (
     <>
+      <ErrorBoundary>
       <Header />
       <Toaster
         position='top-center'
@@ -49,6 +50,7 @@ const App = () => {
         />
       </Routes>
       <Footer />
+      </ErrorBoundary>
     </>
   );
 };
