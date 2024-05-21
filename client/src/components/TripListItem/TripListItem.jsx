@@ -8,18 +8,22 @@ import useTrips from "../../hooks/useTrips.js"
 
 const { VITE_API_URL } = import.meta.env;
 
-function TripListItem() {
+function TripListItem(sixTrips) {
 
-  const { trips, loading } = useTrips();
+  const { loading } = useTrips();
+
+  console.log(sixTrips.sixTrips.sixTrips);
+
+
 
   return (
     <Grid container>
-      {(loading ? Array.from(new Array(5)) : trips).map((trip, index) => (
-        <Box key={index} sx={{ width: 320, marginRight: 1, my: 5 }}>
+      {(loading ? Array.from(new Array(6)) : sixTrips.sixTrips.sixTrips).map((trip, index) => (
+        <Box key={index} sx={{ width: 450, paddingLeft: 25, marginRight: 5, mt: 5 }}>
           {trip ? (
               <Link to={`/trippage/${trip.id}`} className='trip-item'>
                 <img
-                  style={{ width: 320, height: 180, border: '2px solid white', borderRadius: '10px' }}
+                  style={{ width: 450, height: 350, border: '2px solid white', borderRadius: '20px' }}
                   alt={trip.destino}
                   src={`${VITE_API_URL}/${trip.imagen}`}
                 />
@@ -29,7 +33,7 @@ function TripListItem() {
           )}
 
           {trip ? (
-            <Link to={`/trippages/${trip.id}`} className='trip-item'>
+            <Link to={`/trippage/${trip.id}`} className='trip-item'>
               <Box sx={{ pr: 2, marginLeft: 7}}>
                 <Typography gutterBottom variant="body1" color="ButtonText">
                   {trip.destino}
@@ -51,11 +55,11 @@ function TripListItem() {
   );
 }
 
-export default function HackATrip() {
+export default function HackATrip(sixTrips) {
 
   return (
     <Box>
-      <TripListItem loading/>
+      <TripListItem loading sixTrips={sixTrips}/>
     </Box>
   );
 }

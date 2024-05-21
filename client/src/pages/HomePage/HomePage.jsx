@@ -13,6 +13,12 @@ import './HomePage.css';
 const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
   const { trips, setSearchParams, loading } = useTrips(setTripsFiltrados);
 
+  let sixTrips = [];
+
+  for(let i = 0; i < 6; i++) {
+    sixTrips.push(trips[i])
+  }
+
   return (
     <main>
       <SearchForm
@@ -21,58 +27,41 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
         setTripsFiltrados={setTripsFiltrados}
       />
 
-      <div className='ofertas-container'>
-        <img className='ofertas' src='/Logos/Publi.png' alt='Ofertas' />
+      <div className='ofertas'>
+        <img src='/Logos/Publi.png' alt='Ofertas' />
       </div>
 
       <h2 className='textoIdeas'>TE DAMOS IDEAS:</h2>
-      {!tripsFiltrados ? (
-        <ul className='video-list'>
+      {!tripsFiltrados? (
+        <ul className='trip-list'>
           {trips.length === 0 ? (
-            <p>Ningún viaje a la vista</p>
-          ) : (
-            <TripListItem />
-          )}
-        </ul>
-      ) : (
-        <FilterTrips loading={loading} trips={trips} />
-      )}
+              <p>Ningún viaje a la vista</p>
+            ) : (
+              <TripListItem sixTrips={sixTrips}/>
+            )}
+          </ul>
+        ) : (
+            <FilterTrips loading={loading} trips={trips} />)}
 
-      <div className='saber-container'>
-        <img className='saberMas' src='/Logos/Saber mas.png' alt='saber mas' />
-        <button className='botonSaberMas'>¡Saber más!</button>
+      <div className='saber-mas'>
+        <img className='img-grande' src='/Logos/Saber mas.png' alt='saber mas' />
+        <img className='img-pequeña' src="/saber-mas.png" alt="saber mas" />
       </div>
 
       <div className='comunity'>
-        <p>
-          Comparte tus vivencias en Hackatrip con nosotros y con el resto de
-          viajeros
-        </p>
-        <div className='facebook'>
-          <button className='facebookButton'>
+        <p>Comparte tus vivencias en Hackatrip con nosotros y con el resto de viajeros</p>
+        <div className='botones'>
+          <button className='facebook'>
             Grupo de Facebook
-            <img
-              className='iconFacebook'
-              src='/Logos/Facebook.png'
-              alt='Logo de Facebook'
-            />
+            <img className='iconFacebook' src="/Logos/Facebook.png" alt="Logo de Facebook" />
           </button>
-        </div>
-        <div className='comunidad'>
-          <button>Únete a la comundad HAT</button>
-        </div>
-        <div className='instagram'>
-          <button className='instagramButton'>
+          <button className='comunidad'>Únete a la comundad HAT</button>
+          <button className='instagram'>
             Síguenos en Instagram
-            <img
-              className='iconInstagram'
-              src='/Logos/Instagram.png'
-              alt='Logo de Instagram'
-            />
-          </button>
-        </div>
+            <img className="iconInstagram" src="/Logos/Instagram.png" alt="Logo de Instagram" />
+      <div className='ofertas-container'>
+        <img className='ofertas' src='/Logos/Publi.png' alt='Ofertas' />
       </div>
-
       <div className='frases'>
         <div className='como'>
           <img src='/Fotos/como.jpg' alt='' />

@@ -2,12 +2,12 @@
   background-image: url('/Fotos/Home.jpg');
   background-size: cover;
   background-position: center;
-  height: 620px; /* Ajusta la altura según tu diseño */
+  height: 450px; /* Ajusta la altura según tu diseño */
 }
 
 .logo1 {
   position: absolute;
-  max-width: 350px;
+  max-width: 300px;
   z-index: 1; /* Asegura que el logo esté por encima de la foto de fondo */
   top: 20px;
   left: 20px;
@@ -21,7 +21,7 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 40%;
+  top: 18%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
