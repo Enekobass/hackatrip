@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import useTrip from '../../hooks/useTrip.js';
 
@@ -52,20 +52,25 @@ const TripPage = () => {
 
                     {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
                     
-                    <AddVoteForm
-                        insertTripVoteService={insertTripVoteService}
-                        addTripVote={addTripVote}
-                        tripId={trip.tripData[0].id}
-                        coordinador={trip.coordinador}
-                        avgValue={trip.avgValue}
-                        authUser={authUser}
-                        authToken={authToken}
-                    /> 
+                    <>
+                        <AddVoteForm
+                            insertTripVoteService={insertTripVoteService}
+                            addTripVote={addTripVote}
+                            tripId={trip.tripData[0].id}
+                            coordinador={trip.coordinador}
+                            avgValue={trip.avgValue}
+                            authUser={authUser}
+                            authToken={authToken}
+                        />
+
+                        <Link to={`/trippage/${viajeId}/loadpost`}>Sube un post</Link>
+                    </>
                     : 
                     <div>
                         <p>¡Cuando acabe el viaje podrás votar aquí al coordinador del viaje!</p>
                     </div>
                     }
+
 
                 </>
             )}

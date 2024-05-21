@@ -98,7 +98,7 @@ TripInfo.propTypes = {
     activo: PropTypes.number.isRequired,
     confirmado: PropTypes.number.isRequired,
     id: PropTypes.string.isRequired,
-    authToken: PropTypes.string.isRequired,
+    authToken: PropTypes.string,
 };
 
 export default TripInfo;

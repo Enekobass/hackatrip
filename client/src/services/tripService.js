@@ -146,3 +146,38 @@ export const bookTripService = async (viajeId, authToken) => {
 
   return body.message;
 };
+
+export const LoadPostService = async (
+  title,
+  description,
+  photo,
+  value,
+  viajeId,
+  authToken
+) => {
+  const formData = new FormData();
+
+  formData.append('title', title);
+
+  formData.append('description', description);
+
+  formData.append('photo', photo[0]);
+
+  formData.append('value', value);
+
+  const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}/addpost`, {
+    method: 'post',
+    headers: {
+      Authorization: authToken,
+    },
+    body: formData,
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.message;
+};
