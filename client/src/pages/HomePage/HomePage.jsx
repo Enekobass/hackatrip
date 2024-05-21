@@ -59,9 +59,10 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
           <button className='instagram'>
             Síguenos en Instagram
             <img className="iconInstagram" src="/Logos/Instagram.png" alt="Logo de Instagram" />
-      <div className='ofertas-container'>
-        <img className='ofertas' src='/Logos/Publi.png' alt='Ofertas' />
+          </button>
+        </div>
       </div>
+
       <div className='frases'>
         <div className='como'>
           <img src='/Fotos/como.jpg' alt='' />
@@ -70,7 +71,7 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
           <img src='/Fotos/quien.jpg' alt='' />
         </div>
         <div className='que'>
-          <img src='/Fotos/que.jpg' alt='' />
+          <img src='/Fotos/que.jpeg' alt='' />
         </div>
         <div className='sostenible'>
           <img src='/Fotos/Home.jpg' alt='' />

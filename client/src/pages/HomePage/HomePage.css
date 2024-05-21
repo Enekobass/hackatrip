@@ -10,6 +10,7 @@
 }
 
 .ofertas > img {
+  border-radius: 15px;
   width: 60%;
 }
 
