@@ -2,12 +2,19 @@ import PropType from 'prop-types';
 import './LoginForm.css';
 import { useState } from 'react';
 
+import toast from 'react-hot-toast';
+
 const LoginForm = ({ authLogin, authLoading }) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    authLogin(email, pass);
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const message = await authLogin(email, pass);
+      toast.success(message);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (

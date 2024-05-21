@@ -68,9 +68,11 @@ export const AuthProvider = ({ children }) => {
 
       const authToken = await signInService(email, password);
 
-      setAuthToken(authToken);
+      setAuthToken(authToken.token);
 
-      localStorage.setItem('authToken', authToken);
+      localStorage.setItem('authToken', authToken.token);
+
+      return authToken.message;
     } catch (err) {
       toast.error(err.message);
     } finally {

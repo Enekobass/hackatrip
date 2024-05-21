@@ -13,7 +13,9 @@ const ValidateUserPage = () => {
   useEffect(() => {
     const fetchValidateUser = async () => {
       try {
-        await activateUserService(registrationCode);
+        const message = await activateUserService(registrationCode);
+
+        toast.success(message);
 
         navigate('/login');
       } catch (err) {
