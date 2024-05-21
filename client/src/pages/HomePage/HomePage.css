@@ -1,3 +1,9 @@
+.ofertas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .ofertas {
   display: flex;
   margin: 30px;
@@ -10,6 +16,12 @@
   margin: 100px 100px 10px 100px;
 }
 
+.saber-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .saberMas {
   display: flex;
   margin: 30px;
@@ -19,14 +31,22 @@
 }
 
 .botonSaberMas {
+  display: flex;
   background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
   color: black;
   box-shadow: 0px;
   border: grey;
 }
 
+.botonSaberMas:hover {
+  background-image: var(--Red);
+}
+
 .comunity {
-  background-color: #E7E7E7;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: #e7e7e7;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -41,3 +61,18 @@
   width: 19px;
   height: auto;
 }
+
+.frases {
+  width: 309px;
+  height: 489px;
+  left: 1041px;
+  top: 0px;
+  background-image: "/Fotos/Home.jpg";
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+}
+
+.textoProximos {
+  margin: 30px 100px 10px 100px;
+}
+
