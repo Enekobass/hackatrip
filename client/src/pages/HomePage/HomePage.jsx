@@ -6,12 +6,11 @@ import SearchForm from '../../forms/SearchForm/SearchForm';
 
 import TripListItem from '../../components/TripListItem/TripListItem';
 
-import FilterTrips from "../../components/FilterTrips/FilterTrips"
+import FilterTrips from '../../components/FilterTrips/FilterTrips';
 
 import './HomePage.css';
 
-const HomePage = ({setTripsFiltrados, tripsFiltrados}) => {
-
+const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
   const { trips, setSearchParams, loading } = useTrips(setTripsFiltrados);
 
   let sixTrips = [];
@@ -22,7 +21,11 @@ const HomePage = ({setTripsFiltrados, tripsFiltrados}) => {
 
   return (
     <main>
-      <SearchForm setSearchParams={setSearchParams} loading={loading} setTripsFiltrados={setTripsFiltrados} />
+      <SearchForm
+        setSearchParams={setSearchParams}
+        loading={loading}
+        setTripsFiltrados={setTripsFiltrados}
+      />
 
       <div className='ofertas'>
         <img src='/Logos/Publi.png' alt='Ofertas' />
@@ -56,9 +59,25 @@ const HomePage = ({setTripsFiltrados, tripsFiltrados}) => {
           <button className='instagram'>
             Síguenos en Instagram
             <img className="iconInstagram" src="/Logos/Instagram.png" alt="Logo de Instagram" />
-          </button>
+      <div className='ofertas-container'>
+        <img className='ofertas' src='/Logos/Publi.png' alt='Ofertas' />
+      </div>
+      <div className='frases'>
+        <div className='como'>
+          <img src='/Fotos/como.jpg' alt='' />
+        </div>
+        <div className='quien'>
+          <img src='/Fotos/quien.jpg' alt='' />
+        </div>
+        <div className='que'>
+          <img src='/Fotos/que.jpg' alt='' />
+        </div>
+        <div className='sostenible'>
+          <img src='/Fotos/Home.jpg' alt='' />
         </div>
       </div>
+
+      <h2 className='textoProximos'>Nuestros Proximos viajes:</h2>
     </main>
   );
 };

@@ -39,10 +39,15 @@
 }
 
 .botonSaberMas {
+  display: flex;
   background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
   color: black;
   box-shadow: 0px;
   border: grey;
+}
+
+.botonSaberMas:hover {
+  background-image: var(--Red);
 }
 
 .comunity {
@@ -86,6 +91,88 @@
   height: auto;
 }
 
+
 button {
   gap: 5px;
+}
+.frases {
+  display: flex;
+  justify-content: space-around
+}
+.como > img {
+  width: 309px;
+  height: 489px;
+  left: 1041px;
+  top: 0px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+}
+
+.quien > img {
+  width: 309px;
+  height: 489px;
+  left: 1041px;
+  top: 0px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+}
+
+.que > img {
+  width: 309px;
+  height: 489px;
+  left: 1041px;
+  top: 0px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+}
+
+.sostenible > img {
+  width: 309px;
+  height: 489px;
+  left: 1041px;
+  top: 0px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+}
+
+
+.textoProximos {
+  margin: 30px 100px 10px 100px;
+}
+
+/**** Estilos general para Tablet ****/
+
+@media screen and (min-width: 768px) {
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  h1 {
+    font-size: 56px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .gif-container p {
+    font-size: 16px;
+  }
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .gif-container p {
+    font-size: 16px;
+  }
 }

@@ -1,0 +1,13 @@
+.footer {
+  background-color: black;
+  background-size: cover;
+  height: 620px;
+  padding: 20px;
+}
+
+.logo2 {
+    max-width: 350px;
+    z-index: 1; /* Asegura que el logo esté por encima de la foto de fondo */
+    top: 20px;
+    left: 20px;
+}
