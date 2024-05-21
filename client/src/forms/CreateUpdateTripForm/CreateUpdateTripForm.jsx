@@ -15,7 +15,7 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
   const [plazasMinimas, setPlazasMinimas] = useState(0);
   const [plazasMaximas, setPlazasMaximas] = useState(0);
   const [ruta, setRuta] = useState('');
-  const [precio, setPrecio] = useState(0);
+  const [precio, setPrecio] = useState('');
   const [activo, setActivo] = useState('');
   const [photo, setPhoto] = useState('');
 

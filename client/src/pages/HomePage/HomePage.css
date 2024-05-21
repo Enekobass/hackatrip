@@ -1,21 +1,41 @@
+.trip-item {
+  text-decoration: none;
+}
+
 .ofertas {
+  padding-top: 50px;
   display: flex;
-  margin: 30px;
-  border-radius: 15px;
-  width: 70%;
-  height: auto;
+  justify-content: center;
+  height: 170px;
+}
+
+.ofertas > img {
+  width: 60%;
 }
 
 .textoIdeas {
   margin: 100px 100px 10px 100px;
 }
 
-.saberMas {
+.saber-mas {
+  display: flex;
+  justify-content: center;
+}
+
+.img-grande {
   display: flex;
   margin: 30px;
   border-radius: 15px;
   width: 70%;
   height: auto;
+}
+
+.img-pequeña {
+  position: absolute;
+  border-radius: 15px;
+  width: 240px;
+  height: 70px;
+  margin-top: 200px;
 }
 
 .botonSaberMas {
@@ -26,10 +46,34 @@
 }
 
 .comunity {
+  display: flex;
+  flex-direction: column;
   background-color: #E7E7E7;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.comunity > p {
+  display: flex;
+  justify-content: center;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.facebook {
+  display: flex;
+  align-items: center;
+}
+
+.instagram {
+  display: flex;
+  align-items: center;
 }
 
 .iconFacebook {
@@ -40,4 +84,8 @@
 .iconInstagram {
   width: 19px;
   height: auto;
+}
+
+button {
+  gap: 5px;
 }
