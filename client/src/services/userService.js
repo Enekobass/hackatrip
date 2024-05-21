@@ -40,7 +40,10 @@ export const signInService = async (email, password) => {
     throw new Error(body.message);
   }
 
-  return body.data.token;
+  return {
+    token: body.data.token,
+    message: body.message,
+  };
 };
 
 export const activateUserService = async (registrationCode) => {
@@ -56,6 +59,8 @@ export const activateUserService = async (registrationCode) => {
   if (body.status === 'error') {
     throw new Error(body.message);
   }
+
+  return body.message;
 };
 
 export const getPrivateProfileService = async (authToken) => {
