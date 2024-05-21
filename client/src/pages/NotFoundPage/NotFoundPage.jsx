@@ -3,11 +3,11 @@ import './NotFoundPage.css'
 const NotFoundPage = () => {
     return (
       <div className="not-found-container">
-        <h1>404: Página no encontrada</h1>
-        <p>Vaya... Parece que te han dejado en tierra...</p>
+        <h1 className="notFound">404: Página no encontrada</h1>
+        <p id="pNotFound">Vaya... Parece que te han dejado en tierra...</p>
         <div className="gif-container">
-          <p>
-            <a href="https://gifer.com">a través de GIFER</a>
+          <p id="pNotFound">
+            <a id="enlaceNotFound" href="https://gifer.com"></a>
           </p>
         </div>
       </div>
