@@ -125,3 +125,24 @@ export const insertTripVoteService = async (value, viajeId, authToken) => {
     votes: body.data.trip.votes,
   };
 };
+
+export const bookTripService = async (viajeId, authToken) => {
+  const res = await fetch(
+    `${VITE_API_URL}/viajes/${viajeId}/reservarycancelar`,
+    {
+      method: 'post',
+      headers: {
+        Authorization: authToken,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.message;
+};
