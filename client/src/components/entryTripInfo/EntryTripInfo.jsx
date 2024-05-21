@@ -3,15 +3,31 @@ import './EntryTripInfo.css';
 
 const { VITE_API_URL } = import.meta.env;
 
+import { bookTripService } from '../../services/tripService';
+
+import toast from 'react-hot-toast';
+
 const formatDate = (dateString) => {
     const options = { day: 'numeric', month: 'short' };
     return new Date(dateString).toLocaleDateString('es-ES', options);
 };
 
-const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, ruta, precio, photo, activo, confirmado }) => {
+const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, ruta, precio, photo, activo, confirmado, id, authToken }) => {
+
+    const handleClick = async (e) => {
+        try {
+            e.preventDefault();
+
+            const book = await bookTripService(id, authToken);
+
+            toast.success(book);
+        } catch (err) {
+            toast.error(err.message);
+        }
+    };
 
     return (
-        <div>
+        <form>
             <div className="entry-header">
                 {/* Contenedor para el título */}
                 <div className="title-container">
@@ -60,11 +76,11 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
             </ul>
 
             {/* Botón para apuntarse */}
-            <div className="button-container">
-    <button className="signup-button">Apuntarme</button>
-</div>
+            <div onClick={handleClick} className="button-container">
+                <button className="signup-button">Apuntarme</button>
+            </div>
 
-        </div>
+        </form>
     );
 };
 

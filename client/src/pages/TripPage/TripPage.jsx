@@ -46,7 +46,8 @@ const TripPage = () => {
                         photo={trip.tripData[0].imagen}
                         activo={trip.tripData[0].activo}
                         confirmado={trip.tripData[0].confirmado}
-
+                        id={trip.tripData[0].id}
+                        authToken={authToken}
                     />
 
                     {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
