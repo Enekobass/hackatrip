@@ -23,8 +23,7 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
 
       <div className='ofertas-container'>
         <img className='ofertas' src='/Logos/Publi.png' alt='Ofertas' />
-        </div>
-      
+      </div>
 
       <h2 className='textoIdeas'>TE DAMOS IDEAS:</h2>
       {!tripsFiltrados ? (
@@ -75,10 +74,18 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
       </div>
 
       <div className='frases'>
-        <div className='como'></div>
-        <div className='quien'></div>
-        <div className='que'></div>
-        <div className='sostenible'></div>
+        <div className='como'>
+          <img src='/Fotos/como.jpg' alt='' />
+        </div>
+        <div className='quien'>
+          <img src='/Fotos/quien.jpg' alt='' />
+        </div>
+        <div className='que'>
+          <img src='/Fotos/que.jpg' alt='' />
+        </div>
+        <div className='sostenible'>
+          <img src='/Fotos/Home.jpg' alt='' />
+        </div>
       </div>
 
       <h2 className='textoProximos'>Nuestros Proximos viajes:</h2>
