@@ -76,7 +76,7 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
       <input type="text" id="ruta" value={ruta} onChange={(e) => setRuta(e.target.value)} required />
 
       <label htmlFor="precio">Precio:</label>
-      <input type="number" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />
+      <input type="text" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />
 
       <label htmlFor="activo">activo:</label>
       <input type="number" id="activo" value={activo} onChange={(e) => setActivo(parseInt(e.target.value))} required />

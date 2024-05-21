@@ -1,8 +1,7 @@
 /* Estilos para CreateUpdateTripForm */
 .create-update-trip-form {
   background-color: white;
-  padding: 20px;
-  border: 2px solid #ff0000; /* Borde rojo */
+  padding: 20px;/* Borde rojo */
   border-radius: 8px;
   width: 300px; /* Ancho del formulario */
   margin: 0 auto; /* Centra el formulario */
@@ -23,11 +22,11 @@
   width: 100%; /* Ancho completo del contenedor */
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ff0000; /* Borde rojo */
+  border: 1px solid #f11111; /* Borde rojo */
   border-radius: 5px;
   box-sizing: border-box;
   display: block;
-  background-color: black; /* Fondo negro */
+  background-color: white; /* Fondo negro */
   color: white; /* Texto blanco */
 }
 
@@ -64,6 +63,7 @@
 main.admin h1 {
   display: flex;
   justify-content: center;
+  color: black;
 }
 
 main.admin {
