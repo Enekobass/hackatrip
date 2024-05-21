@@ -39,7 +39,7 @@ const AddVoteForm = ({
     };
 
     return (
-        <main>
+        <div>
             {coordinador && (
                 <>
                     <div>¡Vota al coordinador de este viaje si has participado en él!</div>
@@ -53,7 +53,7 @@ const AddVoteForm = ({
                     </div>
                 </>
             )}
-        </main>
+        </div>
     );
 };
 
