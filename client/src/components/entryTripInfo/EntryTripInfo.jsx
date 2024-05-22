@@ -65,7 +65,7 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
                     <strong>Plazas máximas:</strong> {plazasMaximas}
                 </li>
                 <li className='price-overlay'>
-                    <strong>Precio:</strong> {precio}
+                    <strong>Precio:</strong> {precio} €
                 </li>
                 <li className='hidden'>
                     <strong></strong> {activo}
@@ -76,8 +76,8 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
             </ul>
 
             {/* Botón para apuntarse */}
-            <div onClick={handleClick} className="button-container">
-                <button className="signup-button">Apuntarme</button>
+            <div className="button-container">
+                <button onClick={handleClick} className="signup-button">Apuntarme</button>
             </div>
 
         </form>
