@@ -41,6 +41,29 @@ http://localhost:8000/
 
 -Emotion es una biblioteca de CSS-in-JS para React y JavaScript que permite escribir estilos CSS con JavaScript. Ofrece un rendimiento óptimo y una gran flexibilidad para crear estilos dinámicos y personalizados en las aplicaciones web.
 
+## Rutas
+
+Dentro de nuestra página tenemos las siguientes rutas:
+
+'/trippage/:viajeId/loadpost': ruta para publicar un post de un viaje ya disfrutado.
+
+'/changepassword': página para cambiar la contraseña.
+
+'/register': página para registrarse como usuario.
+
+'/login': ruta para logearse.
+
+'/users/validate/:registrationCode': página para validar la cuenta.
+
+'/recover': ruta por si se te olviada la contraseña.
+
+'/admin': página de el administrador de la web.
+
+'/trippage/:viajeId': ruta para consultar todos los viajes.
+
+'*': página de errores.
+
+
 <p align="center">
     <img src="https://skillicons.dev/icons?i=vite,react,eslint" />
 </p>
