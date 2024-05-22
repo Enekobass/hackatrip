@@ -69,6 +69,8 @@ Debería estar escuchando en un puerto específico. Puedes acceder a él a trav�
   
 - `PUT /users/edit`: Actualización perfil del usuario.
   
+- `PUT /users/edit`: Editar el usuario.
+  
 - `PUT /users/avatar/edit`: Cambiar el avatar de usuario.
   
 - `PUT /users/role/:userId`: Ver los usuarios apuntados a un viaje.
@@ -76,6 +78,10 @@ Debería estar escuchando en un puerto específico. Puedes acceder a él a trav�
 #### Trip
 
 - `GET /todosviajes`: Lista de viajes filtrados por título, localidad, imagen, fecha, precio, número reservas, reservada si/no, activa/desactiva y/o confirmada.
+  
+- `GET /ratedcoordinadores`: Puntuar a un coordinador.
+  
+- `GET /todosviajesconfirmados`: Lista de todos los viajes confirmados.
 
 - `POST /viajes`: Creación de un nuevo viaje por parte del admin.
 
@@ -87,11 +93,13 @@ Debería estar escuchando en un puerto específico. Puedes acceder a él a trav�
 
 - `POST /viajes/:viajeId/reservarycancelar`: Reservar y cancelar la reserva de un viaje por parte de un usuario.
 
-- `POST /viajes/:viajeId/addfotos`: Añadir fotos de un viaje por parte de un usuario.
+- `POST /viajes/:viajeId/addpost`: Añadir post de un viaje por parte de un usuario.
 
 - `POST /viajes/:viajeId/coordinadorVotes`: Realizar una puntuación de un coordinador con el que has viajado.
 
 - `POST /viajes/:viajeId/:coordinadorId`: Apuntarse un coordinador a un viaje.
+  
+- `PUT /viajes/:viajeId/modificarviaje`: Modifica un viaje ya creado.
 
 ### Tech stack
 
