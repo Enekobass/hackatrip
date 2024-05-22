@@ -68,24 +68,64 @@ export const selectTripByIdService = async (viajeId) => {
   return body.data;
 };
 
-// //export const updateTripService = async (tripId, tripData) => {
-//   const res = await fetch(`${VITE_API_URL}/update-trip-endpoint/${tripId}`, {
-//     method: 'put',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       // Puedes agregar cualquier encabezado adicional necesario, como el token de autorización si es necesario
-//     },
-//     body: JSON.stringify(tripData),
-//   });
+export const updateTripService = async ({
+  titulo,
+  descripcion,
+  destino,
+  fechaDeInicio,
+  fechaDeFin,
+  plazasMinimas,
+  plazasMaximas,
+  ruta,
+  precio,
+  photo,
+  activo,
+  viajeId,
+  authToken,
+}) => {
+  const formData = new FormData();
 
-//   const body = await res.json();
+  formData.append('titulo', titulo);
 
-//   if (res.status !== 200) {
-//     throw new Error(body.message);
-//   }
+  formData.append('descripcion', descripcion);
 
-//   return body.data; // Suponiendo que tu backend devuelve los datos del viaje actualizado
-// };//
+  formData.append('destino', destino);
+
+  formData.append('fechaDeInicio', fechaDeInicio);
+
+  formData.append('fechaDeFin', fechaDeFin);
+
+  formData.append('plazasMinimas', plazasMinimas);
+
+  formData.append('plazasMaximas', plazasMaximas);
+
+  formData.append('ruta', ruta);
+
+  formData.append('precio', precio);
+
+  formData.append('photo', photo[0]);
+
+  formData.append('activo', activo);
+
+  console.log(formData);
+
+  const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}/modificarviaje`, {
+    method: 'put',
+    headers: {
+      Authorization: authToken,
+      // Puedes agregar cualquier encabezado adicional necesario, como el token de autorización si es necesario
+    },
+    body: formData,
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.message; // Suponiendo que tu backend devuelve los datos del nuevo viaje creado
+};
 
 export const selectAllTripsService = async (searchParams) => {
   const res = await fetch(`${VITE_API_URL}/todosviajes?${searchParams}`);

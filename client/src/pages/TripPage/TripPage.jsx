@@ -50,6 +50,8 @@ const TripPage = () => {
                         authToken={authToken}
                     />
 
+                    {authUser.role === "admin" ? <Link to={`/editar-viaje/${viajeId}`}>Editar viaje</Link> : console.log("no")}
+
                     {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
                     
                     <>
@@ -63,7 +65,7 @@ const TripPage = () => {
                             authToken={authToken}
                         />
 
-                        <Link to={`/trippage/${viajeId}/loadpost`}>Sube un post</Link>
+                        <Link to={`/viaje/${viajeId}/loadpost`}>Sube un post</Link>
                     </>
                     : 
                     <div>

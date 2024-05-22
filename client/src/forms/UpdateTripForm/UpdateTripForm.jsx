@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState, useContext } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-import './CreateUpdateTripForm.css';
+import { useNavigate, useParams } from 'react-router-dom';
+import { updateTripService } from '../../services/tripService';
 
-const CreateUpdateTripForm = ({ createTripService, authToken }) => {
+import { AuthContext } from '../../contexts/AuthContext';
+
+const UpdateTripForm = () => {
 
   const navigate = useNavigate();
   const [titulo, setTitulo] = useState('');
@@ -19,28 +20,35 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
   const [activo, setActivo] = useState('');
   const [photo, setPhoto] = useState('');
 
+  const { authToken } = useContext(AuthContext);
+
+  const params = useParams();
+
+  const viajeId = params.viajeId;
+
   const handleSubmit = async (e) => {
     try{
     e.preventDefault();
 
     // Llama a la función onSubmit pasando los datos del formulario
-    const message = await createTripService({
-      titulo,
-      descripcion,
-      destino,
-      fechaDeInicio,
-      fechaDeFin,
-      plazasMinimas,
-      plazasMaximas,
-      ruta,
-      precio,
-      activo,
-      photo,
-      authToken,
+    const message = await updateTripService({
+        titulo,
+        descripcion,
+        destino,
+        fechaDeInicio,
+        fechaDeFin,
+        plazasMinimas,
+        plazasMaximas,
+        ruta,
+        precio,
+        photo,
+        activo,
+        viajeId,
+        authToken,
   });
 
   toast.success(message);
-   navigate('/');
+  navigate('/');
   } catch(error){
     toast.error(error.message);
   }
@@ -95,9 +103,4 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
   );
 };
 
-CreateUpdateTripForm.propTypes = {
-  createTripService: PropTypes.func.isRequired,
-  authToken: PropTypes.string.isRequired,
-};
-
-export default CreateUpdateTripForm;
+export default UpdateTripForm;

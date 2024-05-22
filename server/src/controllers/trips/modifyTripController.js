@@ -4,9 +4,14 @@ import validateSchema from '../../utils/validateSchemaUtil.js';
 
 import modifyTripSchema from '../../schemas/trips/modifyTripSchema.js';
 
+import { savePhoto } from '../../services/photoService.js';
+
 const modifyTripController = async (req, res, next) => {
     try {
-        await validateSchema(modifyTripSchema, req.body);
+        await validateSchema(
+            modifyTripSchema,
+            Object.assign(req.body, req.files),
+        );
 
         const {
             titulo,
@@ -19,8 +24,9 @@ const modifyTripController = async (req, res, next) => {
             ruta,
             precio,
             activo,
-            confirmado,
         } = req.body;
+
+        const photoName = await savePhoto(req.files, 300);
 
         const { viajeId } = req.params;
 
@@ -35,7 +41,7 @@ const modifyTripController = async (req, res, next) => {
             ruta,
             precio,
             activo,
-            confirmado,
+            photoName,
             viajeId,
         );
 

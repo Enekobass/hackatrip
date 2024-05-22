@@ -12,16 +12,12 @@ function TripListItem(sixTrips) {
 
   const { loading } = useTrips();
 
-  console.log(sixTrips.sixTrips.sixTrips);
-
-
-
   return (
     <Grid container>
       {(loading ? Array.from(new Array(6)) : sixTrips.sixTrips.sixTrips).map((trip, index) => (
-        <Box key={index} sx={{ width: 450, paddingLeft: 25, marginRight: 5, mt: 5 }}>
+        <Box key={index} sx={{ width: 450, paddingLeft: 30, marginRight: 5, mt: 5 }}>
           {trip ? (
-              <Link to={`/trippage/${trip.id}`} className='trip-item'>
+              <Link to={`/viaje/${trip.id}`} className='trip-item'>
                 <img
                   style={{ width: 450, height: 350, border: '2px solid white', borderRadius: '20px' }}
                   alt={trip.destino}
@@ -33,7 +29,7 @@ function TripListItem(sixTrips) {
           )}
 
           {trip ? (
-            <Link to={`/trippage/${trip.id}`} className='trip-item'>
+            <Link to={`/viaje/${trip.id}`} className='trip-item'>
               <Box sx={{ pr: 2, marginLeft: 7}}>
                 <Typography gutterBottom variant="body1" color="ButtonText">
                   {trip.destino}
