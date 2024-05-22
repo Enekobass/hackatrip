@@ -4,21 +4,18 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({setTripsFiltrados}) => {
+const Header = ({ setTripsFiltrados }) => {
   const { authUser, authLogout } = useContext(AuthContext);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const goToHome = () => {
-
-    setTripsFiltrados(false)
-    navigate("/")
-
-}
+    setTripsFiltrados(false);
+    navigate('/');
+  };
 
   return (
     <header className='header'>
-
       <nav>
         <div htmlFor='show-menu'>
           <img
@@ -29,7 +26,11 @@ const Header = ({setTripsFiltrados}) => {
           />
         </div>
 
-        <p className='frasePortada'>Viajar es la única cosa que compras y te hace más rico</p>
+        <div className='contenedorFrasePortada'>
+          <p className='frasePortada'>
+            Viajar es la única cosa que compras y te hace más rico
+          </p>
+        </div>
 
         <ul className='nav-links'>
           {!authUser ? (
@@ -64,6 +65,5 @@ const Header = ({setTripsFiltrados}) => {
 Header.propTypes = {
   setTripsFiltrados: PropType.func.isRequired,
 };
-
 
 export default Header;
