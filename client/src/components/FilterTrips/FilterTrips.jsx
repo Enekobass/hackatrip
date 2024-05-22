@@ -16,7 +16,7 @@ const FilterVideos = ({trips, loading}) => {
             {(loading ? Array.from(new Array(5)) : trips).map((trip, index) => (
                 <Box key={index} sx={{ width: 320, marginRight: 1, my: 5 }}>
                 {trip ? (
-                    <Link to={`/trippage/${trip.id}`} className='trip-item'>
+                    <Link to={`/viaje/${trip.id}`} className='trip-item'>
                         <img
                         style={{ width: 500, height: 290, border: '2px solid white', borderRadius: '10px' }}
                         alt={trip.destino}
@@ -28,7 +28,7 @@ const FilterVideos = ({trips, loading}) => {
                 )}
 
                 {trip ? (
-                    <Link to={`/trippage/${trip.id}`} className='trip-item'>
+                    <Link to={`/viaje/${trip.id}`} className='trip-item'>
                     <Box sx={{ pr: 2, marginLeft: 7}}>
                         <Typography gutterBottom variant="body1" color="ButtonText">
                         {trip.destino}

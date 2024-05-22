@@ -37,7 +37,7 @@ const LoadPostForm = () => {
   );
 
   toast.success(message);
-   navigate(`/trippage/${viajeId}`);
+   navigate(`/viaje/${viajeId}`);
   } catch(error){
     toast.error(error.message);
   }

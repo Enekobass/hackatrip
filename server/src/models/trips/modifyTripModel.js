@@ -11,7 +11,7 @@ const modifyTripModel = async (
     ruta,
     precio,
     activo,
-    confirmado,
+    photoName,
     viajeId,
 ) => {
     const pool = await getPool();
@@ -88,9 +88,9 @@ const modifyTripModel = async (
         ]);
     }
 
-    if (confirmado) {
-        await pool.query(`UPDATE viajes SET confirmado = ? WHERE id = ?`, [
-            confirmado,
+    if (photoName) {
+        await pool.query(`UPDATE viajes SET imagen = ? WHERE id = ?`, [
+            photoName,
             viajeId,
         ]);
     }
