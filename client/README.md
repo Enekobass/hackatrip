@@ -37,6 +37,10 @@ http://localhost:8000/
 
 -ESLint: es una herramienta de linting para JavaScript que ayuda a identificar y corregir errores, mantener un código consistente y aplicar buenas prácticas de codificación en un proyecto. Utiliza reglas configurables y puede integrarse fácilmente en flujos de trabajo de desarrollo para mejorar la calidad del código.
 
+-Mui: MUI (Material-UI) es una biblioteca de componentes de interfaz de usuario para React que sigue los principios de Material Design de Google. Ofrece componentes personalizables, diseño responsivo y tematización, facilitando la creación de interfaces modernas y accesibles.
+
+-Emotion es una biblioteca de CSS-in-JS para React y JavaScript que permite escribir estilos CSS con JavaScript. Ofrece un rendimiento óptimo y una gran flexibilidad para crear estilos dinámicos y personalizados en las aplicaciones web.
+
 <p align="center">
     <img src="https://skillicons.dev/icons?i=vite,react,eslint" />
 </p>
