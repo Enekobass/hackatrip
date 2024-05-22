@@ -1,13 +1,65 @@
 .footer {
   background-color: black;
   background-size: cover;
-  height: 620px;
-  padding: 20px;
+  padding: 2% 5%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__content {
+  max-width: 100%;
+  width: 100%;
+}
+
+.footer__logo {
+  margin-bottom: 2%;
 }
 
 .logo2 {
-    max-width: 350px;
-    z-index: 1; /* Asegura que el logo esté por encima de la foto de fondo */
-    top: 20px;
-    left: 20px;
+  max-width: 30%; /* Ajusta el tamaño máximo del logo para que sea más proporcional */
+  height: auto;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+}
+
+.footer__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 2% 0;
+}
+
+.footer__nav ul li {
+  display: inline;
+  margin: 0 2%;
+}
+
+.footer__nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.footer__nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer__contact p {
+  margin: 0.5em 0;
+}
+
+.footer__social a {
+  margin: 0 1.5%;
+}
+
+.footer__social img {
+  width: 1.5em;
+}
+
+.footer__rights {
+  margin-top: 2%;
+  font-size: 0.9em;
 }
