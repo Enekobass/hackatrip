@@ -45,7 +45,9 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
 
       <div className='saber-mas'>
         <img className='img-grande' src='/Logos/Saber mas.png' alt='saber mas' />
-        <button className='botonSaberMas'>¡Saber más!</button>
+        <div className='boton-div'>
+          <button className='botonSaberMas'>¡Saber más!</button>
+        </div>
       </div>
 
       <div className='comunity'>

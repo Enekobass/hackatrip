@@ -50,6 +50,11 @@
   align-items: center;
 }
 
+.boton-div {
+  position: absolute;
+  margin-top: 200px;
+}
+
 .botonSaberMas:hover {
   background-image: var(--Red);
 }
