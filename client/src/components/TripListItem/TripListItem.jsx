@@ -13,9 +13,9 @@ function TripListItem(sixTrips) {
   const { loading } = useTrips();
 
   return (
-    <Grid container>
+    <Grid container justifyContent="center">
       {(loading ? Array.from(new Array(6)) : sixTrips.sixTrips.sixTrips).map((trip, index) => (
-        <Box key={index} sx={{ width: 450, paddingLeft: 30, marginRight: 5, mt: 5 }}>
+        <Box key={index} sx={{ width: 450, marginRight: 5, mt: 5 }}>
           {trip ? (
               <Link to={`/viaje/${trip.id}`} className='trip-item'>
                 <img
