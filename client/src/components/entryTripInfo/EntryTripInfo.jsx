@@ -73,7 +73,7 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
                 width="400"
                 height="300"
                 style={{ border: 0 }}
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
             ></iframe>
                 <li className='price-overlay'>

@@ -50,7 +50,7 @@ const TripPage = () => {
                         authToken={authToken}
                     />
 
-                    {authUser.role === "admin" ? <Link to={`/editar-viaje/${viajeId}`}>Editar viaje</Link> : console.log("no")}
+                    {authUser?.role === "admin" ? <Link to={`/editar-viaje/${viajeId}`}>Editar viaje</Link> : console.log()}
 
                     {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
                     
