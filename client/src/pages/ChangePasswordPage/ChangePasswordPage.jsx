@@ -5,8 +5,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 const ChangePasswordPage = () => {
   const { authChangePassword } = useContext(AuthContext);
   return (
-    <main>
-      <h2>Cambiar Contraseña</h2>
+    <main className='change'>
+      <h1>Cambiar Contraseña</h1>
 
       <ChangePasswordForm authChangePassword={authChangePassword} />
     </main>
