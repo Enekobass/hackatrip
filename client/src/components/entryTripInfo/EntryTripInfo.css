@@ -62,6 +62,10 @@
     justify-content: center;
 }
 
+.mapa {
+    margin: 2% 35% 2%;
+}
+
 /* Estilos para el overlay del precio */
 .price-overlay {
     grid-area: price;
