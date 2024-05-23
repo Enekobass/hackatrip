@@ -116,3 +116,59 @@ export const changePassword = async (email, newPass, recoverPassCode) => {
 
   return body.message;
 };
+
+export const updateUsernameAndEmailService = async (
+  username,
+  email,
+  password,
+  authToken
+) => {
+  const res = await fetch(`${VITE_API_URL}/users/edit`, {
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: authToken,
+    },
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+    }),
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return {
+    message: body.message,
+    user: body.data.user,
+  };
+};
+
+export const updateAvatarService = async (photo, authToken) => {
+  const formData = new FormData();
+
+  formData.append('photo', photo);
+
+  const res = await fetch(`${VITE_API_URL}/users/avatar/edit`, {
+    method: 'put',
+    headers: {
+      Authorization: authToken,
+    },
+    body: formData,
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return {
+    message: body.message,
+    avatarName: body.data.avatar.name,
+  };
+};
