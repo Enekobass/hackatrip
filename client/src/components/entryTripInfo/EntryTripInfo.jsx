@@ -28,14 +28,10 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
 
     return (
         <form>
-            {/* Iframe de Google Maps */}
-           
             <div className="entry-header">
-                {/* Contenedor para el título */}
                 <div className="title-container">
                     <h1 className="title">{titulo}</h1>
                 </div>
-                {/* Imagen debajo del título */}
                 <img
                     src={`${VITE_API_URL}/${photo}`}
                     alt={`Foto de ${destino}`}
@@ -66,16 +62,6 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
                 <li className="hidden">
                     <strong>Plazas máximas:</strong> {plazasMaximas}
                 </li>
-                <iframe
-                className='mapa'
-                title="Google Maps"
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934864.01374744!2d90.81355033056589!3d12.820796643859362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d8df747424db1%3A0x9ed72c880757e802!2sTailandia!5e0!3m2!1ses!2ses!4v1716404077784!5m2!1ses!2ses`}
-                width="400"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-            ></iframe>
                 <li className='price-overlay'>
                     <strong>Precio:</strong> {precio} €
                 </li>
@@ -86,7 +72,6 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
                     <strong></strong> {confirmado}
                 </li>
             </ul>
-            {/* Botón para apuntarse */}
             <div className="button-container">
                 <button onClick={handleClick} className="signup-button">Apuntarme</button>
             </div>

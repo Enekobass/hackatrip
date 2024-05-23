@@ -62,9 +62,24 @@
     justify-content: center;
 }
 
-.mapa {
-    margin: 2% 35% 2%;
+/* EntryTripInfo.css */
+
+/* Estilos para centrar el iframe del mapa */
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    margin: 2% 10%; /* Ajusta el margen según sea necesario */
 }
+
+.mapa {
+    border: 0;
+    width: 100%;
+    max-width: 600px; /* Ajusta el tamaño máximo del mapa */
+    height: 400px; /* Ajusta la altura del mapa */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 
 /* Estilos para el overlay del precio */
 .price-overlay {
