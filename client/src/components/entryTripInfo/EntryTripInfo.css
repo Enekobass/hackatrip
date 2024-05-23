@@ -15,6 +15,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto; /* Añade un nuevo auto para el precio */
     gap: 10px; /* Espacio entre las áreas */
+    justify-items: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
 /* Estilos para el overlay del destino */
@@ -53,13 +55,15 @@
 /* Estilos para el overlay de las fechas */
 .dates-overlay {
     grid-area: dates;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: blue;
+    color: white;
     padding: 5px 10px;
     border-radius: 5px;
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
+    display: inline;
 }
 
 /* EntryTripInfo.css */
@@ -84,12 +88,20 @@
 /* Estilos para el overlay del precio */
 .price-overlay {
     grid-area: price;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: blue;
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    display: inline;
+    margin-left: 45.7%;
 }
+
 
 /* Estilos para la lista de detalles */
 .entry-details {
@@ -171,3 +183,12 @@
     background-color: darkred;
 }
 
+/* .box-blue {
+    background-color: blue;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

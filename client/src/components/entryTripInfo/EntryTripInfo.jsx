@@ -8,7 +8,7 @@ import { bookTripService } from '../../services/tripService';
 import toast from 'react-hot-toast';
 
 const formatDate = (dateString) => {
-    const options = { day: 'numeric', month: 'short' };
+    const options = { day: 'numeric', month: 'long' };
     return new Date(dateString).toLocaleDateString('es-ES', options);
 };
 
@@ -40,11 +40,14 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
                 <div className="place-overlay">
                     <strong></strong> {destino}
                 </div>
-                <div className="dates-overlay">
-                    <span className="fecha-in">{formatDate(fechaDeInicio)}</span>
-                    <span>-</span>
-                    <span className="fecha-fin">{formatDate(fechaDeFin)}</span>
+                <div className="box-blue">
+                    <div className="dates-overlay">
+                        <span className="fecha-in">{formatDate(fechaDeInicio)}</span>
+                        <span>-</span>
+                        <span className="fecha-fin">{formatDate(fechaDeFin)}</span>
+                    </div>
                 </div>
+               
             </div>
             <ul className='entry-details'>
                 <li className="description">
@@ -61,10 +64,12 @@ const TripInfo = ({ destino, titulo, descripcion, fechaDeInicio, fechaDeFin, pla
                 </li>
                 <li className="hidden">
                     <strong>Plazas máximas:</strong> {plazasMaximas}
-                </li>
-                <li className='price-overlay'>
-                    <strong>Precio:</strong> {precio} €
-                </li>
+                </li> 
+                <div className="box-blue">
+                    <div className='price-overlay'>
+                        <strong>Precio:</strong> {precio} €
+                    </div>
+                </div>
                 <li className='hidden'>
                     <strong></strong> {activo}
                 </li>
