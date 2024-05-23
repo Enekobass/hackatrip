@@ -7,13 +7,13 @@ let pool;
 const getPool = async () => {
     try {
         if (!pool) {
-            pool = await mysql.createPool({
+            const tempPool = await mysql.createPool({
                 host: MYSQL_HOST,
                 user: MYSQL_USER,
                 password: MYSQL_PASS,
             });
 
-            await pool.query(`CREATE DATABASE IF NOT EXISTS ${MYSQL_DB}`);
+            await tempPool.query(`CREATE DATABASE IF NOT EXISTS ${MYSQL_DB}`);
 
             pool = await mysql.createPool({
                 host: MYSQL_HOST,
