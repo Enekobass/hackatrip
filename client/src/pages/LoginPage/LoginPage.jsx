@@ -7,7 +7,7 @@ const LoginPage = () => {
   const { authUser, authLogin, authLoading } = useContext(AuthContext);
 
   if (authUser) {
-    return <Navigate to='/' />;
+    return <Navigate to='/Profile' />;
   }
 
   return (

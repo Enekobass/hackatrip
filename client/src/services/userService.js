@@ -111,3 +111,24 @@ export const changePassword = async (email, newPass, recoverPassCode) => {
 
   return body.message;
 };
+
+export const editProfileService = async (username, email, pass, confirmPass, authToken) => {
+  const res = await fetch(`${VITE_API_URL}/users/edit`, {
+    method: 'put',
+    headers: {
+      Authorization: authToken,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username,
+      email,
+      pass,
+      confirmPass,
+    }),
+  });
+
+  const body = await res.json();
+ 
+  return body.data?.user;
+};
+   

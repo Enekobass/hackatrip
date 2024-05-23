@@ -11,6 +11,7 @@ import {
   signUpService,
   recoverPassword,
   changePassword,
+  editProfileService,
 } from '../services/userService';
 
 export const AuthProvider = ({ children }) => {
@@ -110,6 +111,25 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+
+// Función para editar perfil de usuario.
+const authEditUser = async (username, email, pass, confirmPass) => {
+  try {
+    setAuthLoading(true);
+
+    const message = await editProfileService(username, email, pass, confirmPass);
+
+    toast.success(message);
+
+    navigate('/profile');
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setAuthLoading(false);
+      setAuthToken(null);
+    }
+};
+
   // Función de cerrar sesión.
   const authLogout = () => {
     setAuthUser(null);
@@ -126,6 +146,7 @@ export const AuthProvider = ({ children }) => {
         authUser,
         authRegister,
         authLogin,
+        authEditUser,
         authLogout,
         authLoading,
         authRecoverPassword,

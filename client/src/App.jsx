@@ -16,6 +16,7 @@ import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ChangePasswordPage from './pages/ChangePasswordPage/ChangePasswordPage';
 import AdminPage from './pages/AdminPage/AdminPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
 
 const App = () => {
   return (
@@ -47,6 +48,8 @@ const App = () => {
         <Route path='/trippage/:viajeId' element={<TripPage />} />
         <Route path='*' element={<NotFoundPage />}
         />
+        <Route path='/profile' element={<UserProfilePage />} />
+
       </Routes>
       <Footer />
     </>

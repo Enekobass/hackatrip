@@ -27,7 +27,7 @@ const Header = () => {
           />
         </label>
 
-        <p className='frasePortada'>Frase inspiracional aleatoria</p>
+        <p className='frasePortada'>Frase inspiracional aleatoria</p> 
 
         <ul className='nav-links'>
           {!authUser ? (
