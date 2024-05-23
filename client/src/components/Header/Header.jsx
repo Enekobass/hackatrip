@@ -26,6 +26,14 @@ const Header = ({ setTripsFiltrados }) => {
           />
         </div>
 
+        <ul className="nav-menu">
+                <li><a href="#fechas">Fechas</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
+                <li><a href="#grupos-de-edad">Grupos de Edad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
         <div className='contenedorFrasePortada'>
           <p className='frasePortada'>
             Viajar es la única cosa que compras y te hace más rico

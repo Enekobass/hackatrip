@@ -90,7 +90,7 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
           <img src='/Fotos/que.jpeg' alt='' />
         </div>
         <div className='sostenible'>
-          <img src='/Fotos/Home.jpg' alt='' />
+          <img src='/Fotos/sostenible.jpg' alt='' />
         </div>
       </div>
 

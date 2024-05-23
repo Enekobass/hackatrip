@@ -18,6 +18,33 @@
   cursor: pointer;
 }
 
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-left: 30vw;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+.nav-menu a:hover {
+  font-weight: bolder;
+  
+}
+
 .contenedorFrasePortada {
   display: flex;
   position: absolute;
