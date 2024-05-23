@@ -13,6 +13,10 @@
   --Red: #f44336;
 }
 
+main{
+position: relative;
+}
+
 div#root {
   min-height: 100vh;
   display: flex;

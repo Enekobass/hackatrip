@@ -55,7 +55,7 @@
 /* Estilos para el overlay de las fechas */
 .dates-overlay {
     grid-area: dates;
-    background-color: blue;
+    background-color: var(--Turqoise);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -88,18 +88,14 @@
 /* Estilos para el overlay del precio */
 .price-overlay {
     grid-area: price;
-    background-color: blue;
+    width: max-content;
+    margin-inline: auto;
+    background-color: var(--Turqoise);
     padding: 5px 10px;
-    border-radius: 5px;
     text-align: center;
     font-weight: bold;
     border-radius: 5px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    display: inline;
-    margin-left: 45.7%;
+    
 }
 
 

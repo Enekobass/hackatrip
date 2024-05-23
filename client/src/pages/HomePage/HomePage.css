@@ -11,7 +11,7 @@
 .ofertas > img {
   border-radius: 15px;
   margin: 30px;
-  width: 80%;
+  width: 70vw;
   cursor: pointer;
 }
 
@@ -20,16 +20,15 @@
 }
 
 .saber-mas {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  margin: 30px;
+  width: 70vw;
+  margin-inline: auto;
 }
 
 .img-grande {
-  display: flex;
-  margin: 30px;
+  width: 100%;
   border-radius: 15px;
-  width: 70%;
-  height: auto;
 }
 
 .img-pequeña {
@@ -41,19 +40,18 @@
 }
 
 .botonSaberMas {
-  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15%;
   background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
   color: black;
   box-shadow: none;
   border: grey;
-  height: 40px;
-  align-items: center;
+  padding: 8px 15px;
+  font-size: 1.4vw;
 }
 
-.boton-div {
-  position: absolute;
-  margin-top: 200px;
-}
 
 .botonSaberMas:hover {
   background-image: var(--Red);
@@ -104,40 +102,18 @@
   display: flex;
   justify-content: space-around;
 }
-.como > img {
+.frases img {
   width: 309px;
   height: 489px;
   left: 1041px;
   top: 0px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 15px;
+  object-fit: cover;
 }
 
-.quien > img {
-  width: 309px;
-  height: 489px;
-  left: 1041px;
-  top: 0px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 15px;
-}
-
-.que > img {
-  width: 309px;
-  height: 489px;
-  left: 1041px;
-  top: 0px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 15px;
-}
-
-.sostenible > img {
-  width: 309px;
-  height: 489px;
-  left: 1041px;
-  top: 0px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 15px;
+.sostenible img {
+  object-position: 30%;
 }
 
 .textoProximos {

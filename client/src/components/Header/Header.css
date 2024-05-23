@@ -21,7 +21,8 @@
 .contenedorFrasePortada {
   display: flex;
   position: absolute;
-  margin: 10% 33% 0 33%;
+  text-align: center;
+  margin: 10% 15% 0 15%;
 }
 
 .frasePortada {
