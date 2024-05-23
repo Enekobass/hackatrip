@@ -19,6 +19,8 @@ import AdminPage from './pages/AdminPage/AdminPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import UpdateTripPage from './pages/UpdateTripPage/UpdateTripPage';
+import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
+
 const App = () => {
   const [tripsFiltrados, setTripsFiltrados] = useState(false);
   return (
@@ -60,6 +62,7 @@ const App = () => {
             element={<ValidateUserPage />}
           />
           <Route path='/recover' element={<ResetPasswordPage />} />
+          <Route path='/profile' element={<UserProfilePage />} />
           <Route path='/admin' element={<AdminPage />} />
           <Route path='/viaje/:viajeId' element={<TripPage />} />
           <Route path='*' element={<NotFoundPage />} />

@@ -11,6 +11,8 @@ import {
   signUpService,
   recoverPassword,
   changePassword,
+  updateAvatarService,
+  updateUsernameAndEmailService,
 } from '../services/userService';
 
 export const AuthProvider = ({ children }) => {
@@ -121,6 +123,53 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('authToken');
   };
 
+  const authEditUser = async (username, email, password) => {
+    try {
+        setAuthLoading(true);
+
+        const { message, user } = await updateUsernameAndEmailService(
+            username,
+            email,
+            password,
+            authToken
+        );
+
+        setAuthUser({
+            ...authUser,
+            username: user.username ? user.username : authUser.username,
+            email: user.email ? user.email : authUser.email,
+        });
+
+        toast.success(message);
+    } catch (err) {
+        toast.error(err.message);
+    } finally {
+        setAuthLoading(false);
+    }
+};
+
+const authEditUserAvatar = async (photo) => {
+    try {
+        setAuthLoading(true);
+
+        const { message, avatarName } = await updateAvatarService(
+            photo,
+            authToken
+        );
+
+        setAuthUser({
+            ...authUser,
+            photo: avatarName,
+        });
+
+        toast.success(message);
+    } catch (err) {
+        toast.error(err.message);
+    } finally {
+        setAuthLoading(false);
+    }
+};
+
   return (
     <AuthContext.Provider
       value={{
@@ -132,6 +181,8 @@ export const AuthProvider = ({ children }) => {
         authLoading,
         authRecoverPassword,
         authChangePassword,
+        authEditUser,
+        authEditUserAvatar,
       }}
     >
       {children}
