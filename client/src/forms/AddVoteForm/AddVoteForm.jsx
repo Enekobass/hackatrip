@@ -16,7 +16,7 @@ const AddVoteForm = ({
     authToken,
 }) => {
 
-    const [votesAvg, setVotesAvg] = useState(avgValue.media);
+    const [votesAvg, setVotesAvg] = useState(avgValue?.media);
 
     const handleAddVote = async (vote) => {
         try {
