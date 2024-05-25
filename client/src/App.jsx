@@ -7,7 +7,7 @@ import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import TripPage from './pages/TripPage/TripPage';
 //import ComunityPage from './pages/ComunityPage/ComunityPage';
-//import ContactPage from './pages/ContactPage/ContactPage';
+import ContactPage from './pages/ContactPage/ContactPage';
 //import CoordiPage from './pages/CoordiPage/CoordiPage';
 import LoadPostPage from './pages/LoadPostPage/LoadPostPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
@@ -44,8 +44,8 @@ const App = () => {
             }
           />
           {/* <Route path='/comunity' element={<ComunityPage />} />
-        <Route path='/contact' element={<ContactPage />} />
       <Route path='/coordi' element={<CoordiPage />} /> */}
+          <Route path='/contact' element={<ContactPage />} />
           <Route
             path='/viaje/:viajeId/loadpost'
             element={<LoadPostPage />}
