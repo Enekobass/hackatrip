@@ -2,10 +2,12 @@ import './NotFoundPage.css'
 
 import Header from '../../components/Header/Header';
 
+import imgSrc from '/Home.jpg'
+
 const NotFoundPage = () => {
     return (
       <>
-        <Header />
+        <Header imgSrc={imgSrc}/>
         <main>
           <div className="not-found-container">
             <h1 className="notFound">404: Página no encontrada</h1>

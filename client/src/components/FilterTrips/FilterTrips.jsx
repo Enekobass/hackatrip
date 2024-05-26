@@ -15,6 +15,7 @@ const formatDate = (dateString) => {
   };
 
 const FilterVideos = ({trips, loading}) => {
+
     return (
         <Grid container flexDirection="column" marginLeft={40}>
             {(loading ? Array.from(new Array(5)) : trips).map((trip, index) => (
