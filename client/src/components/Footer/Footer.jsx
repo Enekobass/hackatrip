@@ -25,13 +25,13 @@ const Footer = () => {
         </div>
         <div className='footer__social'>
           <a href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
-            <img src='../../public/logos/facebook.png' alt='Facebook' />
+            <img src='/logos/facebook.png' alt='Facebook' />
           </a>
           <a href='https://twitter.com' target='_blank' rel='noopener noreferrer'>
-            <img src='../../public/logos/gorjeo.png' alt='Twitter' />
+            <img src='/logos/gorjeo.png' alt='Twitter' />
           </a>
           <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
-            <img src='../../public/logos/instagram.png' alt='Instagram' />
+            <img src='/logos/instagram.png' alt='Instagram' />
           </a>
         </div>
         <div className='footer__rights'>

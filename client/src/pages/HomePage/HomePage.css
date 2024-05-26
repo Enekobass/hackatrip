@@ -2,6 +2,11 @@
   text-decoration: none;
 }
 
+.trip-list {
+  display: flex;
+  justify-content: center;
+}
+
 .ofertas {
   display: flex;
   justify-content: center;
@@ -17,143 +22,4 @@
 
 .textoIdeas {
   margin: 80px 100px 10px 100px;
-}
-
-.saber-mas {
-  position: relative;
-  margin: 30px;
-  width: 70vw;
-  margin-inline: auto;
-}
-
-.img-grande {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.img-pequeña {
-  position: absolute;
-  border-radius: 15px;
-  width: 240px;
-  height: 70px;
-  margin-top: 200px;
-}
-
-.botonSaberMas {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 15%;
-  background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
-  color: black;
-  box-shadow: none;
-  border: grey;
-  padding: 8px 15px;
-  font-size: 1.4vw;
-}
-
-
-.botonSaberMas:hover {
-  background-image: var(--Red);
-}
-
-.comunity {
-  display: flex;
-  flex-direction: column;
-  background-color: #e7e7e7;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
-.comunity > p {
-  display: flex;
-  justify-content: center;
-  height: 100px;
-  align-items: center
-}
-
-.botones {
-  display: flex;
-  justify-content: center;
-  gap: 5rem;
-  padding: 0 0 40px 0;
-  
-}
-
-.facebook {
-  display: flex;
-  align-items: center;
-}
-
-.instagram {
-  display: flex;
-  align-items: center;
-}
-
-.iconFacebook {
-  width: 19px;
-  height: auto;
-}
-
-.iconInstagram {
-  width: 19px;
-  height: auto;
-}
-
-.frases {
-  display: flex;
-  justify-content: space-around;
-}
-
-.frases img {
-  width: 309px;
-  height: 489px;
-  left: 1041px;
-  top: 0px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-.textoProximos {
-  margin: 30px 100px 10px 100px;
-}
-
-/**** Estilos general para Tablet ****/
-
-@media screen and (min-width: 768px) {
-}
-
-/**** Estilos Orientación Horizontal en Tablet ****/
-
-@media screen and (min-width: 768px) and (orientation: landscape) {
-  h1 {
-    font-size: 56px;
-  }
-
-  p {
-    font-size: 20px;
-  }
-
-  .gif-container p {
-    font-size: 16px;
-  }
-}
-
-/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
-
-@media screen and (min-width: 1000px) {
-  h1 {
-    font-size: 80px;
-  }
-
-  p {
-    font-size: 18px;
-  }
-
-  .gif-container p {
-    font-size: 16px;
-  }
 }
