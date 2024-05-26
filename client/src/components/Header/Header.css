@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  background-image: url('/Fotos/Home.jpg');
   background-size: cover;
   background-position: center;
   height: 600px; /* Ajusta la altura según tu diseño */
