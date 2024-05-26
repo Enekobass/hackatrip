@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 // Importaciones de las páginas
@@ -23,14 +22,9 @@ import ErrorBoundary from './components/ErrorBoundary';
 import UpdateTripPage from './pages/UpdateTripPage/UpdateTripPage';
 import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
 
-// Importaciones de recursos
-import imgHome from '../public/Fotos/home.jpg'
-import imgContact from '../public/Fotos/como.jpg'
-
 const App = () => {
+
   const [tripsFiltrados, setTripsFiltrados] = useState(false);
-
-
 
   return (
     <>
@@ -45,27 +39,17 @@ const App = () => {
         <Routes>
           <Route
             path='/'
-            element={
-              <>
-              <Header setTripsFiltrados={setTripsFiltrados} imageSrc={imgHome}/>
-              <HomePage
+            element={<HomePage
                 setTripsFiltrados={setTripsFiltrados}
                 tripsFiltrados={tripsFiltrados}
-              />
-              </>
-            }
+              />}
             
           />
           {/* <Route path='/comunity' element={<ComunityPage />} />
       <Route path='/coordi' element={<CoordiPage />} /> */}
           
              
-          <Route path='/contact' element={
-          <>
-          <Header setTripsFiltrados={setTripsFiltrados} imageSrc={imgContact}/>   
-          <ContactPage />
-          </>
-        }
+          <Route path='/contact' element={<ContactPage />}
          />
           
           <Route

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='footer__logo'>
           <img
             className='logo2'
-            src='/Logos/Logo Color (sombra interior).png'
+            src='/Logo Color (sombra interior).png'
             alt='Logotipo'
           />
         </div>
@@ -25,13 +25,13 @@ const Footer = () => {
         </div>
         <div className='footer__social'>
           <a href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
-            <img src='/logos/facebook.png' alt='Facebook' />
+            <img src='/Facebook.png' alt='Facebook' />
           </a>
           <a href='https://twitter.com' target='_blank' rel='noopener noreferrer'>
-            <img src='/logos/gorjeo.png' alt='Twitter' />
+            <img src='/gorjeo.png' alt='Twitter' />
           </a>
           <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
-            <img src='/logos/instagram.png' alt='Instagram' />
+            <img src='/Instagram.png' alt='Instagram' />
           </a>
         </div>
         <div className='footer__rights'>
