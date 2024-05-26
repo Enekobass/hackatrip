@@ -1,9 +1,11 @@
+// Importaciones de los componentes
 import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
+// Importaciones de las páginas
 import HomePage from './pages/HomePage/HomePage';
 import TripPage from './pages/TripPage/TripPage';
 //import ComunityPage from './pages/ComunityPage/ComunityPage';
@@ -21,12 +23,19 @@ import ErrorBoundary from './components/ErrorBoundary';
 import UpdateTripPage from './pages/UpdateTripPage/UpdateTripPage';
 import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
 
+// Importaciones de recursos
+import imgHome from '../public/Fotos/home.jpg'
+import imgContact from '../public/Fotos/como.jpg'
+
 const App = () => {
   const [tripsFiltrados, setTripsFiltrados] = useState(false);
+
+
+
   return (
     <>
       <ErrorBoundary>
-        <Header setTripsFiltrados={setTripsFiltrados} />
+        
         <Toaster
           position='top-center'
           toastOptions={{
@@ -37,15 +46,28 @@ const App = () => {
           <Route
             path='/'
             element={
+              <>
+              <Header setTripsFiltrados={setTripsFiltrados} imageSrc={imgHome}/>
               <HomePage
                 setTripsFiltrados={setTripsFiltrados}
                 tripsFiltrados={tripsFiltrados}
               />
+              </>
             }
+            
           />
           {/* <Route path='/comunity' element={<ComunityPage />} />
       <Route path='/coordi' element={<CoordiPage />} /> */}
-          <Route path='/contact' element={<ContactPage />} />
+          
+             
+          <Route path='/contact' element={
+          <>
+          <Header setTripsFiltrados={setTripsFiltrados} imageSrc={imgContact}/>   
+          <ContactPage />
+          </>
+        }
+         />
+          
           <Route
             path='/viaje/:viajeId/loadpost'
             element={<LoadPostPage />}

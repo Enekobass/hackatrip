@@ -1,10 +1,10 @@
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({ setTripsFiltrados }) => {
+const Header = ({ setTripsFiltrados, imageSrc}) => {
   const { authUser, authLogout } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -17,6 +17,7 @@ const Header = ({ setTripsFiltrados }) => {
   return (
     <header className='header'>
       <nav>
+        <img src={imageSrc} alt="Header" />
         <div htmlFor='show-menu'>
           <img
             onClick={goToHome}
@@ -71,7 +72,8 @@ const Header = ({ setTripsFiltrados }) => {
 };
 
 Header.propTypes = {
-  setTripsFiltrados: PropType.func.isRequired,
+  setTripsFiltrados: PropTypes.func.isRequired,
+  imageSrc: PropTypes.string.isRequired,
 };
 
 export default Header;
