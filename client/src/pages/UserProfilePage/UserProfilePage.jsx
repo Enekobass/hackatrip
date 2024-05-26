@@ -6,6 +6,9 @@ import UserProfileForm from '../../forms/UserProfileForm/UserProfileForm';
 
 const { VITE_API_URL } = import.meta.env;
 
+import Header from '../../components/Header/Header';
+
+
 //import './UserProfilePage.css';
 
 const UserProfilePage = () => {
@@ -13,29 +16,32 @@ const UserProfilePage = () => {
         useContext(AuthContext);
 
     return (
-        <main>
-            {authUser && (
-                <>
-                    <h2>Perfil</h2>
+        <>
+            <Header />
+            <main>
+                {authUser && (
+                    <>
+                        <h2>Perfil</h2>
 
-                    <img
-                    src={
-                        authUser.avatar
-                            ? `${VITE_API_URL}/${authUser.avatar}`
-                            : '/default-avatar.jpg'
-                        }
-                    alt={`Avatar de ${authUser.username}`}
-                    />
+                        <img
+                        src={
+                            authUser.avatar
+                                ? `${VITE_API_URL}/${authUser.avatar}`
+                                : '/default-avatar.jpg'
+                            }
+                        alt={`Avatar de ${authUser.username}`}
+                        />
 
-                    <UserProfileForm
-                    authUser={authUser}
-                    authEditUser={authEditUser}
-                    authEditUserAvatar={authEditUserAvatar}
-                    authLoading={authLoading}
-                    />
-                </>
-            )}
-        </main>
+                        <UserProfileForm
+                        authUser={authUser}
+                        authEditUser={authEditUser}
+                        authEditUserAvatar={authEditUserAvatar}
+                        authLoading={authLoading}
+                        />
+                    </>
+                )}
+            </main>
+        </>
     );
 };
 

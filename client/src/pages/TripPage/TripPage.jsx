@@ -12,6 +12,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 import { insertTripVoteService } from '../../services/tripService.js';
 
+import Header from '../../components/Header/Header';
+
 const TripPage = () => {
 
     const { authUser, authToken } = useContext(AuthContext);
@@ -27,56 +29,61 @@ const TripPage = () => {
 
     const today = new Date();
 
+    const imgSrc = '/Home.jpg'
+
     return (
-        <main>
-            {trip && (
-                <>
-                    <h2>{trip.titulo}</h2>
-
-                    <TripInfo
-                        destino={trip.tripData[0].destino}
-                        titulo={trip.tripData[0].titulo}
-                        descripcion={trip.tripData[0].descripcion}
-                        fechaDeInicio={trip.tripData[0].fechaDeInicio}
-                        fechaDeFin={trip.tripData[0].fechaDeFin}
-                        plazasMinimas={trip.tripData[0].plazasMinimas}
-                        plazasMaximas={trip.tripData[0].plazasMaximas}
-                        ruta={trip.tripData[0].ruta}
-                        precio={trip.tripData[0].precio}
-                        photo={trip.tripData[0].imagen}
-                        activo={trip.tripData[0].activo}
-                        confirmado={trip.tripData[0].confirmado}
-                        id={trip.tripData[0].id}
-                        authToken={authToken}
-                    />
-
-                    {authUser?.role === "admin" ? <Link to={`/editar-viaje/${viajeId}`}>Editar viaje</Link> : console.log()}
-
-                    {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
-                    
+        <>
+            <Header imgSrc={imgSrc}/>
+            <main>
+                {trip && (
                     <>
-                        <AddVoteForm
-                            insertTripVoteService={insertTripVoteService}
-                            addTripVote={addTripVote}
-                            tripId={trip.tripData[0].id}
-                            coordinador={trip.coordinador}
-                            avgValue={trip.avgValue}
-                            authUser={authUser}
+                        <h2>{trip.titulo}</h2>
+
+                        <TripInfo
+                            destino={trip.tripData[0].destino}
+                            titulo={trip.tripData[0].titulo}
+                            descripcion={trip.tripData[0].descripcion}
+                            fechaDeInicio={trip.tripData[0].fechaDeInicio}
+                            fechaDeFin={trip.tripData[0].fechaDeFin}
+                            plazasMinimas={trip.tripData[0].plazasMinimas}
+                            plazasMaximas={trip.tripData[0].plazasMaximas}
+                            ruta={trip.tripData[0].ruta}
+                            precio={trip.tripData[0].precio}
+                            photo={trip.tripData[0].imagen}
+                            activo={trip.tripData[0].activo}
+                            confirmado={trip.tripData[0].confirmado}
+                            id={trip.tripData[0].id}
                             authToken={authToken}
                         />
 
-                        <Link to={`/viaje/${viajeId}/loadpost`}>Sube un post</Link>
+                        {authUser?.role === "admin" ? <Link to={`/editar-viaje/${viajeId}`}>Editar viaje</Link> : console.log()}
+
+                        {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
+                        
+                        <>
+                            <AddVoteForm
+                                insertTripVoteService={insertTripVoteService}
+                                addTripVote={addTripVote}
+                                tripId={trip.tripData[0].id}
+                                coordinador={trip.coordinador}
+                                avgValue={trip.avgValue}
+                                authUser={authUser}
+                                authToken={authToken}
+                            />
+
+                            <Link to={`/viaje/${viajeId}/loadpost`}>Sube un post</Link>
+                        </>
+                        : 
+                        <div>
+                            <p>¡Cuando acabe el viaje podrás votar aquí al coordinador del viaje!</p>
+                        </div>
+                        }
+
+
                     </>
-                    : 
-                    <div>
-                        <p>¡Cuando acabe el viaje podrás votar aquí al coordinador del viaje!</p>
-                    </div>
-                    }
-
-
-                </>
-            )}
-        </main>
+                )}
+            </main>
+        </>
     );
 };
 

@@ -6,7 +6,7 @@ const Home = () => {
             <div className='saber-mas'>
                 <img
                 className='img-grande'
-                src='/Logos/Saber mas.png'
+                src='/Saber mas.png'
                 alt='saber mas'
                 />
                 <button className='botonSaberMas'>¡Saber más!</button>
@@ -22,7 +22,7 @@ const Home = () => {
                     Grupo de Facebook
                     <img
                     className='iconFacebook'
-                    src='/Logos/Facebook.png'
+                    src='/Facebook.png'
                     alt='Logo de Facebook'
                     />
                 </button>
@@ -31,7 +31,7 @@ const Home = () => {
                     Síguenos en Instagram
                     <img
                     className='iconInstagram'
-                    src='/Logos/Instagram.png'
+                    src='/Instagram.png'
                     alt='Logo de Instagram'
                     />
                 </button>
@@ -40,16 +40,16 @@ const Home = () => {
         
             <div className='frases'>
                 <div className='como'>
-                <img src='/Fotos/como.jpg' alt='' />
+                <img src='/como.jpg' alt='' />
                 </div>
                 <div className='quien'>
-                <img src='/Fotos/quien.jpg' alt='' />
+                <img src='/quien.jpg' alt='' />
                 </div>
                 <div className='que'>
-                <img src='/Fotos/que.jpeg' alt='' />
+                <img src='/que.jpeg' alt='' />
                 </div>
                 <div className='sostenible'>
-                <img src='/Fotos/sostenible.jpg' alt='' />
+                <img src='/sostenible.jpg' alt='' />
                 </div>
             </div>
         
