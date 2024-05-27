@@ -17,6 +17,7 @@ const userViewTripModel = async (viajeId, userId = '') => {
             v.fechaDeInicio,
             v.fechaDeFin,
             v.precio,
+            v.grupoDeEdad,
             v.activo,
             v.confirmado,
             COUNT(r.viajeId) AS numeroReservas,

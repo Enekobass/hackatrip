@@ -10,6 +10,7 @@ const modifyTripModel = async (
     plazasMaximas,
     itinerario,
     precio,
+    grupoDeEdad,
     activo,
     photoName,
     viajeId,
@@ -77,6 +78,13 @@ const modifyTripModel = async (
     if (precio) {
         await pool.query(`UPDATE viajes SET precio = ? WHERE id = ?`, [
             precio,
+            viajeId,
+        ]);
+    }
+
+    if (grupoDeEdad) {
+        await pool.query(`UPDATE viajes SET grupoDeEdad = ? WHERE id = ?`, [
+            grupoDeEdad,
             viajeId,
         ]);
     }

@@ -18,6 +18,12 @@ const newTripSchema = joi.object({
         .required()
         .messages(joiErrorMessages),
     precio: joi.number().required().messages(joiErrorMessages),
+    grupoDeEdad: joi
+        .string()
+        .min(3)
+        .max(10)
+        .optional()
+        .messages(joiErrorMessages),
     descripcion: joi
         .string()
         .min(10)

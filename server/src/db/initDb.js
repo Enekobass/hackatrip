@@ -59,6 +59,7 @@ const createTables = async () => {
                 plazasMaximas INT UNSIGNED NOT NULL,
                 itinerario TEXT(10000) NOT NULL,
                 precio INT UNSIGNED NOT NULL,
+                grupoDeEdad VARCHAR(10) NOT NULL,
                 activo INT NOT NULL,
                 confirmado INT NOT NULL,
                 imagen VARCHAR(100) NOT NULL,

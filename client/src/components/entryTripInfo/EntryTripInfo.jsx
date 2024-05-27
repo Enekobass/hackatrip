@@ -22,6 +22,7 @@ const TripInfo = ({
   plazasMaximas,
   itinerario,
   precio,
+  grupoDeEdad,
   photo,
   activo,
   confirmado,
@@ -82,6 +83,10 @@ const TripInfo = ({
           <strong>Precio:</strong> {precio} €
         </div>
 
+        <div>
+          <strong>Grupo de edad:</strong> {grupoDeEdad}
+        </div>
+
         <li className='hidden'>
           <strong></strong> {activo}
         </li>
@@ -108,6 +113,7 @@ TripInfo.propTypes = {
   plazasMaximas: PropTypes.number.isRequired,
   itinerario: PropTypes.string.isRequired,
   precio: PropTypes.number.isRequired,
+  grupoDeEdad: PropTypes.string.isRequired,
   photo: PropTypes.string.isRequired,
   activo: PropTypes.number.isRequired,
   confirmado: PropTypes.number.isRequired,

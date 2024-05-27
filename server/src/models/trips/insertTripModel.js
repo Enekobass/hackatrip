@@ -11,13 +11,14 @@ const insertTripModel = async (
     plazasMaximas,
     itinerario,
     precio,
+    grupoDeEdad,
     activo,
     photoId,
 ) => {
     const pool = await getPool();
 
     await pool.query(
-        `INSERT INTO viajes (id, titulo, descripcion, destino, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, itinerario, precio, activo, confirmado, imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO viajes (id, titulo, descripcion, destino, fechaDeInicio, fechaDeFin, plazasMinimas, plazasMaximas, itinerario, precio, grupoDeEdad, activo, confirmado, imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
             id,
             titulo,
@@ -29,6 +30,7 @@ const insertTripModel = async (
             plazasMaximas,
             itinerario,
             precio,
+            grupoDeEdad,
             activo,
             0,
             photoId,
