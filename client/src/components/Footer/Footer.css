@@ -26,24 +26,53 @@
   margin: 0 auto;
 }
 
-.footer__nav ul {
+.footer__nav {
+  text-align: center;
+}
+
+.footer__nav-list {
   list-style: none;
   padding: 0;
   margin: 2% 0;
+  display: flex;
+  justify-content: center;
 }
 
-.footer__nav ul li {
-  display: inline;
+.footer__nav-list > li {
   margin: 0 2%;
+  position: relative;
 }
 
-.footer__nav ul li a {
+.footer__nav-list > li a {
   color: white;
   text-decoration: none;
   font-size: 1em;
 }
 
-.footer__nav ul li a:hover {
+.footer__nav-list > li a:hover {
+  text-decoration: underline;
+}
+
+.footer__destinations {
+  list-style: none;
+  padding: 0;
+  margin-left: 20%; /* Ajusta este margen izquierdo para alinear la sublista */
+  color: white;
+  text-align: left;
+}
+
+.footer__destinations li {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.footer__destinations li a {
+  color: red;
+  text-decoration: none;
+  text-align: right;
+}
+
+.footer__destinations li a:hover {
   text-decoration: underline;
 }
 
