@@ -1,139 +1,174 @@
-  .saber-mas {
-    position: relative;
-    margin: 30px;
-    width: 70vw;
-    margin-inline: auto;
+.saber-mas {
+  position: relative;
+  margin: 30px;
+  width: 70vw;
+  margin-inline: auto;
+}
+
+.img-grande {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.img-pequeña {
+  position: absolute;
+  border-radius: 15px;
+  width: 240px;
+  height: 70px;
+  margin-top: 200px;
+}
+
+.botonSaberMas {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15%;
+  background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
+  color: black;
+  box-shadow: none;
+  border: grey;
+  padding: 8px 15px;
+  font-size: 1.4vw;
+}
+
+.botonSaberMas:hover {
+  background-image: var(--Red);
+}
+
+.comunity {
+  display: flex;
+  flex-direction: column;
+  background-color: #e7e7e7;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.comunity > p {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: 0 0 40px 0;
+}
+
+.facebook, .instagram {
+  display: flex;
+  align-items: center;
+}
+
+.iconFacebook, .iconInstagram {
+  display: inline;
+  margin: 2px;
+  width: 20px;
+  height: auto;
+}
+
+.frases {
+  display: flex;
+  justify-content: space-around;
+}
+
+.frases img {
+  width: 309px;
+  height: 489px;
+  object-fit: cover;
+}
+
+.tituloFrase {
+  font-size: 40px;
+}
+
+.frases {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a varias líneas si es necesario */
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.frase-container {
+  position: relative;
+  width: 100%;
+  max-width: 310px;
+  overflow: hidden;
+}
+
+.frase-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+#como {
+  top: 10px;
+}
+
+.tituloFrase,
+.textoFrase {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 10px; /* Para agregar algo de espacio a los lados */
+}
+
+.tituloFrase {
+  top: 8%;
+  font-size: 3rem;
+}
+
+.textoFrase {
+  top: 25%;
+  font-size: 1.2rem; /* Ajusta según tu diseño */
+}
+
+.textoProximos {
+  margin: 30px 100px 10px 100px;
+}
+
+/**** Estilos general para Tablet ****/
+
+@media screen and (min-width: 768px) {
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  h1 {
+    font-size: 56px;
   }
-  
-  .img-grande {
-    width: 100%;
-    border-radius: 15px;
+
+  p {
+    font-size: 20px;
   }
-  
-  .img-pequeña {
-    position: absolute;
-    border-radius: 15px;
-    width: 240px;
-    height: 70px;
-    margin-top: 200px;
+
+  .gif-container p {
+    font-size: 16px;
   }
-  
-  .botonSaberMas {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 15%;
-    background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
-    color: black;
-    box-shadow: none;
-    border: grey;
-    padding: 8px 15px;
-    font-size: 1.4vw;
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 80px;
   }
-  
-  
-  .botonSaberMas:hover {
-    background-image: var(--Red);
+
+  p {
+    font-size: 18px;
   }
-  
-  .comunity {
-    display: flex;
-    flex-direction: column;
-    background-color: #e7e7e7;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 2rem;
+
+  .gif-container p {
+    font-size: 16px;
   }
-  
-  .comunity > p {
-    display: flex;
-    justify-content: center;
-    height: 100px;
-    align-items: center
-  }
-  
-  .botones {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-    padding: 0 0 40px 0;
-    
-  }
-  
-  .facebook {
-    display: flex;
-    align-items: center;
-  }
-  
-  .instagram {
-    display: flex;
-    align-items: center;
-  }
-  
-  .iconFacebook {
-    width: 19px;
-    height: auto;
-  }
-  
-  .iconInstagram {
-    width: 19px;
-    height: auto;
-  }
-  
-  .frases {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .frases img {
-    width: 309px;
-    height: 489px;
-    left: 1041px;
-    top: 0px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 15px;
-    object-fit: cover;
-  }
-  
-  .textoProximos {
-    margin: 30px 100px 10px 100px;
-  }
-  
-  /**** Estilos general para Tablet ****/
-  
-  @media screen and (min-width: 768px) {
-  }
-  
-  /**** Estilos Orientación Horizontal en Tablet ****/
-  
-  @media screen and (min-width: 768px) and (orientation: landscape) {
-    h1 {
-      font-size: 56px;
-    }
-  
-    p {
-      font-size: 20px;
-    }
-  
-    .gif-container p {
-      font-size: 16px;
-    }
-  }
-  
-  /**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
-  
-  @media screen and (min-width: 1000px) {
-    h1 {
-      font-size: 80px;
-    }
-  
-    p {
-      font-size: 18px;
-    }
-  
-    .gif-container p {
-      font-size: 16px;
-    }
-  }
-  
+}
