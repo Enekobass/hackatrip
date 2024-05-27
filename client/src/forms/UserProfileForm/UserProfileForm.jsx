@@ -1,6 +1,6 @@
 import PropType from 'prop-types';
-
 import { useState } from 'react';
+import './UserProfileForm.css';
 
 const UserProfileForm = ({
     authUser,
@@ -11,32 +11,41 @@ const UserProfileForm = ({
     const [username, setUsername] = useState(authUser.username);
     const [email, setEmail] = useState(authUser.email);
     const [avatar, setAvatar] = useState(null);
+    const [avatarPreview, setAvatarPreview] = useState(null);
     const [password, setPassword] = useState('');
+
+    const handleAvatarChange = (e) => {
+        const file = e.target.files[0];
+        setAvatar(file);
+        setAvatarPreview(URL.createObjectURL(file));
+    };
 
     const handleAvatarSubmit = (e) => {
         e.preventDefault();
-
         authEditUserAvatar(avatar);
     };
 
     const handleUsernameEmailSubmit = (e) => {
         e.preventDefault();
-
         authEditUser(username, email, password);
     };
 
     return (
         <>
-            <form onSubmit={handleAvatarSubmit}>
+            <h2>Cambia tu avatar</h2>
+            <form className="avatar-form" onSubmit={handleAvatarSubmit}>
                 <input
                     type='file'
-                    onChange={(e) => setAvatar(e.target.files[0])}
+                    className='file-input'
+                    onChange={handleAvatarChange}
                     accept='image/png, image/jpeg'
                     required
                 />
+                {avatarPreview && <img src={avatarPreview} alt="Avatar Preview" className="avatar-preview" />}
                 <button>Editar</button>
             </form>
 
+            <h2>Modifica tus datos</h2>
             <form onSubmit={handleUsernameEmailSubmit}>
                 <label htmlFor='username'>Usuario:</label>
                 <input
@@ -57,13 +66,13 @@ const UserProfileForm = ({
                 />
 
                 <label htmlFor='pass'>Contraseña:</label>
-                    <input
-                        type='password'
-                        id='pass'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        autoComplete='password'
-                        required
+                <input
+                    type='password'
+                    id='pass'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoComplete='password'
+                    required
                 />
 
                 <button disabled={authLoading}>Editar</button>
