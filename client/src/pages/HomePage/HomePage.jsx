@@ -14,7 +14,7 @@ import Header from '../../components/Header/Header';
 
 import './HomePage.css';
 
-import imgSrc from '/Home.jpg'
+import imgSrc from '/Home.jpg';
 
 const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
   const { trips, setSearchParams, loading } = useTrips(setTripsFiltrados);
@@ -27,7 +27,7 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
 
   return (
     <>
-      <Header setTripsFiltrados={setTripsFiltrados} imgSrc={imgSrc}/>
+      <Header setTripsFiltrados={setTripsFiltrados} imgSrc={imgSrc} />
       <main>
         <SearchForm
           setSearchParams={setSearchParams}
