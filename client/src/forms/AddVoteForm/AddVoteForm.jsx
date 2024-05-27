@@ -4,6 +4,8 @@ import toast from 'react-hot-toast';
 
 import Stars from '../../components/Stars/Stars';
 
+import './AddVoteForm.css';
+
 const AddVoteForm = ({
     insertTripVoteService,
     addTripVote,
@@ -33,17 +35,17 @@ const AddVoteForm = ({
     };
 
     return (
-        <div>
+        <div className='container-coordinador'>
             {coordinador && (
                 <>
-                    <div>¡Vota al coordinador de este viaje si has participado en él!</div>
-                    <div>
-                        <img src={coordinador?.avatar ? coordinador.avatar : '/default-avatar.jpg'} alt={coordinador?.username} />
-                        <p>{coordinador?.username}</p>
+                    <p className='p-coordinador'>¡Vota al coordinador de este viaje si has participado en él!</p>
+                    <div className='imagen-coordinador'>
+                        <img className='imagen' src={coordinador?.avatar ? coordinador.avatar : '/default-avatar.jpg'} alt={coordinador?.username} />
+                        <p className='name-coordinador'>{coordinador?.username}</p>
                     </div>
                     <div className='stars-vote'>
                         <Stars votesAvg={avgValue?.media} votedByMe={avgValue?.votedByMe} handleAddVote={handleAddVote} />
-                        <span>{avgValue?.media} estrellas</span>
+                        <span className='star-span'>{avgValue?.media} </span>
                     </div>
                 </>
             )}
@@ -63,3 +65,4 @@ AddVoteForm.propTypes = {
 };
 
 export default AddVoteForm;
+
