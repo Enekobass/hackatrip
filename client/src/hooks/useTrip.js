@@ -1,16 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import toast from 'react-hot-toast';
 
 import { selectTripByIdService } from '../services/tripService';
 
+import { AuthContext } from '../contexts/AuthContext';
+
 const useTrip = (viajeId) => {
   const [trip, setTrip] = useState(null);
+
+  const { authToken } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchTrip = async () => {
       try {
-        const trip = await selectTripByIdService(viajeId);
+        const trip = await selectTripByIdService(viajeId, authToken);
 
         setTrip(trip);
       } catch (err) {
@@ -19,12 +23,15 @@ const useTrip = (viajeId) => {
     };
 
     fetchTrip();
-  }, [viajeId]);
+  }, [viajeId, authToken]);
 
   const addTripVote = (votesAvg) => {
     setTrip({
       ...trip,
-      votes: votesAvg,
+      avgValue: {
+        media: votesAvg,
+        votedByMe: 1,
+      },
     });
   };
 

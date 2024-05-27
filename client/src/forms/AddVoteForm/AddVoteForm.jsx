@@ -1,7 +1,5 @@
 import PropType from 'prop-types';
 
-import { useState } from 'react';
-
 import toast from 'react-hot-toast';
 
 import Stars from '../../components/Stars/Stars';
@@ -16,8 +14,6 @@ const AddVoteForm = ({
     authToken,
 }) => {
 
-    const [votesAvg, setVotesAvg] = useState(avgValue?.media);
-
     const handleAddVote = async (vote) => {
         try {
             if (authUser) {
@@ -28,8 +24,6 @@ const AddVoteForm = ({
                 );
                 
                 addTripVote(newVotesAvg.votes);
-
-                setVotesAvg(avgValue.media);
 
                 toast.success(newVotesAvg.message);
             }
@@ -48,8 +42,8 @@ const AddVoteForm = ({
                         <p>{coordinador?.username}</p>
                     </div>
                     <div className='stars-vote'>
-                        <Stars votesAvg={votesAvg} handleAddVote={handleAddVote} />
-                        <span>{votesAvg} estrellas</span>
+                        <Stars votesAvg={avgValue?.media} votedByMe={avgValue?.votedByMe} handleAddVote={handleAddVote} />
+                        <span>{avgValue?.media} estrellas</span>
                     </div>
                 </>
             )}

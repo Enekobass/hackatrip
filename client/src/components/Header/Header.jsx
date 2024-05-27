@@ -1,13 +1,17 @@
 import PropType from 'prop-types';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ setTripsFiltrados, imgSrc }) => {
   const { authUser, authLogout } = useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  console.log(searchParams.get("destino"));
 
   const goToHome = () => {
     if(setTripsFiltrados) {
@@ -38,9 +42,14 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             </ul>
 
         <div className='contenedorFrasePortada'>
+          {searchParams.get("destino") ?
+          <p className='frasePortada'>
+            {searchParams.get("destino")}
+          </p>
+          :
           <p className='frasePortada'>
             Viajar es la única cosa que compras y te hace más rico
-          </p>
+          </p>}
         </div>
 
         <ul className='nav-links'>
