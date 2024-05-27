@@ -11,8 +11,13 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
+<<<<<<< Eneko
+  console.log(searchParams.get('destino'));
+
+=======
+>>>>>>> main
   const goToHome = () => {
-    if(setTripsFiltrados) {
+    if (setTripsFiltrados) {
       setTripsFiltrados(false);
     }
     navigate('/');
@@ -20,8 +25,8 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
 
   return (
     <header className='header'>
-      <img className='imgheader' src={imgSrc} alt="Home" />
-      <nav>
+      <img className='imgheader' src={imgSrc} alt='Home' />
+      <nav className='nav-container'>
         <div htmlFor='show-menu'>
           <img
             onClick={goToHome}
@@ -31,6 +36,25 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
           />
         </div>
 
+<<<<<<< Eneko
+        <ul className='nav-menu'>
+          <li>
+            <a href='#fechas'>Fechas</a>
+          </li>
+          <li>
+            <a href='#destinos'>Destinos</a>
+          </li>
+          <li>
+            <a href='#comunidad'>Comunidad</a>
+          </li>
+          <li>
+            <a href='#grupos-de-edad'>Grupos de Edad</a>
+          </li>
+          <li>
+            <a href='#contacto'>Contacto</a>
+          </li>
+        </ul>
+=======
         <ul className="nav-menu">
                 <li><a href="#fechas">Fechas</a></li>
                 <li><a href="#destinos">Destinos</a></li>
@@ -52,11 +76,11 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             Viajar es la única cosa que compras y te hace más rico
           </p>
         </div>
+>>>>>>> main
 
         <ul className='nav-links'>
           {!authUser ? (
             <>
-              {/* Si no estamos logueados (si existe usuario) mostramos el registro y el login. */}
               <li>
                 <NavLink to='/register'>Registro</NavLink>
               </li>
@@ -66,12 +90,9 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             </>
           ) : (
             <>
-              {/* Si estamos logueados (si existe usuario) mostramos el botón de cerrar sesión. */}
-
               <li>
                 <button>{authUser.username}</button>
               </li>
-
               <li>
                 <button onClick={authLogout}>Cerrar sesión</button>
               </li>
@@ -79,6 +100,16 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
           )}
         </ul>
       </nav>
+
+      <div className='contenedorFrasePortada'>
+        {searchParams.get('destino') ? (
+          <p className='frasePortada'>{searchParams.get('destino')}</p>
+        ) : (
+          <p className='frasePortada'>
+            Viajar es la única cosa que compras y te hace más rico
+          </p>
+        )}
+      </div>
     </header>
   );
 };
