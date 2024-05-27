@@ -65,3 +65,4 @@ AddVoteForm.propTypes = {
 };
 
 export default AddVoteForm;
+

@@ -94,3 +94,4 @@ const TripPage = () => {
 };
 
 export default TripPage;
+
