@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LoadPostService } from '../../services/tripService.js';
 import { AuthContext } from '../../contexts/AuthContext';
+import './LoadPostForm.css'
 
 const LoadPostForm = () => {
 
@@ -17,6 +18,8 @@ const LoadPostForm = () => {
   const [photo, setPhoto] = useState('');
 
   const [value, setValue] = useState('');
+
+  const [imagePreview, setImagePreview] = useState(null);
 
   const params = useParams();
 
@@ -43,11 +46,37 @@ const LoadPostForm = () => {
   }
 };
 
+const handlePhotoChange = (e) => {
+  const file = e.target.files[0];
+  setPhoto(file); // Actualiza el estado de la foto
+  // Lee la imagen y muestra la vista previa
+  const reader = new FileReader();
+  reader.onload = () => {
+    setImagePreview(reader.result);
+  };
+  reader.readAsDataURL(file);
+};
+
 
   return (
-    <div className='create-update-trip-form-container'>
+    <div className='load-post-form-container'>
+    <h2 className="load-post-form-title">Sabemos que te encanta viajar, comparte con nosotros tu experiencia</h2>
+          <p className="load-post-form-description">Aquí puedes contar tus aventuras, experiencias, y detalles de los viajes que hayas hecho con nosotros, y compartirlas con toda la comunidad, siéntete libre de contar todo lo que quieras y acompáñalo de las mejores fotos y momentos del viaje.</p>
     <form onSubmit={handleSubmit}>
     <div className='create-update-trip-form'>
+  <input
+    type='file'
+    id="photo-upload-button"
+    onChange={handlePhotoChange}
+    accept='image/png, image/jpeg'
+    required
+  />
+  {/* Muestra la vista previa de la imagen dentro del contenedor si existe */}
+  {imagePreview && (
+    <div className='imagen-container'>
+      <img src={imagePreview} alt="Vista previa de la imagen" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+    </div>
+  )}
       <label htmlFor="tittle">Título:</label>
       <input type="text" id="title" value={title} onChange={(e) => setTitulo(e.target.value)} required />
 
@@ -57,13 +86,7 @@ const LoadPostForm = () => {
       <label htmlFor="descripcion">Nota del viaje (1-5):</label>
       <textarea id="descripcion" value={value} onChange={(e) => setValue(e.target.value)} required />
 
-      <label htmlFor="Imagen">Portada del viaje:</label>
-      <input
-      type='file'
-      onChange={(e) => setPhoto(e.target.files)}
-      accept='image/png, image/jpeg'
-      required
-  />
+      
   </div>
       <button className='boton-admin' type="submit">Enviar</button>
     </form>
