@@ -46,7 +46,7 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
               {trips.length === 0 ? (
                 <p>Ningún viaje a la vista</p>
               ) : (
-                <TripListItem sixTrips={sixTrips} />
+                <TripListItem sixTrips={sixTrips} loading={loading} />
               )}
             </ul>
             <Home />
