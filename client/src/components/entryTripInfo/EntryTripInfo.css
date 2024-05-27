@@ -1,190 +1,150 @@
-/* EntryTripInfo.css */
-
 /* Estilos para el contenedor principal de la entrada */
 .entry-header {
-    position: relative;
-    width: 80%;
-    margin-left: 10%;
-    display: grid;
-    grid-template-areas: 
-        "place"
-        "title"
-        "price"
-        "dates"
-        "photo";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto; /* Añade un nuevo auto para el precio */
-    gap: 10px; /* Espacio entre las áreas */
-    justify-items: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  display: grid;
+  grid-template-areas:
+    'place'
+    'title'
+    'price'
+    'dates'
+    'photo';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto; /* Añade un nuevo auto para el precio */
+  gap: 10px; /* Espacio entre las áreas */
+  justify-items: start; /* Centra horizontalmente */
+}
+
+.extra-content {
+  grid-area: extra;
+  padding: 15px;
+  background-image: linear-gradient(var(--Blue), var(--Turqoise));
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Estilos para el overlay del destino */
 .place-overlay {
-    grid-area: place;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: black; /* Color azul para el texto */
-    text-align: center; /* Centra el texto */
-    font-size: 60px; /* Tamaño de fuente más grande */
-    font-weight: bold; /* Texto en negrita */
+  grid-area: place;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Jomhuria', serif;
 }
 
-/* Estilos para el contenedor del título */
 .title-container {
-    grid-area: title;
-    text-align: center;
+  grid-area: title;
+  text-align: center;
 }
 
 .title {
-    color: black;
-    font-size: 60px;
-    font-weight: bold;
+  font-size: 40px;
+  font-family: 'Martel Sans', sans-serif;
 }
 
 /* Estilos para la imagen */
 .entry-image {
-    grid-area: photo;
-    justify-self: center;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
+  grid-area: photo;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px;
 }
 
 /* Estilos para el overlay de las fechas */
 .dates-overlay {
-    grid-area: dates;
-    background-color: var(--Turqoise);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    display: inline;
+  grid-area: dates;
+  background-color: var(--Turqoise);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline;
 }
 
-/* EntryTripInfo.css */
+.edad {
+  margin: 10px;
+  margin-left: 10%;
+  background-color: var(--Turqoise);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline;
+}
 
 /* Estilos para centrar el iframe del mapa */
 .mapa-container {
-    display: flex;
-    justify-content: center;
-    margin: 2% 10%; /* Ajusta el margen según sea necesario */
+  display: flex;
+  justify-content: center;
+  margin: 2% 10%; /* Ajusta el margen según sea necesario */
 }
 
 .mapa {
-    border: 0;
-    width: 100%;
-    max-width: 600px; /* Ajusta el tamaño máximo del mapa */
-    height: 400px; /* Ajusta la altura del mapa */
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  width: 100%;
+  max-width: 600px; /* Ajusta el tamaño máximo del mapa */
+  height: 400px; /* Ajusta la altura del mapa */
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
-
 
 /* Estilos para el overlay del precio */
 .price-overlay {
-    grid-area: price;
-    width: max-content;
-    margin-inline: auto;
-    background-color: var(--Turqoise);
-    padding: 5px 10px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 5px;
-    
-}
-
-
-/* Estilos para la lista de detalles */
-.entry-details {
-    list-style-type: none;
-    padding: 0;
-    position: relative;
-}
-
-/* Estilos para cada ítem de la lista de detalles */
-.entry-details li {
-    margin-bottom: 10px;
-}
-
-/* Estilos para los textos en negrita dentro de la lista de detalles */
-.entry-details strong {
-    font-weight: bold;
+  grid-area: price;
+  width: max-content;
+  margin-inline: auto;
+  background-color: var(--Turqoise);
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px;
+  margin-left: 10%;
 }
 
 /* Estilos para las descripciones */
 .description {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: block;
-    margin-top: 20px; /* Ajusta el margen según sea necesario */
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 50%;
+  display: block;
+  margin-top: 20px; /* Ajusta el margen según sea necesario */
 }
 
 /* Estilos para la ruta */
 .route {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: block;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
-    margin-top: 20px;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 50%;
+  display: block;
 }
 
 /* Estilos para los títulos de itinerario */
 .itinerary h2 {
-    margin-left: 10%;
-    margin-right: 10%;
-    font-weight: bold;
-    text-align: center;
+  margin-left: 10%;
 }
 
 /* Estilos para ocultar la imagen */
 .entry-header img.hidden {
-    display: none;
+  display: none;
 }
 
 /* Estilos para ocultar elementos */
 .hidden {
-    display: none;
-}
-
-/* Estilos para el botón de apuntarse */
-/* Estilos para el contenedor del botón */
-.button-container {
-    text-align: center; /* Centra los elementos hijos horizontalmente */
+  display: none;
 }
 
 /* Estilos para el botón de apuntarse */
 .signup-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  background-color: var(--Red);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  margin-left: 10%;
 }
 
 .signup-button:hover {
-    background-color: darkred;
+  background-color: rgb(255, 0, 0);
 }
-
-/* .box-blue {
-    background-color: blue;
-    border: 2px solid black;
-    border-radius: 5px;
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
