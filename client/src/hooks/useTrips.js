@@ -21,7 +21,7 @@ const useTrips = (setTripsFiltrados) => {
       try {
         setLoading(true);
 
-        const trips = await selectAllTripsService(searchParams, authToken);
+        const trips = await selectAllTripsService(searchParams);
 
         if (searchParams.get('keyword')) {
           setTripsFiltrados(true);
