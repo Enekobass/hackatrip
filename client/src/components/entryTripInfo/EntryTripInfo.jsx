@@ -20,7 +20,7 @@ const TripInfo = ({
   fechaDeFin,
   plazasMinimas,
   plazasMaximas,
-  ruta,
+  itinerario,
   precio,
   photo,
   activo,
@@ -68,7 +68,7 @@ const TripInfo = ({
         <li className='itinerary'>
           <h2>Itinerario</h2>
           <div className='route'>
-            <strong></strong> {ruta}
+            <strong></strong> {itinerario}
           </div>
         </li>
         <li className='hidden'>
@@ -106,7 +106,7 @@ TripInfo.propTypes = {
   fechaDeFin: PropTypes.string.isRequired,
   plazasMinimas: PropTypes.number.isRequired,
   plazasMaximas: PropTypes.number.isRequired,
-  ruta: PropTypes.string.isRequired,
+  itinerario: PropTypes.string.isRequired,
   precio: PropTypes.number.isRequired,
   photo: PropTypes.string.isRequired,
   activo: PropTypes.number.isRequired,
