@@ -20,8 +20,9 @@ const TripInfo = ({
   fechaDeFin,
   plazasMinimas,
   plazasMaximas,
-  ruta,
+  itinerario,
   precio,
+  grupoDeEdad,
   photo,
   activo,
   confirmado,
@@ -68,7 +69,7 @@ const TripInfo = ({
         <li className='itinerary'>
           <h2>Itinerario</h2>
           <div className='route'>
-            <strong></strong> {ruta}
+            <strong></strong> {itinerario}
           </div>
         </li>
         <li className='hidden'>
@@ -80,6 +81,10 @@ const TripInfo = ({
 
         <div className='price-overlay'>
           <strong>Precio:</strong> {precio} €
+        </div>
+
+        <div>
+          <strong>Grupo de edad:</strong> {grupoDeEdad}
         </div>
 
         <li className='hidden'>
@@ -106,8 +111,9 @@ TripInfo.propTypes = {
   fechaDeFin: PropTypes.string.isRequired,
   plazasMinimas: PropTypes.number.isRequired,
   plazasMaximas: PropTypes.number.isRequired,
-  ruta: PropTypes.string.isRequired,
+  itinerario: PropTypes.string.isRequired,
   precio: PropTypes.number.isRequired,
+  grupoDeEdad: PropTypes.string.isRequired,
   photo: PropTypes.string.isRequired,
   activo: PropTypes.number.isRequired,
   confirmado: PropTypes.number.isRequired,

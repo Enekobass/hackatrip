@@ -339,12 +339,17 @@
 									"type": "text"
 								},
 								{
-									"key": "ruta",
+									"key": "itinerario",
 									"value": "",
 									"type": "text"
 								},
 								{
 									"key": "precio",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "grupoDeEdad",
 									"value": "",
 									"type": "text"
 								},

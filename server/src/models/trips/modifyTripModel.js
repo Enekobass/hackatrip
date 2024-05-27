@@ -8,8 +8,9 @@ const modifyTripModel = async (
     fechaDeFin,
     plazasMinimas,
     plazasMaximas,
-    ruta,
+    itinerario,
     precio,
+    grupoDeEdad,
     activo,
     photoName,
     viajeId,
@@ -67,9 +68,9 @@ const modifyTripModel = async (
         ]);
     }
 
-    if (ruta) {
-        await pool.query(`UPDATE viajes SET ruta = ? WHERE id = ?`, [
-            ruta,
+    if (itinerario) {
+        await pool.query(`UPDATE viajes SET itinerario = ? WHERE id = ?`, [
+            itinerario,
             viajeId,
         ]);
     }
@@ -77,6 +78,13 @@ const modifyTripModel = async (
     if (precio) {
         await pool.query(`UPDATE viajes SET precio = ? WHERE id = ?`, [
             precio,
+            viajeId,
+        ]);
+    }
+
+    if (grupoDeEdad) {
+        await pool.query(`UPDATE viajes SET grupoDeEdad = ? WHERE id = ?`, [
+            grupoDeEdad,
             viajeId,
         ]);
     }
