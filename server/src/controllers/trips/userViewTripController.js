@@ -16,7 +16,7 @@ const userViewTripController = async (req, res, next) => {
 
         const coordinador = await selectCoordinadorModel(viajeId);
 
-        const avgValue = await selectAvgValueCoordinadorModel();
+        const avgValue = await selectAvgValueCoordinadorModel(viajeId, req.user?.id);
 
         res.send({
             status: 'ok',
