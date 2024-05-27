@@ -11,11 +11,7 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-<<<<<<< Eneko
-  console.log(searchParams.get('destino'));
 
-=======
->>>>>>> main
   const goToHome = () => {
     if (setTripsFiltrados) {
       setTripsFiltrados(false);
@@ -36,7 +32,7 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
           />
         </div>
 
-<<<<<<< Eneko
+
         <ul className='nav-menu'>
           <li>
             <a href='#fechas'>Fechas</a>
@@ -54,29 +50,8 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             <a href='#contacto'>Contacto</a>
           </li>
         </ul>
-=======
-        <ul className="nav-menu">
-                <li><a href="#fechas">Fechas</a></li>
-                <li><a href="#destinos">Destinos</a></li>
-                <li><a href="#comunidad">Comunidad</a></li>
-                <li><a href="#grupos-de-edad">Grupos de Edad</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
 
-        <div className='contenedorFrasePortada'>
-          {/* {searchParams.get("destino") ?
-          <p className='frasePortada'>
-            {searchParams.get("destino")}
-          </p>
-          :
-          <p className='frasePortada'>
-            Viajar es la única cosa que compras y te hace más rico
-          </p>} */}
-          <p className='frasePortada'>
-            Viajar es la única cosa que compras y te hace más rico
-          </p>
-        </div>
->>>>>>> main
+
 
         <ul className='nav-links'>
           {!authUser ? (
@@ -102,13 +77,16 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
       </nav>
 
       <div className='contenedorFrasePortada'>
-        {searchParams.get('destino') ? (
+        {/* {searchParams.get('destino') ? (
           <p className='frasePortada'>{searchParams.get('destino')}</p>
         ) : (
           <p className='frasePortada'>
             Viajar es la única cosa que compras y te hace más rico
           </p>
-        )}
+        )} */}
+        <p className='frasePortada'>
+            Viajar es la única cosa que compras y te hace más rico
+          </p>
       </div>
     </header>
   );
