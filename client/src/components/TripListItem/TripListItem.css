@@ -12,3 +12,7 @@
     margin: 20px;
   }
   
+  .trip-item img {
+
+    object-fit: cover;
+  }

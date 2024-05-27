@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
 import { Link } from 'react-router-dom';
+import "./TripListItem.css"
 
 import useTrips from "../../hooks/useTrips.js"
 
