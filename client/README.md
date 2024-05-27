@@ -45,7 +45,7 @@ http://localhost:8000/
 
 Dentro de nuestra página tenemos las siguientes rutas:
 
-'/trippage/:viajeId/loadpost': ruta para publicar un post de un viaje ya disfrutado.
+'/viaje/:viajeId/loadpost': ruta para publicar un post de un viaje ya disfrutado.
 
 '/changepassword': página para cambiar la contraseña.
 
@@ -59,7 +59,11 @@ Dentro de nuestra página tenemos las siguientes rutas:
 
 '/admin': página de el administrador de la web.
 
-'/trippage/:viajeId': ruta para consultar todos los viajes.
+'/editar-viaje/:viajeId': ruta para editar la información de un viaje.
+
+'/profile': página del perfil del usuario.
+
+'/viaje/:viajeId': ruta para consultar todos los viajes.
 
 '*': página de errores.
 
