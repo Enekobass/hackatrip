@@ -58,9 +58,9 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             <>
               {/* Si estamos logueados (si existe usuario) mostramos el botón de cerrar sesión. */}
 
-              <div className='user-data'>
-                <span>@{authUser.username}</span>
-              </div>
+              <li>
+                <button>{authUser.username}</button>
+              </li>
 
               <li>
                 <button onClick={authLogout}>Cerrar sesión</button>
