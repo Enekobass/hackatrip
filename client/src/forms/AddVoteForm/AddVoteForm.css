@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ .container-coordinador {
+    margin-left:10%;
+    margin-right:10%;
+ }
+
+ .p-coordinador{
+    font-weight: bold;
+    font-size: 25px;
+ }
+
+ .imagen-coordinador{
+    display:flex;
+    align-items: center;
+    color: black ;
+    font-weight: bold ;
+    text-transform: uppercase ;    
+}
+ .imagen{
+    width: 10% ;
+    height: 10% ;
+    border-radius: 50% ;
+ }
+
+ .name-coordinador{
+    margin: 5% ;
+ }
+
+
+  /**** Estilos general para Tablet ****/
+
+@media screen and (min-width: 768px) {
+
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+
+@media screen and (min-width: 1000px) {
+
+}

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import useTrip from '../../hooks/useTrip.js';
 
@@ -13,6 +13,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { insertTripVoteService } from '../../services/tripService.js';
 
 import Header from '../../components/Header/Header';
+
+import './TripPage.css';
 
 const TripPage = () => {
 
@@ -57,7 +59,9 @@ const TripPage = () => {
                             authToken={authToken}
                         />
 
-                        {authUser?.role === "admin" ? <Link to={`/editar-viaje/${viajeId}`}>Editar viaje</Link> : console.log()}
+
+                        {authUser?.role === "admin" ? 
+                            <button className='btn-editar' onClick={() => window.location.href = `/editar-viaje/${viajeId}`}> Editar viaje </button> : console.log()}
 
                         {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
                         
@@ -72,7 +76,8 @@ const TripPage = () => {
                                 authToken={authToken}
                             />
 
-                            <Link to={`/viaje/${viajeId}/loadpost`}>Sube un post</Link>
+                            <button className='btn-sube-post'onClick={() => window.location.href = `/viaje/${viajeId}/loadpost`}> Sube un post </button>
+
                         </>
                         : 
                         <div>
