@@ -11,8 +11,6 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  console.log(searchParams.get("destino"));
-
   const goToHome = () => {
     if(setTripsFiltrados) {
       setTripsFiltrados(false);

@@ -23,6 +23,7 @@ const modifyTripController = async (req, res, next) => {
             plazasMaximas,
             itinerario,
             precio,
+            grupoDeEdad,
             activo,
         } = req.body;
 
@@ -40,6 +41,7 @@ const modifyTripController = async (req, res, next) => {
             plazasMaximas,
             itinerario,
             precio,
+            grupoDeEdad,
             activo,
             photoName,
             viajeId,
@@ -59,6 +61,7 @@ const modifyTripController = async (req, res, next) => {
                     plazasMaximas,
                     itinerario,
                     precio,
+                    grupoDeEdad,
                     viajeId,
                     modifiedAt: new Date(),
                 },

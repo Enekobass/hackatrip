@@ -49,6 +49,7 @@ const TripPage = () => {
                             plazasMaximas={trip.tripData[0].plazasMaximas}
                             itinerario={trip.tripData[0].itinerario}
                             precio={trip.tripData[0].precio}
+                            grupoDeEdad={trip.tripData[0].grupoDeEdad}
                             photo={trip.tripData[0].imagen}
                             activo={trip.tripData[0].activo}
                             confirmado={trip.tripData[0].confirmado}

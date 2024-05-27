@@ -13,6 +13,7 @@ const filterTripModel = async (fecha = '', destino = '', userId = '') => {
             v.fechaDeInicio,
             v.fechaDeFin,
             v.precio,
+            v.grupoDeEdad,
             v.activo,
             v.confirmado,
             v.createdAt,
