@@ -14,7 +14,10 @@ const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('es-ES', options);
   };
 
-const FilterVideos = ({trips, loading}) => {
+  const dateDifferenceInDays = (dateInitial, dateFinal) =>
+    (dateFinal - dateInitial) / 86_400_000;
+
+const FilterTrips = ({trips, loading}) => {
 
     return (
         <Grid container flexDirection="column" marginLeft={40}>
@@ -23,8 +26,21 @@ const FilterVideos = ({trips, loading}) => {
                 {trip ? (
                     <>
                         <p>{formatDate(trip.fechaDeInicio)}</p>
-                        <p>{trip.destino}</p>
-                        <p>Desde {formatDate(trip.fechaDeInicio)} a {formatDate(trip.fechaDeFin)}</p>
+                        <img
+                            style={{ width: 100, height: 100, border: '2px solid white', borderRadius: '20px' }}
+                            alt={trip.destino}
+                            src={`${VITE_API_URL}/${trip.imagen}`}
+                        />
+                        <p>{trip.titulo}</p>
+                        <p>{formatDate(trip.fechaDeInicio)} - {formatDate(trip.fechaDeFin)}</p>
+                        <p>{Math.floor(dateDifferenceInDays(new Date(trip.fechaDeInicio), new Date(trip.fechaDeFin)))} días</p>
+                        {console.log(trip)}
+                        {trip.numeroReservas === trip.plazasMaximas ? <p>Agotado</p> : trip.numeroReservas > 10 ? <p>Ultimas plazas</p> : <p>Plazas disponibles</p> }
+                        <p>{trip.grupoDeEdad}</p>
+                        <p>{trip.precio}€</p>
+                        <Link to={`/viaje/${trip.id}`} >
+                            <button>Ver Viaje</button>
+                        </Link>
                     </>
                 ) : (
                     <Skeleton variant="rectangular" width={210} height={118} />
@@ -35,10 +51,10 @@ const FilterVideos = ({trips, loading}) => {
     );
 };
 
-FilterVideos.propTypes = {
+FilterTrips.propTypes = {
     trips: PropType.array.isRequired,
     loading: PropType.bool.isRequired,
 };
 
 
-export default FilterVideos;
+export default FilterTrips;

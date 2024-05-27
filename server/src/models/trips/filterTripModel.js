@@ -10,6 +10,7 @@ const filterTripModel = async (fecha = '', destino = '', userId = '') => {
             v.titulo,
             v.destino,
             v.imagen,
+            v.plazasMaximas,
             v.fechaDeInicio,
             v.fechaDeFin,
             v.precio,
