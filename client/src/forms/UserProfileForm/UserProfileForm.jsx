@@ -32,8 +32,8 @@ const UserProfileForm = ({
 
     return (
         <>
-            <h2>Cambia tu avatar</h2>
-            <form className="avatar-form" onSubmit={handleAvatarSubmit}>
+            <h2 className='h2'>Cambia tu avatar</h2>
+            <form className="form" onSubmit={handleAvatarSubmit}>
                 <input
                     type='file'
                     className='file-input'
@@ -45,8 +45,8 @@ const UserProfileForm = ({
                 <button>Editar</button>
             </form>
 
-            <h2>Modifica tus datos</h2>
-            <form onSubmit={handleUsernameEmailSubmit}>
+            <h2 className='h2'>Modifica tus datos</h2>
+            <form className='form' onSubmit={handleUsernameEmailSubmit}>
                 <label htmlFor='username'>Usuario:</label>
                 <input
                     type='text'
