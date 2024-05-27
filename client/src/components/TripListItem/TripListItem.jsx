@@ -5,13 +5,9 @@ import Skeleton from '@mui/material/Skeleton';
 import { Link } from 'react-router-dom';
 import "./TripListItem.css"
 
-import useTrips from "../../hooks/useTrips.js"
-
 const { VITE_API_URL } = import.meta.env;
 
-function TripListItem(sixTrips) {
-
-  const { loading } = useTrips();
+function TripListItem(sixTrips, {loading}) {
 
   return (
     <Grid container justifyContent="center">

@@ -14,7 +14,7 @@ const useTrip = (viajeId) => {
   useEffect(() => {
     const fetchTrip = async () => {
       try {
-        const trip = await selectTripByIdService(viajeId, authToken);
+        const trip = await selectTripByIdService(viajeId);
 
         setTrip(trip);
       } catch (err) {

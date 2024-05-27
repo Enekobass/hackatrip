@@ -47,6 +47,20 @@ const TripInfo = ({
         <div className='title-container'>
           <h1 className='title'>{titulo}</h1>
         </div>
+
+        <div className='extra-content'>
+          <h2>Apúntate a este viaje </h2>
+          <div className='frasesExtraContent'><p className='viviras'>Vivirás experiencias únicas con gente de tu edad</p>
+          <p className='nuevos'>Nuevos amigos para siempre</p>
+          <p className='acompañado'>Acompañado de un coordinador experimentado en la zona</p>
+          <p className='recuerdos'>Recuerdos para toda la vida</p>
+          <div className='button-container'></div>
+        <button onClick={handleClick} className='signup-button'>
+          Apuntarme
+        </button>
+      </div>
+        </div>
+
         <img
           src={`${VITE_API_URL}/${photo}`}
           alt={`Foto de ${destino}`}
@@ -62,6 +76,11 @@ const TripInfo = ({
           <span className='fecha-fin'>{formatDate(fechaDeFin)}</span>
         </div>
       </div>
+
+      <div className='edad'>
+        <strong>Grupo de edad:</strong> {grupoDeEdad}
+      </div>
+
       <ul className='entry-details'>
         <li className='description'>
           <strong></strong> {descripcion}
@@ -83,10 +102,6 @@ const TripInfo = ({
           <strong>Precio:</strong> {precio} €
         </div>
 
-        <div>
-          <strong>Grupo de edad:</strong> {grupoDeEdad}
-        </div>
-
         <li className='hidden'>
           <strong></strong> {activo}
         </li>
@@ -94,11 +109,7 @@ const TripInfo = ({
           <strong></strong> {confirmado}
         </li>
       </ul>
-      <div className='button-container'>
-        <button onClick={handleClick} className='signup-button'>
-          Apuntarme
-        </button>
-      </div>
+    
     </form>
   );
 };

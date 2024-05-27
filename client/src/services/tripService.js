@@ -59,13 +59,8 @@ export const createTripService = async ({
   return body.message; // Suponiendo que tu backend devuelve los datos del nuevo viaje creado
 };
 
-export const selectTripByIdService = async (viajeId, authToken) => {
-  const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}`, {
-    headers: {
-      Authorization: authToken,
-      // Puedes agregar cualquier encabezado adicional necesario, como el token de autorización si es necesario
-    },
-  });
+export const selectTripByIdService = async (viajeId) => {
+  const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}`);
 
   const body = await res.json();
 
@@ -117,8 +112,6 @@ export const updateTripService = async ({
   formData.append('photo', photo[0]);
 
   formData.append('activo', activo);
-
-  console.log(formData);
 
   const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}/modificarviaje`, {
     method: 'put',

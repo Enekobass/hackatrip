@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import toast from 'react-hot-toast';
 
 import { selectAllTripsService } from '../services/tripService';
+
+import { AuthContext } from '../contexts/AuthContext';
 
 const useTrips = (setTripsFiltrados) => {
   const [trips, setTrips] = useState([]);
@@ -12,6 +14,8 @@ const useTrips = (setTripsFiltrados) => {
 
   const [loading, setLoading] = useState(false);
 
+  const { authToken } = useContext(AuthContext);
+
   useEffect(() => {
     const fetchTrips = async () => {
       try {
@@ -19,8 +23,10 @@ const useTrips = (setTripsFiltrados) => {
 
         const trips = await selectAllTripsService(searchParams);
 
-        if (searchParams.get('keyword')) {
+        if (searchParams.get('destino')) {
           setTripsFiltrados(true);
+        } else {
+          setTripsFiltrados(false);
         }
 
         setTrips(trips);
@@ -31,7 +37,7 @@ const useTrips = (setTripsFiltrados) => {
       }
     };
     fetchTrips();
-  }, [searchParams, setTripsFiltrados]);
+  }, [searchParams, setTripsFiltrados, authToken]);
 
   return {
     trips,
