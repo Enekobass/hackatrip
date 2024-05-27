@@ -42,14 +42,17 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             </ul>
 
         <div className='contenedorFrasePortada'>
-          {searchParams.get("destino") ?
+          {/* {searchParams.get("destino") ?
           <p className='frasePortada'>
             {searchParams.get("destino")}
           </p>
           :
           <p className='frasePortada'>
             Viajar es la única cosa que compras y te hace más rico
-          </p>}
+          </p>} */}
+          <p className='frasePortada'>
+            Viajar es la única cosa que compras y te hace más rico
+          </p>
         </div>
 
         <ul className='nav-links'>
