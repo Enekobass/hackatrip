@@ -47,7 +47,7 @@ const TripPage = () => {
                             fechaDeFin={trip.tripData[0].fechaDeFin}
                             plazasMinimas={trip.tripData[0].plazasMinimas}
                             plazasMaximas={trip.tripData[0].plazasMaximas}
-                            ruta={trip.tripData[0].ruta}
+                            itinerario={trip.tripData[0].itinerario}
                             precio={trip.tripData[0].precio}
                             photo={trip.tripData[0].imagen}
                             activo={trip.tripData[0].activo}
