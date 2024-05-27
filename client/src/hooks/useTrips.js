@@ -23,8 +23,10 @@ const useTrips = (setTripsFiltrados) => {
 
         const trips = await selectAllTripsService(searchParams);
 
-        if (searchParams.get('keyword')) {
+        if (searchParams.get('destino')) {
           setTripsFiltrados(true);
+        } else {
+          setTripsFiltrados(false);
         }
 
         setTrips(trips);
