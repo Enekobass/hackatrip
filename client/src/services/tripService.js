@@ -118,8 +118,6 @@ export const updateTripService = async ({
 
   formData.append('activo', activo);
 
-  console.log(formData);
-
   const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}/modificarviaje`, {
     method: 'put',
     headers: {
@@ -138,8 +136,13 @@ export const updateTripService = async ({
   return body.message; // Suponiendo que tu backend devuelve los datos del nuevo viaje creado
 };
 
-export const selectAllTripsService = async (searchParams) => {
-  const res = await fetch(`${VITE_API_URL}/todosviajes?${searchParams}`);
+export const selectAllTripsService = async (searchParams, authToken) => {
+  const res = await fetch(`${VITE_API_URL}/todosviajes?${searchParams}`, {
+    headers: {
+      Authorization: authToken,
+      // Puedes agregar cualquier encabezado adicional necesario, como el token de autorización si es necesario
+    },
+  });
 
   const body = await res.json();
 
