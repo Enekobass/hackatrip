@@ -38,7 +38,7 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             <a href='#fechas'>Fechas</a>
           </li>
           <li>
-            <a href='#destinos'>Destinos</a>
+            <a href='/destinos'>Destinos</a>
           </li>
           <li>
             <a href='#comunidad'>Comunidad</a>
