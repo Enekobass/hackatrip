@@ -38,14 +38,57 @@
 
 }
 
-/**** Estilos Orientación Horizontal en Tablet ****/
-
-@media screen and (min-width: 768px) and (orientation: landscape) {
-
+ .container-coordinador {
+   margin-left: 5%; /* Reduce los márgenes para adaptarse mejor a la pantalla más pequeña */
+   margin-right: 5%; 
 }
 
-/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+.p-coordinador {
+   font-size: 20px; /* Reducir el tamaño de fuente para una mejor visualización */
+}
 
+.imagen {
+   width: 15%; /* Aumentar el tamaño de la imagen para llenar más espacio */
+   height: 15%; 
+}
+
+.name-coordinador {
+   margin: 3%; /* Ajustar el margen para evitar desbordamientos */
+}
+
+
+/* Estilos Orientación Horizontal en Tablet */
+@media screen and (min-width: 768px) and (orientation: landscape) {
+
+.container-coordinador {
+   margin-left: 3%; /* Menor margen izquierdo para aprovechar el espacio adicional */
+   margin-right: 3%; 
+}
+
+.imagen {
+   width: 12%; /* Ajustar el tamaño de la imagen para mantener la proporción */
+   height: 12%; 
+}
+}
+
+/* VERSIÓN PREDETERMINADA: Escritorio */
 @media screen and (min-width: 1000px) {
+/* Estilos para pantallas de escritorio */
+.container-coordinador {
+   margin-left: 7.5%; /* Ajustar los márgenes para pantallas más grandes */
+   margin-right: 7.5%; 
+}
 
+.p-coordinador {
+   font-size: 30px; /* Aumentar el tamaño de fuente para pantallas más grandes */
+}
+
+.imagen {
+   width: 8%; /* Ajustar el tamaño de la imagen para pantallas más grandes */
+   height: 8%; 
+}
+
+.name-coordinador {
+   margin: 4%; /* Ajustar el margen para pantallas más grandes */
+}
 }
