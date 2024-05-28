@@ -18,36 +18,39 @@ const formatDate = (dateString) => {
   const dateDifferenceInDays = (dateInitial, dateFinal) =>
     (dateFinal - dateInitial) / 86_400_000;
 
+  const today = new Date();
+
 const FilterTrips = ({trips, loading}) => {
 
     return (
         <Grid container flexDirection="column">
             {(loading ? Array.from(new Array(5)) : trips).map((trip, index) => (
+                formatDate(trip?.fechaDeInicio) > formatDate(today) ?
                 <Box key={index} sx={{ width: "80%", marginLeft:"180px", my: 2}}>
                 {trip ? (
-                    <>
-                        <div className='viaje'>
-                            <p>{formatDate(trip.fechaDeInicio)}</p>
-                            <img
-                                style={{ width: 100, height: 100, border: '2px solid white', borderRadius: '20px' }}
-                                alt={trip.destino}
-                                src={`${VITE_API_URL}/${trip.imagen}`}
-                            />
-                            <p>{trip.titulo}</p>
-                            <p>{formatDate(trip.fechaDeInicio)} - {formatDate(trip.fechaDeFin)}</p>
-                            <p>{Math.floor(dateDifferenceInDays(new Date(trip.fechaDeInicio), new Date(trip.fechaDeFin)))} días</p>
-                            {trip.numeroReservas === trip.plazasMaximas ? <p>😩 Agotado</p> : trip.numeroReservas > 10 ? <p>🔥 Ultimas plazas</p> : <p>🎉 Plazas disponibles</p> }
-                            <p className='grupoedad'>{trip.grupoDeEdad} años</p>
-                            <p>{trip.precio}€</p>
-                            <Link to={`/viaje/${trip.id}`} >
-                                <button>Ver Viaje</button>
-                            </Link>
-                        </div>
-                    </>
+                   <>
+                   <div className='viaje'>
+                       <p>{formatDate(trip.fechaDeInicio)}</p>
+                       <img
+                           style={{ width: 100, height: 100, border: '2px solid white', borderRadius: '20px' }}
+                           alt={trip.destino}
+                           src={`${VITE_API_URL}/${trip.imagen}`}
+                       />
+                       <p>{trip.titulo}</p>
+                       <p>{formatDate(trip.fechaDeInicio)} - {formatDate(trip.fechaDeFin)}</p>
+                       <p>{Math.floor(dateDifferenceInDays(new Date(trip.fechaDeInicio), new Date(trip.fechaDeFin)))} días</p>
+                       {trip.numeroReservas === trip.plazasMaximas ? <p>😩 Agotado</p> : trip.numeroReservas > 10 ? <p>🔥 Ultimas plazas</p> : <p>🎉 Plazas disponibles</p> }
+                       <p className='grupoedad'>{trip.grupoDeEdad} años</p>
+                       <p>{trip.precio}€</p>
+                       <Link to={`/viaje/${trip.id}`} >
+                           <button>Ver Viaje</button>
+                       </Link>
+                   </div>
+               </>
                 ) : (
                     <Skeleton variant="rectangular" width={210} height={118} />
                 )}
-                </Box>
+                </Box> : console.log()
             ))}
         </Grid>
     );
