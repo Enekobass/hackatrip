@@ -4,26 +4,29 @@
   padding: 2% 5%;
   color: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
+  position: relative;
 }
 
-.footer__content {
-  max-width: 100%;
-  width: 100%;
-}
-
-.footer__logo {
-  margin-bottom: 2%;
+.footer__logo-container {
+  position: absolute;
+  top: 2%; /* Ajusta este valor según sea necesario */
+  left: 5%; /* Ajusta este valor según sea necesario */
 }
 
 .logo2 {
-  max-width: 30%; /* Ajusta el tamaño máximo del logo para que sea más proporcional */
+  max-width: 15%; /* Ajusta el tamaño máximo del logo para que sea más pequeño */
   height: auto;
-  z-index: 1;
-  position: relative;
-  margin: 0 auto;
+}
+
+.footer__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 2%; /* Ajusta este valor según sea necesario */
 }
 
 .footer__nav {
@@ -36,6 +39,10 @@
   margin: 2% 0;
   display: flex;
   justify-content: center;
+}
+
+.footer__nav-list.bold-list > li a {
+  font-weight: bold; /* Aplicar negrita solo a las listas principales */
 }
 
 .footer__nav-list > li {
@@ -61,9 +68,20 @@
   text-align: left;
 }
 
+/* Ajusta el margen vertical entre los elementos del submenú */
+/* Cambiar la visualización de los elementos de lista a inline-block */
+/* Estilo para las sublistas */
+.footer__destinations ul {
+  display: block; /* Asegura que las sublistas sean elementos de bloque */
+  margin: 0; /* Elimina el margen para evitar espacios adicionales */
+}
+
+/* Estilo para los elementos de las sublistas */
 .footer__destinations li {
-  margin: 5px 0;
+  display: block; /* Asegura que los elementos de la sublista sean elementos de bloque */
+  margin: 10px 0; /* Ajusta el margen vertical según sea necesario */
   font-size: 0.9em;
+  width: 200px; /* Ajusta el ancho del elemento según sea necesario */
 }
 
 .footer__destinations li a {
@@ -80,8 +98,14 @@
   margin: 0.5em 0;
 }
 
+.footer__social {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%; /* Ajusta este valor según sea necesario */
+}
+
 .footer__social a {
-  margin: 0 1.5%;
+  margin: 0 10px; /* Aumenta el margen entre los iconos de redes sociales */
 }
 
 .footer__social img {
