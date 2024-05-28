@@ -96,6 +96,11 @@
 
 .frase-container img {
   height: 100%;
+  transition: filter 0.2s ease; /* Transición suave para el efecto de desenfoque */
+}
+
+.frase-container img:hover {
+  filter: blur(5px);
 }
 
 .frase-img {
@@ -103,6 +108,7 @@
   height: auto;
   display: block;
   border-radius: 15px;
+  
 }
 
 .tituloFrase,
