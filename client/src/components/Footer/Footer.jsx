@@ -12,7 +12,7 @@ const Footer = () => {
       </div>
       <div className='footer__content'>
         <div className='footer__nav'>
-          <ul className='footer__nav-list bold-list'> {/* Aplicar la clase bold-list aquí */}
+          <ul className='footer__nav-list'>
             <li className='footer__nav-item'>
               <a href='/services'>DESTINOS</a>
               <ul className='footer__destinations'>
@@ -27,7 +27,7 @@ const Footer = () => {
               </ul>
             </li>
             <li className='footer__nav-item'>
-              <a className='sublista' href='/services'>COORDINADORES</a>
+              <a href='/services'>COORDINADORES</a>
               <ul className='footer__destinations'>
                 <li><a href='/nuestros-coordinadores'>Nuestros coordinadores</a></li>
                 <li><a href='/hazte-coordinador'>Hazte coordinador</a></li>
@@ -43,6 +43,7 @@ const Footer = () => {
                 <li><a href='/telegram'>Telegram</a></li>
                 <li><a href='/youtube'>Youtube</a></li>
                 <li><a href='/facebook-group'>Facebook Group</a></li>
+                <li><a href='/comunidad-hackatrip'>Comunidad Hackatrip</a></li>
               </ul>
             </li>
             <li className='footer__nav-item'>

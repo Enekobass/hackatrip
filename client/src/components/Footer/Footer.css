@@ -39,10 +39,20 @@
   margin: 2% 0;
   display: flex;
   justify-content: center;
+  gap: 5%; /* Aumentar espacio entre columnas */
 }
 
-.footer__nav-list.bold-list > li a {
-  font-weight: bold; /* Aplicar negrita solo a las listas principales */
+.footer__nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  min-width: 220px; /* Aumentar el ancho mínimo */
+}
+
+.footer__nav-item a {
+  font-weight: bold;
+  font-size: 1.2em; /* Aumentar el tamaño de la fuente */
 }
 
 .footer__nav-list > li {
@@ -53,7 +63,6 @@
 .footer__nav-list > li a {
   color: white;
   text-decoration: none;
-  font-size: 1em;
 }
 
 .footer__nav-list > li a:hover {
@@ -63,31 +72,21 @@
 .footer__destinations {
   list-style: none;
   padding: 0;
-  margin-left: 20%; /* Ajusta este margen izquierdo para alinear la sublista */
   color: white;
   text-align: left;
+  margin: 10px 0; /* Ajusta el margen según sea necesario */
 }
 
-/* Ajusta el margen vertical entre los elementos del submenú */
-/* Cambiar la visualización de los elementos de lista a inline-block */
-/* Estilo para las sublistas */
-.footer__destinations ul {
-  display: block; /* Asegura que las sublistas sean elementos de bloque */
-  margin: 0; /* Elimina el margen para evitar espacios adicionales */
-}
-
-/* Estilo para los elementos de las sublistas */
 .footer__destinations li {
-  display: block; /* Asegura que los elementos de la sublista sean elementos de bloque */
-  margin: 10px 0; /* Ajusta el margen vertical según sea necesario */
+  display: block;
+  margin: 10px 0;
   font-size: 0.9em;
-  width: 200px; /* Ajusta el ancho del elemento según sea necesario */
+  white-space: nowrap; /* Evita que el texto pase a la siguiente línea */
 }
 
 .footer__destinations li a {
   color: red;
   text-decoration: none;
-  text-align: right;
 }
 
 .footer__destinations li a:hover {
@@ -101,11 +100,11 @@
 .footer__social {
   display: flex;
   justify-content: center;
-  margin-top: 2%; /* Ajusta este valor según sea necesario */
+  margin-top: 2%;
 }
 
 .footer__social a {
-  margin: 0 10px; /* Aumenta el margen entre los iconos de redes sociales */
+  margin: 0 10px;
 }
 
 .footer__social img {
