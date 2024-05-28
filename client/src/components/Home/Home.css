@@ -31,7 +31,6 @@
   border: grey;
   padding: 8px 15px;
   font-size: 4vw; /* Ajuste el tamaño de fuente para móviles */
-  max-font-size: 1.4vw; /* Límite de tamaño de fuente para pantallas más grandes */
 }
 
 .botonSaberMas:hover {
@@ -95,6 +94,10 @@
   overflow: hidden;
 }
 
+.frase-container img {
+  height: 100%;
+}
+
 .frase-img {
   width: 100%;
   height: auto;
@@ -116,24 +119,24 @@
 .tituloFrase {
   top: 8%;
   font-size: 6vw; /* Ajuste el tamaño de fuente para móviles */
-  max-font-size: 3rem; /* Límite de tamaño de fuente para pantallas más grandes */
+  
 }
 
 .textoFrase {
   top: 25%;
   font-size: 3vw; /* Ajuste el tamaño de fuente para móviles */
-  max-font-size: 1.2rem; /* Límite de tamaño de fuente para pantallas más grandes */
+  
 }
 
 .textoProximos {
   margin: 30px 20px 10px 20px; /* Ajuste el margen para móviles */
-  max-margin: 30px 100px 10px 100px; /* Límite de margen para pantallas más grandes */
+  
 }
 
 /**** Estilos general para Tablet ****/
 @media screen and (min-width: 768px) {
   .botonSaberMas {
-    font-size: 2vw; /* Ajuste el tamaño de fuente para tablets */
+    font-size: 1vw; /* Ajuste el tamaño de fuente para tablets */
   }
 
   .tituloFrase {
