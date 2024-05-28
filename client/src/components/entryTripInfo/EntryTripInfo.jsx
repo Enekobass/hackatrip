@@ -61,11 +61,7 @@ const TripInfo = ({
       </div>
         </div>
 
-        <img
-          src={`${VITE_API_URL}/${photo}`}
-          alt={`Foto de ${destino}`}
-          className='entry-image'
-        />
+      
         <div className='place-overlay'>
           <strong></strong> {destino}
         </div>
@@ -85,6 +81,12 @@ const TripInfo = ({
         <li className='description'>
           <strong></strong> {descripcion}
         </li>
+
+        <img
+          src={`${VITE_API_URL}/${photo}`}
+          alt={`Foto de ${destino}`}
+          className='entry-image'
+        />
         <li className='itinerary'>
           <h2>Itinerario</h2>
           <div className='route'>
