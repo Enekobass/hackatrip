@@ -39,7 +39,7 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
           <img src='/Publi.png' alt='Ofertas' />
         </div>
 
-        <h2 className='textoIdeas'>TE DAMOS IDEAS:</h2>
+        <h2 className='textoIdeas'>TE DAMOS IDEAS:</h2> 
         {!tripsFiltrados ? (
           <>
             <ul className='trip-list'>
