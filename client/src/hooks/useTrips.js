@@ -21,7 +21,7 @@ const useTrips = (setTripsFiltrados) => {
       try {
         setLoading(true);
 
-        const trips = await selectAllTripsService(searchParams);
+        const trips = await selectAllTripsService(searchParams, authToken);
 
         if (searchParams.get('destino')) {
           setTripsFiltrados(true);

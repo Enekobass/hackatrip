@@ -31,11 +31,18 @@ const TripPage = () => {
 
     const today = new Date();
 
-    const imgSrc = '/Home.jpg'
+    const listaPaises = ["africa", "asia", "egipto", "indonesia", "islandia", "japon", "laos", "mexico", "nuevayork", "rep.dominicana", "rep.dominicana2", "singapur" , "tailandia", "tanzania", "vietnam"]; // Añadir aquí la imagen de cada país que se añade
+
+    // fetch a Front http://front:4334/italia.jpg
+    // Si fetch devuelve 404 uso Home.jpg
+    // 200 uso la img del pais
 
     return (
         <>
-            <Header imgSrc={imgSrc}/>
+            <Header imgSrc={
+                listaPaises.includes(trip?.tripData[0].destino.toLowerCase())  ? `/${trip?.tripData[0].destino}.jpg` : '/Home.jpg' } />
+                
+
             <main>
                 {trip && (
                     <>
