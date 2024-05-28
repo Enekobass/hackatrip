@@ -21,6 +21,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import UpdateTripPage from './pages/UpdateTripPage/UpdateTripPage';
 import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
+import DestinosPage from './pages/DestinosPage/DestinosPage';
 
 const App = () => {
 
@@ -67,6 +68,9 @@ const App = () => {
             path='/users/validate/:registrationCode'
             element={<ValidateUserPage />}
           />
+          <Route path='/destinos' element={<DestinosPage
+              setTripsFiltrados={setTripsFiltrados}
+           />} />
           <Route path='/recover' element={<ResetPasswordPage />} />
           <Route path='/profile' element={<UserProfilePage />} />
           <Route path='/admin' element={<AdminPage />} />
