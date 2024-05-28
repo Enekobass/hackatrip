@@ -1,4 +1,4 @@
-.btn-editar, .btn-sube-post{
+.btn-editar, .btn-sube-post {
     margin-left: 43%;
     border-radius: 15%;
     background-color: red;
@@ -11,3 +11,32 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+/**** Estilos general para Tablet ****/
+@media screen and (min-width: 768px) {
+    .btn-editar, .btn-sube-post {
+        margin-left: 30%;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+@media screen and (min-width: 768px) and (orientation: landscape) {
+    .btn-editar, .btn-sube-post {
+        margin-left: 25%;
+        font-size: 15px;
+        padding: 9px 18px;
+    }
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+@media screen and (min-width: 1000px) {
+    .btn-editar, .btn-sube-post {
+        margin-left: 43%; /* O cualquier valor que consideres adecuado para escritorio */
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
