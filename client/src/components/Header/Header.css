@@ -22,10 +22,9 @@
 
 .nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 10px 20px; /* Ajuste de padding para dispositivos móviles */
+  padding: 10px; /* Ajuste de padding para dispositivos móviles */
   z-index: 2; /* Asegura que el contenido de la navegación esté por encima de la foto de fondo */
 }
 
@@ -82,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px; /* Ajuste para dispositivos móviles */
+  margin: 10px; /* Ajuste para dispositivos móviles */
   z-index: 2; /* Asegura que la frase esté por encima de la foto de fondo */
   text-align: center;
 }
