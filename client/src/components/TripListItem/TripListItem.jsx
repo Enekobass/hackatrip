@@ -19,7 +19,7 @@ function TripListItem(sixTrips, {loading}) {
   return (
     <Grid container justifyContent="center">
       {(loading ? Array.from(new Array(6)) : sixTrips.sixTrips.sixTrips).map((trip, index) => (
-        formatDate(trip.fechaDeInicio) > formatDate(today) ?
+        new Date(trip?.fechaDeInicio) > new Date(today) ?
         <Box key={index} sx={{ width: 450, marginRight: 5, mt: 5 }}>
           {trip ? (
               <Link to={`/viaje/${trip.id}`} className='trip-item'>
@@ -34,7 +34,7 @@ function TripListItem(sixTrips, {loading}) {
           )}
 
           {trip ? (
-            formatDate(trip.fechaDeInicio) > formatDate(today) ?
+            new Date(trip?.fechaDeInicio) > new Date(today) ?
               <Link to={`/viaje/${trip.id}`} className='trip-item'>
                 <Box sx={{ pr: 2, marginLeft: 7}}>
                   <Typography gutterBottom variant="body1" color="ButtonText">
