@@ -17,3 +17,9 @@
     background-color: var(--Red);
     border-radius: 10px;
 }
+
+.vista {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
