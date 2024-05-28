@@ -37,7 +37,7 @@ const FilterTrips = ({trips, loading}) => {
                             <p>{formatDate(trip.fechaDeInicio)} - {formatDate(trip.fechaDeFin)}</p>
                             <p>{Math.floor(dateDifferenceInDays(new Date(trip.fechaDeInicio), new Date(trip.fechaDeFin)))} días</p>
                             {trip.numeroReservas === trip.plazasMaximas ? <p>😩 Agotado</p> : trip.numeroReservas > 10 ? <p>🔥 Ultimas plazas</p> : <p>🎉 Plazas disponibles</p> }
-                            <p>{trip.grupoDeEdad}</p>
+                            <p className='grupoedad'>{trip.grupoDeEdad} años</p>
                             <p>{trip.precio}€</p>
                             <Link to={`/viaje/${trip.id}`} >
                                 <button>Ver Viaje</button>

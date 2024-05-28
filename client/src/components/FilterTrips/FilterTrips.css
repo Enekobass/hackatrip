@@ -11,3 +11,9 @@
 .viaje p {
     padding: 15px;
 }
+
+.grupoedad {
+    color: white;
+    background-color: var(--Red);
+    border-radius: 10px;
+}
