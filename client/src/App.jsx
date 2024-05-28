@@ -29,7 +29,7 @@ const App = () => {
   return (
     <>
       <ErrorBoundary>
-        
+
         <Toaster
           position='top-center'
           toastOptions={{
@@ -40,18 +40,18 @@ const App = () => {
           <Route
             path='/'
             element={<HomePage
-                setTripsFiltrados={setTripsFiltrados}
-                tripsFiltrados={tripsFiltrados}
-              />}
-            
+              setTripsFiltrados={setTripsFiltrados}
+              tripsFiltrados={tripsFiltrados}
+            />}
+
           />
           {/* <Route path='/comunity' element={<ComunityPage />} />
       <Route path='/coordi' element={<CoordiPage />} /> */}
-          
-             
+
+
           <Route path='/contact' element={<ContactPage />}
-         />
-          
+          />
+
           <Route
             path='/viaje/:viajeId/loadpost'
             element={<LoadPostPage />}
