@@ -66,7 +66,9 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
           ) : (
             <>
               <li>
-                <button>{authUser.username}</button>
+                <button>
+                  <NavLink to='/profile'>{authUser.username}</NavLink>
+                </button>
               </li>
               <li>
                 <button onClick={authLogout}>Cerrar sesión</button>
