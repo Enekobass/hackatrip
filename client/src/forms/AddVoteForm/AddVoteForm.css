@@ -32,7 +32,7 @@
  }
 
 
-  /**** Estilos general para Tablet ****/
+  /**** Estilos general para Móvil ****/
 
 @media screen and (min-width: 768px) {
 
@@ -57,7 +57,9 @@
 }
 
 
-/* Estilos Orientación Horizontal en Tablet */
+
+
+/*** Estilos Orientación Horizontal en Tablet ****/
 @media screen and (min-width: 768px) and (orientation: landscape) {
 
 .container-coordinador {
@@ -71,9 +73,11 @@
 }
 }
 
-/* VERSIÓN PREDETERMINADA: Escritorio */
+
+
+/*** VERSIÓN PREDETERMINADA: Escritorio ***/
 @media screen and (min-width: 1000px) {
-/* Estilos para pantallas de escritorio */
+
 .container-coordinador {
    margin-left: 7.5%; /* Ajustar los márgenes para pantallas más grandes */
    margin-right: 7.5%; 
