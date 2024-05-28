@@ -9,7 +9,7 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
 
   const navigate = useNavigate();
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  //const [searchParams, setSearchParams] = useSearchParams();
 
 
   const goToHome = () => {
@@ -72,6 +72,13 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
                 <button onClick={authLogout}>Cerrar sesión</button>
               </li>
             </>
+          )}
+          {authUser?.role === "admin" ? (
+            <button>
+              <NavLink to='/admin'>Crear Viaje</NavLink>
+            </button>
+          ) : (
+            console.log()
           )}
         </ul>
       </nav>
