@@ -25,7 +25,7 @@ const FilterTrips = ({trips, loading}) => {
     return (
         <Grid container flexDirection="column">
             {(loading ? Array.from(new Array(5)) : trips).map((trip, index) => (
-                formatDate(trip?.fechaDeInicio) > formatDate(today) ?
+                new Date(trip?.fechaDeInicio) > new Date(today) ?
                 <Box key={index} sx={{ width: "80%", marginLeft:"180px", my: 2}}>
                 {trip ? (
                    <>
