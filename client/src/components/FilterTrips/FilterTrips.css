@@ -1,0 +1,13 @@
+.viaje {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 10px;
+
+}
+
+.viaje p {
+    padding: 15px;
+}
