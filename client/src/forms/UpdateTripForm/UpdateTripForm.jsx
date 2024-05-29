@@ -5,27 +5,33 @@ import { updateTripService } from '../../services/tripService';
 
 import { AuthContext } from '../../contexts/AuthContext';
 
-const UpdateTripForm = () => {
+const UpdateTripForm = (trip) => {
 
   const navigate = useNavigate();
-  const [titulo, setTitulo] = useState('');
-  const [descripcion, setDescripcion] = useState('');
-  const [destino, setDestino] = useState('');
-  const [fechaDeInicio, setFechaDeInicio] = useState('');
-  const [fechaDeFin, setFechaDeFin] = useState('');
-  const [plazasMinimas, setPlazasMinimas] = useState(0);
-  const [plazasMaximas, setPlazasMaximas] = useState(0);
-  const [itinerario, setItinerario] = useState('');
-  const [precio, setPrecio] = useState('');
-  const [grupoDeEdad, setGrupoDeEdad] = useState('');
-  const [activo, setActivo] = useState('');
-  const [photo, setPhoto] = useState('');
+
 
   const { authToken } = useContext(AuthContext);
 
   const params = useParams();
 
   const viajeId = params.viajeId;
+
+  const startDate = new Date(trip.trip.tripData[0].fechaDeInicio).toISOString().split('T')[0];
+
+  const endDate = new Date(trip.trip.tripData[0].fechaDeFin).toISOString().split('T')[0];
+
+  const [titulo, setTitulo] = useState(trip.trip.tripData[0].titulo);
+  const [descripcion, setDescripcion] = useState(trip.trip.tripData[0].descripcion);
+  const [destino, setDestino] = useState(trip.trip.tripData[0].destino);
+  const [fechaDeInicio, setFechaDeInicio] = useState(startDate);
+  const [fechaDeFin, setFechaDeFin] = useState(endDate);
+  const [plazasMinimas, setPlazasMinimas] = useState(trip.trip.tripData[0].plazasMinimas);
+  const [plazasMaximas, setPlazasMaximas] = useState(trip.trip.tripData[0].plazasMaximas);
+  const [itinerario, setItinerario] = useState(trip.trip.tripData[0].itinerario);
+  const [precio, setPrecio] = useState(trip.trip.tripData[0].precio);
+  const [grupoDeEdad, setGrupoDeEdad] = useState(trip.trip.tripData[0].grupoDeEdad);
+  const [activo, setActivo] = useState(trip.trip.tripData[0].activo);
+  const [photo, setPhoto] = useState('');
 
   const handleSubmit = async (e) => {
     try{
