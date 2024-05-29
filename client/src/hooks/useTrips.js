@@ -23,7 +23,11 @@ const useTrips = (setTripsFiltrados) => {
 
         const trips = await selectAllTripsService(searchParams, authToken);
 
-        if (searchParams.get('destino') || searchParams.get('grupoDeEdad')) {
+        if (
+          searchParams.get('destino') ||
+          searchParams.get('grupoDeEdad') ||
+          searchParams.get('fecha')
+        ) {
           setTripsFiltrados(true);
         } else {
           setTripsFiltrados(false);

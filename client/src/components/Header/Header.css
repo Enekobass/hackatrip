@@ -48,6 +48,17 @@
 
 .nav-menu li {
   margin: 0 10px; /* Ajuste para dispositivos móviles */
+  float: left;
+  list-style: none;
+}
+
+.nav-menu li ul{
+  display: none;
+  position: absolute;
+}
+
+.nav-menu li:hover > ul {
+  display: block;
 }
 
 .nav-menu a {

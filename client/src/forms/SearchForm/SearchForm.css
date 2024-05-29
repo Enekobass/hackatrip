@@ -23,18 +23,19 @@
   font-weight: 300;
 }
 
-/* .botonDonde:hover,
-.botonCuando:hover {
-  background-image: linear-gradient(var(--Blue), var(--Blue));
-  color: white;
-} */
-
 .botonDonde {
   background-color: white;
-  color: black;
+}
+
+
+.botonDonde:hover,
+.botonCuando:hover {
+  background-image: linear-gradient(var(--Blue), var(--Blue));
 }
 
 .botonCuando {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   background-image: linear-gradient(to right, var(--Turqoise), var(--Blue));
-  color: black;
 }
