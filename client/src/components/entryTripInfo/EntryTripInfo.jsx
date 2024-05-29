@@ -50,18 +50,22 @@ const TripInfo = ({
 
         <div className='extra-content'>
           <h2>Apúntate a este viaje </h2>
-          <div className='frasesExtraContent'><p className='viviras'>Vivirás experiencias únicas con gente de tu edad</p>
-          <p className='nuevos'>Nuevos amigos para siempre</p>
-          <p className='acompañado'>Acompañado de un coordinador experimentado en la zona</p>
-          <p className='recuerdos'>Recuerdos para toda la vida</p>
-          <div className='button-container'></div>
-        <button onClick={handleClick} className='signup-button'>
-          Apuntarme
-        </button>
-      </div>
+          <div className='frasesExtraContent'>
+            <p className='viviras'>
+              Vivirás experiencias únicas con gente de tu edad
+            </p>
+            <p className='nuevos'>Nuevos amigos para siempre</p>
+            <p className='acompañado'>
+              Acompañado de un coordinador experimentado en la zona
+            </p>
+            <p className='recuerdos'>Recuerdos para toda la vida</p>
+            <div className='button-container'></div>
+            <button onClick={handleClick} className='signup-button'>
+              Apuntarme
+            </button>
+          </div>
         </div>
 
-      
         <div className='place-overlay'>
           <strong></strong> {destino}
         </div>
@@ -111,7 +115,6 @@ const TripInfo = ({
           <strong></strong> {confirmado}
         </li>
       </ul>
-    
     </form>
   );
 };

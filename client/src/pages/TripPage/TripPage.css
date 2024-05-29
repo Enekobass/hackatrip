@@ -1,17 +1,16 @@
 .btn-editar, .btn-sube-post {
-    margin-left: 43%;
-    border-radius: 15%;
-    background-color: red;
+    background-color: var(--Red);
     color: white;
-    border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
+.btn-sube-post {
+    margin-bottom: 20px;
+}
 /**** Estilos general para Tablet ****/
 @media screen and (min-width: 768px) {
     .btn-editar, .btn-sube-post {
