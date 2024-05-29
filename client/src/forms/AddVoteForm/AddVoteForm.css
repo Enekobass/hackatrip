@@ -44,6 +44,7 @@
 }
 
 .p-coordinador {
+   margin-top: 80px;
    font-size: 20px; /* Reducir el tamaño de fuente para una mejor visualización */
 }
 
@@ -79,8 +80,8 @@
 @media screen and (min-width: 1000px) {
 
 .container-coordinador {
-   margin-left: 7.5%; /* Ajustar los márgenes para pantallas más grandes */
-   margin-right: 7.5%; 
+   margin-left: 5%; /* Ajustar los márgenes para pantallas más grandes */
+   margin-right: 5%; 
 }
 
 .p-coordinador {

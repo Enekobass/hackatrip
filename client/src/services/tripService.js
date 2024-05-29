@@ -9,6 +9,8 @@ export const createTripService = async ({
   plazasMinimas,
   plazasMaximas,
   itinerario,
+  lat,
+  lng,
   precio,
   grupoDeEdad,
   photo,
@@ -32,6 +34,10 @@ export const createTripService = async ({
   formData.append('plazasMaximas', plazasMaximas);
 
   formData.append('itinerario', itinerario);
+
+  formData.append('lat', lat);
+
+  formData.append('lng', lng);
 
   formData.append('precio', precio);
 
@@ -84,6 +90,8 @@ export const updateTripService = async ({
   plazasMinimas,
   plazasMaximas,
   itinerario,
+  lat,
+  lng,
   precio,
   grupoDeEdad,
   photo,
@@ -108,6 +116,10 @@ export const updateTripService = async ({
   formData.append('plazasMaximas', plazasMaximas);
 
   formData.append('itinerario', itinerario);
+
+  formData.append('lat', lat);
+
+  formData.append('lng', lng);
 
   formData.append('precio', precio);
 

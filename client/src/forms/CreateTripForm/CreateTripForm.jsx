@@ -15,6 +15,8 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
   const [plazasMinimas, setPlazasMinimas] = useState(0);
   const [plazasMaximas, setPlazasMaximas] = useState(0);
   const [itinerario, setItinerario] = useState('');
+  const [lat, setLat] = useState('');
+  const [lng, setLng] = useState('');
   const [precio, setPrecio] = useState('');
   const [grupoDeEdad, setGrupoDeEdad] = useState('');
   const [activo, setActivo] = useState('');
@@ -34,6 +36,8 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
       plazasMinimas,
       plazasMaximas,
       itinerario,
+      lat,
+      lng,
       precio,
       grupoDeEdad,
       activo,
@@ -77,8 +81,14 @@ const CreateUpdateTripForm = ({ createTripService, authToken }) => {
       <label htmlFor="itinerario">Itinerario:</label>
       <input type="text" id="itinerario" value={itinerario} onChange={(e) => setItinerario(e.target.value)} required />
 
+      <label htmlFor="latitud">Latitud:</label>
+      <input type="number" id="latitud" value={lat} onChange={(e) => setLat(e.target.value)} required />
+
+      <label htmlFor="longitud">Longitud:</label>
+      <input type="number" id="longitud" value={lng} onChange={(e) => setLng(parseInt(e.target.value))} required />
+
       <label htmlFor="precio">Precio:</label>
-      <input type="text" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />
+      <input type="number" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />
 
       <label htmlFor="grupoDeEdad">Grupo de edad (25-35/36-45):</label>
       <input type="text" id="grupoDeEdad" value={grupoDeEdad} onChange={(e) => setGrupoDeEdad(e.target.value)} required />

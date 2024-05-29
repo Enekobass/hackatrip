@@ -19,12 +19,12 @@ const newTripController = async (req, res, next) => {
             plazasMinimas,
             plazasMaximas,
             itinerario,
+            lat,
+            lng,
             precio,
             grupoDeEdad,
             activo,
         } = req.body;
-
-        console.log(req.body);
 
         const photoName = await savePhoto(req.files, 300);
 
@@ -41,6 +41,8 @@ const newTripController = async (req, res, next) => {
             plazasMaximas,
             itinerario,
             precio,
+            lat,
+            lng,
             grupoDeEdad,
             activo,
             photoName,
@@ -60,6 +62,8 @@ const newTripController = async (req, res, next) => {
                     plazasMinimas,
                     plazasMaximas,
                     itinerario,
+                    lat,
+                    lng,
                     precio,
                     grupoDeEdad,
                     userId: req.user.id,

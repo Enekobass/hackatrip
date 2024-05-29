@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import './EntryTripInfo.css';
 
-const { VITE_API_URL } = import.meta.env;
+const { VITE_API_URL, VITE_GOOGLE_MAPS_API_KEY, VITE_MAP_ID } = import.meta.env;
 
 import { bookTripService } from '../../services/tripService';
 
 import toast from 'react-hot-toast';
+
+import {APIProvider, Map, AdvancedMarker, Pin, InfoWindow, } from "@vis.gl/react-google-maps"
+import { useState } from 'react';
 
 const formatDate = (dateString) => {
   const options = { day: 'numeric', month: 'long' };
@@ -21,6 +24,8 @@ const TripInfo = ({
   plazasMinimas,
   plazasMaximas,
   itinerario,
+  lat,
+  lng,
   precio,
   grupoDeEdad,
   photo,
@@ -40,6 +45,10 @@ const TripInfo = ({
       toast.error(err.message);
     }
   };
+
+  const position = { lat: lat, lng: lng};
+
+  const [open, setOpen] = useState(false)
 
   return (
     <form>
@@ -103,6 +112,30 @@ const TripInfo = ({
         <li className='hidden'>
           <strong>Plazas máximas:</strong> {plazasMaximas}
         </li>
+{/* 
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102477.73576302624!2d-4.6696376049198705!3d36.61605317510837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1717012936012!5m2!1ses!2ses"
+          width="400"
+          height="300"
+          allowFullScreen=""
+          loading="lazy"
+          >
+        </iframe> */}
+
+        <APIProvider apiKey={VITE_GOOGLE_MAPS_API_KEY}>
+          <div style={{height: "40vh", width: "30vw"}}>
+            <Map defaultZoom={9} defaultCenter={position} mapId={VITE_MAP_ID}>
+              <AdvancedMarker position={position} onClick={() => setOpen(true)}>
+                <Pin background={"lightblue"} borderColor={"black"} glyphColor={"black"}/>
+              </AdvancedMarker>
+              {open && (
+                <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
+                  <p>Hotel</p>
+                </InfoWindow>
+              )}
+            </Map>
+          </div>
+        </APIProvider>
 
         <div className='price-overlay'>
           <strong>Precio:</strong> {precio} €

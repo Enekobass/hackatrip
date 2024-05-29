@@ -17,6 +17,8 @@ const newTripSchema = joi.object({
         .max(10000)
         .optional()
         .messages(joiErrorMessages),
+    lat: joi.number().required().messages(joiErrorMessages),
+    lng: joi.number().required().messages(joiErrorMessages),
     precio: joi.number().optional().messages(joiErrorMessages),
     grupoDeEdad: joi
         .string()
