@@ -1,10 +1,8 @@
 main.login {
-  background-image: linear-gradient(#ffffff, var(--Turqoise));
-  /*background-image: linear-gradient(#ffffff, #F44336);*/
+  background-image: linear-gradient(#ffffff, var(--Turquoise));
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  /*background: url('./Fondos/Fondo3.jpg');*/
   background-size: cover; /* Ajusta el tamaño de la imagen para que cubra toda la pantalla */
   background-position: center; /* Centra la imagen de fondo */
   background-repeat: no-repeat; /* Evita la repetición de la imagen */
@@ -32,7 +30,6 @@ main.login h1 {
   border-radius: 10px;
 }
 
-
 .login-form input {
   width: 100%;
   padding: 10px;
@@ -46,4 +43,70 @@ main.login h1 {
   margin-left: 130px;
 }
 
+/**** Estilos general para Tablet ****/
 
+@media screen and (min-width: 768px) {
+  .login-container {
+    max-width: 600px;
+    padding: 30px;
+  }
+
+  .login-form {
+    max-width: 500px;
+  }
+
+  .login-form input {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .boton-login {
+    margin-left: 100px;
+  }
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .login-container {
+    max-width: 800px;
+    padding: 40px;
+    margin-bottom: 50px;
+  }
+
+  .login-form {
+    max-width: 700px;
+  }
+
+  .login-form input {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .boton-login {
+    margin-left: 80px;
+  }
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+
+@media screen and (min-width: 1000px) {
+  .login-container {
+    max-width: 1000px;
+    padding: 50px;
+    margin-bottom: 50px;
+  }
+
+  .login-form {
+    max-width: 900px;
+  }
+
+  .login-form input {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .boton-login {
+    margin-left: 50px;
+  }
+}
