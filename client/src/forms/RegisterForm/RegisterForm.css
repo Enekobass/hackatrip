@@ -1,10 +1,8 @@
 main.register {
   background-image: linear-gradient(#ffffff, var(--Blue));
-  /*background-image: linear-gradient(#ffffff, #F44336);*/
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  /*background: url('./Fondos/Fondo3.jpg');*/
   background-size: cover; /* Ajusta el tamaño de la imagen para que cubra toda la pantalla */
   background-position: center; /* Centra la imagen de fondo */
   background-repeat: no-repeat; /* Evita la repetición de la imagen */
@@ -52,4 +50,72 @@ main.register h1 {
 
 .boton-register {
   margin-left: 110px;
+}
+
+/**** Estilos general para Tablet ****/
+
+@media screen and (min-width: 768px) {
+  .signup-container {
+    max-width: 600px;
+    padding: 30px;
+  }
+
+  .signup-form {
+    max-width: 500px;
+  }
+
+  .signup-form input {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .boton-register {
+    margin-left: 90px;
+  }
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .signup-container {
+    max-width: 800px;
+    padding: 40px;
+    margin-bottom: 50px;
+  }
+
+  .signup-form {
+    max-width: 700px;
+  }
+
+  .signup-form input {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .boton-register {
+    margin-left: 70px;
+  }
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+
+@media screen and (min-width: 1000px) {
+  .signup-container {
+    max-width: 1000px;
+    padding: 50px;
+    margin-bottom: 50px;
+  }
+
+  .signup-form {
+    max-width: 900px;
+  }
+
+  .signup-form input {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .boton-register {
+    margin-left: 50px;
+  }
 }

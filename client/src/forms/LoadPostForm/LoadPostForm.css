@@ -25,6 +25,69 @@
 .imagen-container img {
     width: auto; /* La imagen se ajusta al ancho máximo del contenedor */
     max-width: none; /* Elimina la restricción de ancho máximo */
-    height: 40rem; /* La altura se ajusta automáticamente para mantener la relación de aspecto */ /* Elimina la restricción de altura máxima */
+    height: 40rem; /* La altura se ajusta automáticamente para mantener la relación de aspecto */
     display: block; /* Ajusta la altura máxima según sea necesario */
-  }
+}
+
+/**** Estilos general para Tablet ****/
+
+@media screen and (min-width: 768px) {
+    .load-post-form-title {
+        font-size: 4rem;
+    }
+
+    .load-post-form-description {
+        font-size: 1.3rem;
+        width: 70%;
+    }
+
+    .imagen-container {
+        height: 30rem;
+    }
+
+    .imagen-container img {
+        height: 30rem;
+    }
+}
+
+/**** Estilos Orientación Horizontal en Tablet ****/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+    .load-post-form-title {
+        font-size: 3.5rem;
+    }
+
+    .load-post-form-description {
+        font-size: 1.2rem;
+        width: 60%;
+    }
+
+    .imagen-container {
+        height: 25rem;
+    }
+
+    .imagen-container img {
+        height: 25rem;
+    }
+}
+
+/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+
+@media screen and (min-width: 1000px) {
+    .load-post-form-title {
+        font-size: 5rem;
+    }
+
+    .load-post-form-description {
+        font-size: 1.4rem;
+        width: 60%;
+    }
+
+    .imagen-container {
+        height: 35rem;
+    }
+
+    .imagen-container img {
+        height: 35rem;
+    }
+}
