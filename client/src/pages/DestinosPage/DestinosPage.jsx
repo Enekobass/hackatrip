@@ -13,7 +13,7 @@ const DestinosPage = ({ setTripsFiltrados }) => {
   return (
     <main>
         <Header imgSrc={imgSrc}/>
-      <FilterTrips loading={loading} trips={trips}/>
+        <FilterTrips loading={loading} trips={trips}/>
     </main>
   );
 };

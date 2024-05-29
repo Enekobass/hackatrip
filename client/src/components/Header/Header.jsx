@@ -44,7 +44,11 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             <a href='#comunidad'>Comunidad</a>
           </li>
           <li>
-            <a href='#grupos-de-edad'>Grupos de Edad</a>
+            <a href=''>Grupos de Edad</a>
+            <ul>
+              <li><a href="?grupoDeEdad=25-35">25-35</a></li>
+              <li><a href="?grupoDeEdad=36-45">36-45</a></li>
+            </ul>
           </li>
           <li>
             <a href='/contact'>Contacto</a>

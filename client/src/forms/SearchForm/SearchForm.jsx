@@ -11,10 +11,11 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
 
     const [destino, setDestino] = useState('');
     const [grupoDeEdad, setGrupoDeEdad] = useState('');
-    //const [fecha, setFecha] = useState('');
+    const [fecha, setFecha] = useState('');
 
     //En esta array, añadir cuando se crea un viaje con un nuevo destino que no habia existido antes en la web
     const destinos = [
+        { value: '', label: 'Todos' },
         { value: 'costa rica', label: 'Costa Rica' },
         { value: 'estados unidos', label: 'Estados Unidos' },
         { value: 'francia', label: 'Francia' },
@@ -30,17 +31,8 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
         { value: 'tailandia', label: 'Tailandia' },
       ];
 
-      const grupos = [
-        { value: '25-35', label: '25-35' },
-        { value: '36-45', label: '36-45' },
-      ];
-
-    const handleChange1 = (selectedOption) => {
+    const handleChange = (selectedOption) => {
         setDestino(selectedOption.value)
-    }
-
-    const handleChange2 = (selectedOption) => {
-        setGrupoDeEdad(selectedOption.value)
     }
 
     const handleSubmit = (e) => {
@@ -51,18 +43,17 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
         setSearchParams(
             new URLSearchParams({
                 destino,
-                grupoDeEdad
+                grupoDeEdad,
+                fecha
             })
         );
     };
 
     return (
         <form onSubmit={handleSubmit} className='botonesHome'>
-            <Select placeholder="Busca un destino al que dirigirte" className='botonDonde' options={destinos} onChange={handleChange1} />
+            <Select placeholder="¿Dónde quieres ir?" className='botonDonde' options={destinos} onChange={handleChange} />
 
-            <Select placeholder="Grupo de edad" className='botonDonde' options={grupos} onChange={handleChange2} />
-
-            {/* <div className='botonCuando'>
+            <div className='botonCuando'>
                 <label htmlFor='fecha'>¿Cuando quieres salir?</label>
                 <input
                     type='date'
@@ -70,7 +61,7 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
                     value={fecha}
                     onChange={(e) => setFecha(e.target.value)}
                 />
-            </div> */}
+            </div>
 
             <button disabled={loading}>Buscar</button>
         </form>
