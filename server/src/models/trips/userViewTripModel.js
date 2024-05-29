@@ -13,6 +13,8 @@ const userViewTripModel = async (viajeId, userId = '') => {
             v.plazasMinimas,
             v.plazasMaximas,
             v.itinerario,
+            v.lat,
+            v.lng,
             v.imagen,
             v.fechaDeInicio,
             v.fechaDeFin,

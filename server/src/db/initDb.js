@@ -58,6 +58,8 @@ const createTables = async () => {
                 plazasMinimas INT UNSIGNED NOT NULL,
                 plazasMaximas INT UNSIGNED NOT NULL,
                 itinerario TEXT(10000) NOT NULL,
+                lat INT NOT NULL,
+                lng INT NOT NULL,
                 precio INT UNSIGNED NOT NULL,
                 grupoDeEdad VARCHAR(10) NOT NULL,
                 activo INT NOT NULL,

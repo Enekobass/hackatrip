@@ -6,12 +6,11 @@ const selectCoordinadorModel = async (viajeId) => {
     const [coordinador] = await pool.query(
         `
         SELECT 
-            username, avatar
+            username, avatar, c.confirmado
         FROM users u
         LEFT JOIN coordinadorviajes c ON c.userId = u.id
         LEFT JOIN coordinadorvotes cv ON c.viajeId = cv.viajeId
         WHERE c.viajeId = ?
-        GROUP BY u.id
         `,
         [viajeId],
     );

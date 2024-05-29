@@ -57,6 +57,8 @@ const TripPage = () => {
                             plazasMinimas={trip.tripData[0].plazasMinimas}
                             plazasMaximas={trip.tripData[0].plazasMaximas}
                             itinerario={trip.tripData[0].itinerario}
+                            lat={trip.tripData[0].lat}
+                            lng={trip.tripData[0].lng}
                             precio={trip.tripData[0].precio}
                             grupoDeEdad={trip.tripData[0].grupoDeEdad}
                             photo={trip.tripData[0].imagen}
@@ -70,7 +72,7 @@ const TripPage = () => {
                         {authUser?.role === "admin" ? 
                             <button className='btn-editar' onClick={() => window.location.href = `/editar-viaje/${viajeId}`}> Editar viaje </button> : console.log()}
 
-                        {formatDate(trip.tripData[0].fechaDeFin) < formatDate(today) ? 
+                        {formatDate(trip.tripData[0].fechaDeFin) > formatDate(today) && trip.coordinador.confirmado ? 
                         
                         <>
                             <AddVoteForm
@@ -83,12 +85,14 @@ const TripPage = () => {
                                 authToken={authToken}
                             />
 
+                            <p className='p-post'>¡También puedes subir un post a nuestra comunidad valorando tu experiencia!</p>
+
                             <button className='btn-sube-post'onClick={() => window.location.href = `/viaje/${viajeId}/loadpost`}> Sube un post </button>
 
                         </>
                         : 
                         <div>
-                            <p>¡Cuando acabe el viaje podrás votar aquí al coordinador del viaje!</p>
+                            <p className='p-post'>¡Cuando acabe el viaje podrás subir un post a nuestra comunidad valorando tu experiencia y/o votar aquí al coordinador del viaje!</p>
                         </div>
                         }
 

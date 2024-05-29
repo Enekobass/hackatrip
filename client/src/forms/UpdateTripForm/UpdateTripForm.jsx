@@ -28,6 +28,8 @@ const UpdateTripForm = (trip) => {
   const [plazasMinimas, setPlazasMinimas] = useState(trip.trip.tripData[0].plazasMinimas);
   const [plazasMaximas, setPlazasMaximas] = useState(trip.trip.tripData[0].plazasMaximas);
   const [itinerario, setItinerario] = useState(trip.trip.tripData[0].itinerario);
+  const [lat, setLat] = useState(trip.trip.tripData[0].lat);
+  const [lng, setLng] = useState(trip.trip.tripData[0].lng);
   const [precio, setPrecio] = useState(trip.trip.tripData[0].precio);
   const [grupoDeEdad, setGrupoDeEdad] = useState(trip.trip.tripData[0].grupoDeEdad);
   const [activo, setActivo] = useState(trip.trip.tripData[0].activo);
@@ -47,6 +49,8 @@ const UpdateTripForm = (trip) => {
         plazasMinimas,
         plazasMaximas,
         itinerario,
+        lat,
+        lng,
         precio,
         grupoDeEdad,
         photo,
@@ -91,8 +95,14 @@ const UpdateTripForm = (trip) => {
       <label htmlFor="itinerario">Itinerario:</label>
       <input type="text" id="itinerario" value={itinerario} onChange={(e) => setItinerario(e.target.value)} required />
 
+      <label htmlFor="latitud">Latitud:</label>
+      <input type="number" id="latitud" value={lat} onChange={(e) => setLat(parseInt(e.target.value))} required />
+
+      <label htmlFor="longitud">Longitud:</label>
+      <input type="number" id="longitud" value={lng} onChange={(e) => setLng(parseInt(e.target.value))} required />
+
       <label htmlFor="precio">Precio:</label>
-      <input type="text" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />
+      <input type="number" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />
 
       <label htmlFor="grupoDeEdad">Grupo de edad:</label>
       <input type="text" id="grupoDeEdad" value={grupoDeEdad} onChange={(e) => setGrupoDeEdad(e.target.value)} required />
