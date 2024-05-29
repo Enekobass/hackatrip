@@ -23,11 +23,11 @@
   font-weight: 300;
 }
 
-.botonDonde:hover,
+/* .botonDonde:hover,
 .botonCuando:hover {
   background-image: linear-gradient(var(--Blue), var(--Blue));
   color: white;
-}
+} */
 
 .botonDonde {
   background-color: white;

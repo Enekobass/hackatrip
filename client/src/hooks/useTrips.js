@@ -23,7 +23,7 @@ const useTrips = (setTripsFiltrados) => {
 
         const trips = await selectAllTripsService(searchParams, authToken);
 
-        if (searchParams.get('destino')) {
+        if (searchParams.get('destino') || searchParams.get('fecha')) {
           setTripsFiltrados(true);
         } else {
           setTripsFiltrados(false);

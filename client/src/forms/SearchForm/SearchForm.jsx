@@ -4,9 +4,34 @@ import { useState } from 'react';
 
 import './SearchForm.css';
 
+import Select from "react-select"
+
 const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
-    const [destino, setDestino] = useState('');
-    const [fecha, setFecha] = useState('');
+
+
+    const [destino, setDestino] = useState(null);
+    //const [fecha, setFecha] = useState('');
+
+    //En esta array, añadir cuando se crea un viaje con un nuevo destino que no habia existido antes en la web
+    const destinos = [
+        { value: 'costa rica', label: 'Costa Rica' },
+        { value: 'estados unidos', label: 'Estados Unidos' },
+        { value: 'francia', label: 'Francia' },
+        { value: 'indonesia', label: 'Indonesia' },
+        { value: 'italia', label: 'Italia' },
+        { value: 'japon', label: 'Japón' },
+        { value: 'kenia', label: 'Kenia' },
+        { value: 'laos', label: 'Laos' },
+        { value: 'marruecos', label: 'Marruecos' },
+        { value: 'mexico', label: 'México' },
+        { value: 'peru', label: 'Perú' },
+        { value: 'portugal', label: 'Portugal' },
+        { value: 'tailandia', label: 'Tailandia' },
+      ];
+
+    const handleChange = (selectedOption) => {
+        setDestino(selectedOption.value)
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,33 +40,24 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
 
         setSearchParams(
             new URLSearchParams({
-                destino,
-                fecha,
+                destino
             })
         );
     };
 
     return (
         <form onSubmit={handleSubmit} className='botonesHome'>
-            <div className='botonDonde'>
-                <label htmlFor='destino'>¿A donde quieres ir?</label>
-                <input
-                    type='text'
-                    id='destino'
-                    value={destino}
-                    onChange={(e) => setDestino(e.target.value)}
-                />
-            </div>
+            <Select placeholder="Busca un destino al que dirigirte" className='botonDonde' options={destinos} onChange={handleChange} />
 
-            <div className='botonCuando'>
+            {/* <div className='botonCuando'>
                 <label htmlFor='fecha'>¿Cuando quieres salir?</label>
                 <input
-                    type='text'
+                    type='date'
                     id='fecha'
                     value={fecha}
                     onChange={(e) => setFecha(e.target.value)}
                 />
-            </div>
+            </div> */}
 
             <button disabled={loading}>Buscar</button>
         </form>
