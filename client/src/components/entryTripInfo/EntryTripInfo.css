@@ -1,30 +1,49 @@
-/* Estilos para el contenedor principal de la entrada */
+/* Estilos generales para el contenedor principal */
 .entry-header {
   position: relative;
   width: 90%; /* Ajuste para dispositivos móviles */
   margin-left: 5%; /* Ajuste para dispositivos móviles */
   display: grid;
   grid-template-areas:
-    'place'
-    'title'
-    'price'
-    'dates'
-    'photo';
+      'place'
+      'title'
+      'price'
+      'dates'
+      'photo';
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto auto; /* Añade un nuevo auto para el precio */
+  grid-template-rows: repeat(5, auto); /* Ajusta automáticamente cada fila */
   gap: 10px; /* Espacio entre las áreas */
-  justify-items: start; /* Centra horizontalmente */
+  justify-items: start; /* Alinea elementos al inicio horizontalmente */
 }
 
+/* Estilos para el contenido extra con efecto parallax */
 .extra-content {
   grid-area: extra;
   padding: 15px;
-  background-image: linear-gradient(var(--Blue), var(--Turqoise));
+  background-image: linear-gradient(var(--Turqoise), var(--Blue));
   width: 100%; /* Ajuste para dispositivos móviles */
   max-width: 350px; /* Límite de ancho para pantallas más grandes */
-  height: auto; /* Ajuste para dispositivos móviles */
+  max-height: 400px; /* Ajuste para dispositivos móviles */
+  border: 2px solid #000;
   border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: absolute; /* Para el efecto parallax */
+  transition: transform 1s ease-out; /* Suaviza el movimiento */
+  top: 50%;
+  left: 70%;
+  z-index: 1;
+}
+
+/* Estilos para el botón de apuntarse */
+.signup-button {
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.signup-button:hover {
+  background-color: rgb(255, 0, 0);
 }
 
 /* Estilos para el overlay del destino */
@@ -37,11 +56,13 @@
   font-family: 'Jomhuria', serif;
 }
 
+/* Contenedor para el título */
 .title-container {
   grid-area: title;
   text-align: center;
 }
 
+/* Estilos para el título */
 .title {
   font-size: 1.2rem; /* Ajuste para dispositivos móviles */
   font-family: 'Martel Sans', sans-serif;
@@ -60,28 +81,40 @@
 /* Estilos para el overlay de las fechas */
 .dates-overlay {
   grid-area: dates;
-  background-color: var(--Turqoise);
+  background-color: var(--Blue);
   padding: 5px 10px;
   border-radius: 5px;
-  display: inline;
+  display: inline-block;
+  font-weight: bold;
+  font-size: larger;
+  border: 2px solid #000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
 }
 
+/* Estilos para la edad */
 .edad {
   margin: 10px;
   margin-left: 5%; /* Ajuste para dispositivos móviles */
   background-color: var(--Turqoise);
   padding: 5px 10px;
   border-radius: 5px;
-  display: inline;
+  display: inline-block;
+  border: 1px solid #000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Estilos para centrar el iframe del mapa */
+/* Estilos para el contenedor del mapa */
 .mapa-container {
-  display: flex;
-  justify-content: center;
-  margin: 2% 5%; /* Ajuste para dispositivos móviles */
+  width: 100%;
+  height: 400px; /* Ajuste de la altura según necesidad */
+  max-width: 600px; /* Tamaño máximo para pantallas más grandes */
+  margin: auto;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
+/* Estilos para el mapa */
 .mapa {
   border: 0;
   width: 100%;
@@ -100,118 +133,98 @@
   padding: 5px 10px;
   text-align: center;
   font-weight: bold;
+  font-size: 1.3rem;
   border-radius: 5px;
   margin: 10px;
+  border: 1px solid #000;
   margin-left: 5%; /* Ajuste para dispositivos móviles */
 }
 
 /* Estilos para las descripciones */
 .description {
-  padding: 10px;
-  margin-left: 5%; /* Ajuste para dispositivos móviles */
-  margin-right: 10%; /* Ajuste para dispositivos móviles */
+  margin: 20px 40% 20px 5%; /* Ajuste para dispositivos móviles */
   display: block;
-  margin-top: 20px; /* Ajusta el margen según sea necesario */
-}
-
-/* Estilos para la ruta */
-.route {
-  padding: 10px;
-  margin-left: 5%; /* Ajuste para dispositivos móviles */
-  margin-right: 10%; /* Ajuste para dispositivos móviles */
-  display: block;
+  font-size: larger;
 }
 
 /* Estilos para los títulos de itinerario */
 .itinerary h2 {
-  margin-left: 5%; /* Ajuste para dispositivos móviles */
+  margin: 20px 0 0 5%; /* Ajuste para dispositivos móviles */
 }
 
-/* Estilos para ocultar la imagen */
-.entry-header img.hidden {
-  display: none;
+/* Estilos para la ruta */
+.route {
+  margin: 20px 10% 10px 5%; /* Ajuste para dispositivos móviles */
+  display: block;
 }
 
-/* Estilos para ocultar elementos */
+/* Estilos para ocultar elementos que no queremos mostrar */
 .hidden {
   display: none;
 }
 
-/* Estilos para el botón de apuntarse */
-.signup-button {
-  background-color: var(--Red);
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px;
-  margin-left: 5%; /* Ajuste para dispositivos móviles */
-}
-
-.signup-button:hover {
-  background-color: rgb(255, 0, 0);
-}
-
-/**** Estilos general para Tablet ****/
+/* Estilos generales para tablet */
 @media screen and (min-width: 768px) {
   .entry-header {
-    width: 80%;
-    margin-left: 10%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      'place place'
-      'title title'
-      'price price'
-      'dates dates'
-      'photo photo';
+      width: 80%;
+      margin-left: 10%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+          'place place'
+          'title title'
+          'price price'
+          'dates dates'
+          'photo photo';
   }
 
   .title {
-    font-size: 2rem; /* Ajuste para tablets */
+      font-size: 2rem; /* Ajuste para tablets */
   }
 
   .place-overlay {
-    font-size: 3rem; /* Ajuste para tablets */
+      font-size: 3rem; /* Ajuste para tablets */
   }
 
   .extra-content {
-    width: 350px;
-    height: 500px;
+      width: 350px;
+      height: 500px;
   }
 }
 
-/**** Estilos Orientación Horizontal en Tablet ****/
+/* Estilos para tablets en orientación horizontal */
 @media screen and (min-width: 768px) and (orientation: landscape) {
   .entry-header {
-    width: 75%;
-    margin-left: 12.5%;
+      width: 75%;
+      margin-left: 12.5%;
   }
 
   .title {
-    font-size: 2.5rem; /* Ajuste para tablets en modo horizontal */
+      font-size: 2.5rem; /* Ajuste para tablets en modo horizontal */
   }
 
   .place-overlay {
-    font-size: 3.5rem; /* Ajuste para tablets en modo horizontal */
+      font-size: 3.5rem; /* Ajuste para tablets en modo horizontal */
   }
 }
 
-/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+/* Estilos predeterminados para escritorio */
 @media screen and (min-width: 1000px) {
   .entry-header {
-    width: 70%;
-    margin-left: 15%;
+      width: 70%;
+      margin-left: 15%;
   }
 
   .title {
-    font-size: 2.5rem;
+      font-size: 2.5rem;
   }
 
   .place-overlay {
-    font-size: 4rem;
+      font-size: 4rem;
   }
 
   .extra-content {
-    width: 350px;
-    height: 500px;
+      width: 350px;
+      height: 500px;
   }
 }
+

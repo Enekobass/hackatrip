@@ -52,11 +52,6 @@
   margin: 0 2%; /* Aumenta este margen para mayor separación */
 }
 
-.footer__nav-item a {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
 .footer__nav-list > li {
   position: relative;
 }
@@ -86,7 +81,7 @@
 }
 
 .footer__destinations li a {
-  color: red;
+  color: var(--Red);
   text-decoration: none;
 }
 
