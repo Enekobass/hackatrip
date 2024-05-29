@@ -10,7 +10,6 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
 
 
     const [destino, setDestino] = useState('');
-    const [grupoDeEdad, setGrupoDeEdad] = useState('');
     const [fecha, setFecha] = useState('');
 
     //En esta array, añadir cuando se crea un viaje con un nuevo destino que no habia existido antes en la web
@@ -43,7 +42,6 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
         setSearchParams(
             new URLSearchParams({
                 destino,
-                grupoDeEdad,
                 fecha
             })
         );
