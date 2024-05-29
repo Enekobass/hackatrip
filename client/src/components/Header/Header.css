@@ -1,3 +1,4 @@
+/* Estilos generales para el contenedor principal */
 .header {
   display: grid;
   grid-template-areas: 
@@ -9,6 +10,7 @@
   overflow: hidden; /* Asegura que la imagen no se desborde */
 }
 
+/* Estilos para la imagen de fondo */
 .imgheader {
   position: absolute;
   top: 0;
@@ -17,9 +19,10 @@
   width: 100%;
   object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin deformarse */
   object-position: center;
-  z-index: 0; /* Asegura que la imagen esté detrás de los otros elementos */
+  z-index: -1; /* Asegura que la imagen esté detrás de los otros elementos */
 }
 
+/* Estilos para el contenedor de navegación */
 .nav-container {
   display: flex;
   align-items: center;
@@ -29,6 +32,7 @@
   z-index: 2; /* Asegura que el contenido de la navegación esté por encima de la foto de fondo */
 }
 
+/* Estilos para el logo */
 .logo1 {
   max-width: 150px; /* Ajuste para dispositivos móviles */
   margin-top: 10px;
@@ -37,6 +41,7 @@
   z-index: 2;
 }
 
+/* Estilos para el menú de navegación */
 .nav-menu {
   display: flex;
   justify-content: center;
@@ -48,13 +53,14 @@
 
 .nav-menu li {
   margin: 0 10px; /* Ajuste para dispositivos móviles */
-  float: left;
-  list-style: none;
+  position: relative; /* Necesario para submenús */
 }
 
-.nav-menu li ul{
+.nav-menu li ul {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 .nav-menu li:hover > ul {
@@ -66,16 +72,19 @@
   text-decoration: none;
   padding: 10px 10px;
   display: block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .nav-menu a:hover {
   font-weight: bolder;
 }
 
+/* Estilos para los enlaces adicionales */
 .nav-links {
   display: flex;
   justify-content: center;
   gap: 10px; /* Ajuste para dispositivos móviles */
+  
   list-style: none;
   z-index: 2; /* Asegura que los enlaces estén por encima de la foto de fondo */
 }
@@ -86,6 +95,7 @@
   padding: 10px 10px; /* Ajuste para dispositivos móviles */
   border: none;
   cursor: pointer;
+  
 }
 
 .contenedorFrasePortada {
@@ -93,17 +103,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px; /* Ajuste para dispositivos móviles */
-  z-index: 2; /* Asegura que la frase esté por encima de la foto de fondo */
+  margin: 10px; /* Ajuste para dispositivos móviles */
+  z-index: 2;
   text-align: center;
+  
 }
 
+/* Estilos para la frase de portada */
 .frasePortada {
   font-size: 2rem; /* Ajuste para dispositivos móviles */
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  
+  
 }
 
-/**** Estilos general para Tablet ****/
+/* Estilos para tablet */
 @media screen and (min-width: 768px) {
   .header {
     height: 70vh; /* Ajuste para tablets */
@@ -138,7 +153,7 @@
   }
 }
 
-/**** Estilos Orientación Horizontal en Tablet ****/
+/* Estilos para orientación horizontal en tablet */
 @media screen and (min-width: 768px) and (orientation: landscape) {
   .header {
     height: 75vh; /* Ajuste para tablets en modo horizontal */
@@ -149,7 +164,7 @@
   }
 }
 
-/**************** VERSIÓN PREDETERMINADA: Escritorio ***************/
+/* Estilos para escritorio */
 @media screen and (min-width: 1000px) {
   .header {
     height: 650px; /* Ajuste para escritorio */
@@ -183,3 +198,4 @@
     font-size: 55px; /* Ajuste para escritorio */
   }
 }
+
