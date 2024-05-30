@@ -31,7 +31,7 @@ const TripPage = () => {
 
     const today = new Date();
 
-    const listaPaises = ["africa", "americadelnorte", "asia", "egipto", "europa", "indonesia", "islandia", "japon", "laos", "latinoamerica", "mexico", "nuevayork", "rep.dominicana", "rep.dominicana2", "singapur" , "tailandia", "tanzania", "vietnam"]; // Añadir aquí la imagen de cada país que se añade
+    const listaPaises = ["africa", "americadelnorte", "asia", "egipto", "europa", "indonesia", "islandia", "japón", "laos", "latinoamerica", "mexico", "nuevayork", "rep.dominicana", "rep.dominicana2", "singapur" , "tailandia", "tanzania", "vietnam"]; // Añadir aquí la imagen de cada país que se añade
 
     // fetch a Front http://front:4334/italia.jpg
     // Si fetch devuelve 404 uso Home.jpg
