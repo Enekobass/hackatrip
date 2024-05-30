@@ -25,6 +25,12 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
     sixTrips.push(trips[i]);
   }
 
+  let tenTrips = [];
+
+  for (let i = 0; i < 10; i++) {
+    tenTrips.push(trips[i]);
+  }
+
   return (
     <>
       <Header setTripsFiltrados={setTripsFiltrados} imgSrc={imgSrc} />
@@ -49,7 +55,7 @@ const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
                 <TripListItem sixTrips={sixTrips} loading={loading} />
               )}
             </ul>
-            <Home />
+            <Home tenTrips={tenTrips} loading={loading}/>
           </>
         ) : (
           <ul className='trip-list'>
