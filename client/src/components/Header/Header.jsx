@@ -21,15 +21,50 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
   return (
     <header className='header'>
       <img className='imgheader' src={imgSrc} alt='Home' />
-      <nav className='nav-container-auth'>
-        <ul className='nav-auth'>
+      <nav className='nav-container'>
+        <div htmlFor='show-menu'>
+          <img
+            onClick={goToHome}
+            className='logo1'
+            src='/Logo Blanco (sombra interior).png'
+            alt='Logotipo'
+          />
+        </div>
+
+        <ul className='nav-menu'>
+          <li>
+            <a href='#fechas'>Fechas</a>
+          </li>
+          <li>
+            <a href='/destinos'>Destinos</a>
+          </li>
+          <li>
+            <a href='#comunidad'>Comunidad</a>
+          </li>
+          <li>
+            <a href=''>Grupos de Edad</a>
+            <ul>
+              <li>
+                <a href='/?grupoDeEdad=25-35'>25-35</a>
+              </li>
+              <li>
+                <a href='/?grupoDeEdad=36-45'>36-45</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='/contact'>Contacto</a>
+          </li>
+        </ul>
+
+        <ul className='nav-links'>
           {!authUser ? (
             <>
               <li>
-                <NavLink to='/register'>Registro</NavLink>
+                <button><NavLink to='/register'>Registro</NavLink></button>
               </li>
               <li>
-                <NavLink to='/login'>Login</NavLink>
+                <button><NavLink to='/login'>Login</NavLink></button>
               </li>
             </>
           ) : (
@@ -51,41 +86,6 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
           ) : (
             console.log()
           )}
-        </ul>
-      </nav>
-      <div className='show-menu'>
-        <img
-          onClick={goToHome}
-          className='logo1'
-          src='/Logo Blanco (sombra interior).png'
-          alt='Logotipo'
-        />
-      </div>
-      <nav className='nav-container'>
-        <ul className='nav-menu'>
-          <li>
-            <a href='#fechas'>Fechas</a>
-          </li>
-          <li>
-            <a href='/destinos'>Destinos</a>
-          </li>
-          <li>
-            <a href='#comunidad'>Comunidad</a>
-          </li>
-          <li>
-            <a href=''>Grupos de Edad</a>
-            <ul>
-              <li>
-                <a href='?grupoDeEdad=25-35'>25-35</a>
-              </li>
-              <li>
-                <a href='?grupoDeEdad=36-45'>36-45</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href='/contact'>Contacto</a>
-          </li>
         </ul>
       </nav>
 

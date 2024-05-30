@@ -22,13 +22,14 @@
 .grupoedad {
     display: flex;
     color: white;
-    background-color: var(--Red);
+    background-color: var(--Blue);
     border-radius: 10px;
     justify-content: center;
 }
 
 .viaje button {
     width: 150px;
+    margin-right: 50px;
 }
 
 /* Media queries para responsividad */
