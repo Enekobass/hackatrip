@@ -26,7 +26,6 @@ const SearchForm = ({ setSearchParams, loading, setTripsFiltrados }) => {
         { value: 'marruecos', label: 'Marruecos' },
         { value: 'mexico', label: 'México' },
         { value: 'peru', label: 'Perú' },
-        { value: 'portugal', label: 'Portugal' },
         { value: 'tailandia', label: 'Tailandia' },
       ];
 
