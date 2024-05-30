@@ -96,10 +96,10 @@ const UpdateTripForm = (trip) => {
       <input type="text" id="itinerario" value={itinerario} onChange={(e) => setItinerario(e.target.value)} required />
 
       <label htmlFor="latitud">Latitud:</label>
-      <input type="number" id="latitud" value={lat} onChange={(e) => setLat(parseInt(e.target.value))} required />
+      <input type="number" id="latitud" value={lat} onChange={(e) => setLat(parseFloat(e.target.value))} required />
 
       <label htmlFor="longitud">Longitud:</label>
-      <input type="number" id="longitud" value={lng} onChange={(e) => setLng(parseInt(e.target.value))} required />
+      <input type="number" id="longitud" value={lng} onChange={(e) => setLng(parseFloat(e.target.value))} required />
 
       <label htmlFor="precio">Precio:</label>
       <input type="number" id="precio" value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))} required />

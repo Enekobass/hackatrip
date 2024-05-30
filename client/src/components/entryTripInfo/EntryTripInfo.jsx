@@ -112,16 +112,7 @@ const TripInfo = ({
         <li className='hidden'>
           <strong>Plazas máximas:</strong> {plazasMaximas}
         </li>
-{/* 
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102477.73576302624!2d-4.6696376049198705!3d36.61605317510837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1717012936012!5m2!1ses!2ses"
-          width="400"
-          height="300"
-          allowFullScreen=""
-          loading="lazy"
-          >
-        </iframe> */}
-
+        
         <APIProvider apiKey={VITE_GOOGLE_MAPS_API_KEY}>
           <div style={{height: "40vh", width: "30vw"}}>
             <Map defaultZoom={9} defaultCenter={position} mapId={VITE_MAP_ID}>

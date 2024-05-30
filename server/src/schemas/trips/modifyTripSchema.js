@@ -5,7 +5,7 @@ import imgSchema from '../imgSchema.js';
 import joiErrorMessages from '../joiErrorMessages.js';
 
 const newTripSchema = joi.object({
-    titulo: joi.string().min(5).max(20).optional().messages(joiErrorMessages),
+    titulo: joi.string().min(5).max(100).optional().messages(joiErrorMessages),
     destino: joi.string().min(2).max(50).optional().messages(joiErrorMessages),
     fechaDeInicio: joi.date().optional().messages(joiErrorMessages),
     fechaDeFin: joi.date().optional().messages(joiErrorMessages),

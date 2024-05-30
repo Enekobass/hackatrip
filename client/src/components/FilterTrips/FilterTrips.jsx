@@ -26,7 +26,7 @@ const FilterTrips = ({trips, loading}) => {
         <Grid container flexDirection="column">
             {(loading ? Array.from(new Array(5)) : trips).map((trip, index) => (
                 new Date(trip?.fechaDeInicio) > new Date(today) ?
-                <Box key={index} sx={{ width: "80%", marginLeft:"180px", my: 2}}>
+                <Box className="box" key={index}>
                 {trip ? (
                    <>
                    <div className='viaje'>
