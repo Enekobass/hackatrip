@@ -72,7 +72,7 @@ const TripPage = () => {
                         {authUser?.role === "admin" ? 
                             <button className='btn-editar' onClick={() => window.location.href = `/editar-viaje/${viajeId}`}> Editar viaje </button> : console.log()}
 
-                        {formatDate(trip.tripData[0].fechaDeFin) > formatDate(today) && trip.coordinador.confirmado ? 
+                        {formatDate(trip.tripData[0].fechaDeFin) > formatDate(today) && trip.coordinador?.confirmado ? 
                         
                         <>
                             <AddVoteForm
