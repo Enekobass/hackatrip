@@ -114,8 +114,8 @@ const TripInfo = ({
         </li>
         
         <APIProvider apiKey={VITE_GOOGLE_MAPS_API_KEY}>
-          <div style={{height: "40vh", width: "30vw"}}>
-            <Map defaultZoom={9} defaultCenter={position} mapId={VITE_MAP_ID}>
+          <div style={{height: "40vh", width: "30vw", marginLeft: "95px", border: "solid", borderRadius: "5px", boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
+            <Map defaultZoom={6} defaultCenter={position} mapId={VITE_MAP_ID}>
               <AdvancedMarker position={position} onClick={() => setOpen(true)}>
                 <Pin background={"lightblue"} borderColor={"black"} glyphColor={"black"}/>
               </AdvancedMarker>

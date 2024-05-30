@@ -37,10 +37,10 @@ function TripListItem(sixTrips, {loading}) {
             new Date(trip?.fechaDeInicio) > new Date(today) ?
               <Link to={`/viaje/${trip.id}`} className='trip-item'>
                 <Box sx={{ pr: 2, marginLeft: 7}}>
-                  <Typography gutterBottom variant="body1" color="ButtonText">
+                  <Typography gutterBottom fontFamily="Martel Sans" variant="h4" color="ButtonText">
                     {trip.destino}
                   </Typography>
-                  <Typography display="block" variant="subtitle1" color="GrayText">
+                  <Typography display="block" fontFamily="Martel Sans" variant="h5" color="GrayText">
                     {trip.precio}€
                   </Typography>
                 </Box>
