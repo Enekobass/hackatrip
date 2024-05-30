@@ -48,6 +48,8 @@
   font-size: 1rem; /* Ajuste para dispositivos móviles */
   padding: 0;
   list-style: none;
+  background-color: rgba(0, 0, 0, 0.300);
+  border-radius: 10px;
   z-index: 2; /* Asegura que el menú esté por encima de la foto de fondo */
 }
 
@@ -62,6 +64,8 @@
   position: absolute;
   top: 100%;
   left: 0;
+  background-color: rgba(0, 0, 0, 0.300);
+  border-radius: 10px;
 }
 
 .nav-menu li:hover > ul {

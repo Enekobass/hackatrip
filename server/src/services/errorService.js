@@ -67,7 +67,7 @@ export const invalidTokenError = () => {
     throw {
         httpStatus: 401, // Unauthorized
         code: 'INVALID_TOKEN',
-        message: 'Token invalido',
+        message: 'Tienes que hacer login',
     };
 };
 
