@@ -54,6 +54,7 @@
 .nav-menu li {
   margin: 0 10px; /* Ajuste para dispositivos móviles */
   position: relative; /* Necesario para submenús */
+  list-style: none;
 }
 
 .nav-menu li ul {
