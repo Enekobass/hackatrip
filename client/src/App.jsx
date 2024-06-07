@@ -22,6 +22,10 @@ import ErrorBoundary from './components/ErrorBoundary';
 import UpdateTripPage from './pages/UpdateTripPage/UpdateTripPage';
 import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
 import DestinosPage from './pages/DestinosPage/DestinosPage';
+import CoordinadoresPage from './pages/CoordinadoresPage/CoordinadoresPage';
+import UsersPage from './pages/UsersPage/UsersPage';
+import ReservasPage from './pages/ReservasPage/ReservasPage';
+import CommunityPage from './pages/CommunityPage/CommunityPage';
 
 const App = () => {
 
@@ -44,13 +48,17 @@ const App = () => {
               setTripsFiltrados={setTripsFiltrados}
               tripsFiltrados={tripsFiltrados}
             />}
-
           />
-          {/* <Route path='/comunity' element={<ComunityPage />} />
-      <Route path='/coordi' element={<CoordiPage />} /> */}
+            
+          <Route path='/contact' element={<ContactPage />}/>
 
+          <Route path='/community' element={<CommunityPage />}/>
 
-          <Route path='/contact' element={<ContactPage />}
+          <Route
+            path='/reservas'
+            element={<ReservasPage
+              setTripsFiltrados={setTripsFiltrados}
+            />}
           />
 
           <Route
@@ -74,7 +82,9 @@ const App = () => {
           <Route path='/recover' element={<ResetPasswordPage />} />
           <Route path='/profile' element={<UserProfilePage />} />
           <Route path='/admin' element={<AdminPage />} />
+          <Route path='/users' element={<UsersPage />} />
           <Route path='/viaje/:viajeId' element={<TripPage />} />
+          <Route path='/coordinadores/:viajeId' element={<CoordinadoresPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
         <Footer />

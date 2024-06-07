@@ -10,6 +10,7 @@ import {
     editUserController,
     editUserAvatarController,
     getOwnUserController,
+    getAllUsersController,
 } from '../controllers/users/index.js';
 
 import {
@@ -26,6 +27,13 @@ router.put('/users/validate/:registrationCode', validateUserController);
 router.post('/users/login', loginUserController);
 
 router.get('/users', authUserController, getOwnUserController);
+
+router.get(
+    '/allusers',
+    authUserController,
+    authAdminController,
+    getAllUsersController,
+);
 
 router.post('/users/password/recover', sendRecoverPassController);
 

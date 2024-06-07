@@ -65,22 +65,6 @@ export const createTripService = async ({
   return body.message; // Suponiendo que tu backend devuelve los datos del nuevo viaje creado
 };
 
-export const selectTripByIdService = async (viajeId, authToken) => {
-  const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}`, {
-    headers: {
-      Authorization: authToken,
-    },
-  });
-
-  const body = await res.json();
-
-  if (body.status === 'error') {
-    throw new Error(body.message);
-  }
-
-  return body.data;
-};
-
 export const updateTripService = async ({
   titulo,
   descripcion,
@@ -147,6 +131,22 @@ export const updateTripService = async ({
   return body.message; // Suponiendo que tu backend devuelve los datos del nuevo viaje creado
 };
 
+export const selectTripByIdService = async (viajeId, authToken) => {
+  const res = await fetch(`${VITE_API_URL}/viajes/${viajeId}`, {
+    headers: {
+      Authorization: authToken,
+    },
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.data;
+};
+
 export const selectAllTripsService = async (searchParams, authToken) => {
   const res = await fetch(`${VITE_API_URL}/todosviajes?${searchParams}`, {
     headers: {
@@ -162,6 +162,75 @@ export const selectAllTripsService = async (searchParams, authToken) => {
   }
 
   return body.data.viajesFiltrados;
+};
+
+export const selectCoordinadoresService = async (viajeId, authToken) => {
+  const res = await fetch(`${VITE_API_URL}/${viajeId}/coordinadores`, {
+    headers: {
+      Authorization: authToken,
+    },
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.data;
+};
+
+export const selectPostsService = async (authToken) => {
+  const res = await fetch(`${VITE_API_URL}/posts`, {
+    headers: {
+      Authorization: authToken,
+    },
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.data.posts;
+};
+
+export const selectCoordinadoresConRatingservice = async (authToken) => {
+  const res = await fetch(`${VITE_API_URL}/ratedcoordinadores`, {
+    headers: {
+      Authorization: authToken,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.data;
+};
+
+export const confirmarCoordinador = async (userId, viajeId, authToken) => {
+  const res = await fetch(
+    `${VITE_API_URL}/viajes/${userId}/${viajeId}/confirmar`,
+    {
+      method: 'post',
+      headers: {
+        Authorization: authToken,
+      },
+    }
+  );
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.message; // Suponiendo que tu backend devuelve los datos del nuevo viaje creado
 };
 
 export const insertTripVoteService = async (value, viajeId, authToken) => {
@@ -194,6 +263,27 @@ export const insertTripVoteService = async (value, viajeId, authToken) => {
 export const bookTripService = async (viajeId, authToken) => {
   const res = await fetch(
     `${VITE_API_URL}/viajes/${viajeId}/reservarycancelar`,
+    {
+      method: 'post',
+      headers: {
+        Authorization: authToken,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.message;
+};
+
+export const applyAsCoordinador = async (viajeId, coordinadorId, authToken) => {
+  const res = await fetch(
+    `${VITE_API_URL}/viajes/${viajeId}/${coordinadorId}`,
     {
       method: 'post',
       headers: {

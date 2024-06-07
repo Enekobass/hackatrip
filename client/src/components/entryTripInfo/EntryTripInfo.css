@@ -23,7 +23,7 @@
   background-image: linear-gradient(var(--Turqoise), var(--Blue));
   width: 100%; /* Ajuste para dispositivos móviles */
   max-width: 350px; /* Límite de ancho para pantallas más grandes */
-  max-height: 400px; /* Ajuste para dispositivos móviles */
+  max-height: 430px; /* Ajuste para dispositivos móviles */
   border: 2px solid #000;
   border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

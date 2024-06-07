@@ -4,6 +4,8 @@ import toast from 'react-hot-toast';
 
 import Stars from '../../components/Stars/Stars';
 
+const { VITE_API_URL } = import.meta.env;
+
 import './AddVoteForm.css';
 
 const AddVoteForm = ({
@@ -40,12 +42,12 @@ const AddVoteForm = ({
                 <>
                     <p className='p-coordinador'>¡Vota al coordinador de este viaje si has participado en él!</p>
                     <div className='imagen-coordinador'>
-                        <img className='imagen' src={coordinador?.avatar ? coordinador.avatar : '/default-avatar.jpg'} alt={coordinador?.username} />
+                        <img className='imagen' src={coordinador?.avatar ? `${VITE_API_URL}/${coordinador?.avatar}` : '/default-avatar.jpg'} alt={coordinador?.username} />
                         <p className='name-coordinador'>{coordinador?.username}</p>
                     </div>
                     <div className='stars-vote'>
                         <Stars votesAvg={avgValue?.media} votedByMe={avgValue?.votedByMe} handleAddVote={handleAddVote} />
-                        <span className='star-span'>{avgValue?.media} </span>
+                        <span className='star-span'>Media de votos de {coordinador?.username} {avgValue?.media}</span>
                     </div>
                 </>
             )}

@@ -46,8 +46,6 @@ const TripPage = () => {
             <main>
                 {trip && (
                     <>
-                        <h2>{trip.titulo}</h2>
-
                         <TripInfo
                             destino={trip.tripData[0].destino}
                             titulo={trip.tripData[0].titulo}
@@ -66,11 +64,19 @@ const TripPage = () => {
                             confirmado={trip.tripData[0].confirmado}
                             id={trip.tripData[0].id}
                             authToken={authToken}
+                            authUser={authUser}
+                            viajeId={viajeId}
+                            reservedByMe={trip.tripData[0].reservedByMe}
                         />
 
 
-                        {authUser?.role === "admin" ? 
-                            <button className='btn-editar' onClick={() => window.location.href = `/editar-viaje/${viajeId}`}> Editar viaje </button> : console.log()}
+                        {authUser?.role === "admin" ?
+                            <>
+                                {trip.coordinador?.confirmado ? console.log() : <button className='btn-editar' onClick={() => window.location.href = `/coordinadores/${viajeId}`}> Gestionar coordinadores </button>}
+                                <button className='btn-editar' onClick={() => window.location.href = `/editar-viaje/${viajeId}`}> Editar viaje </button>
+                            </>
+                            :
+                            console.log()}
 
                         {formatDate(trip.tripData[0].fechaDeFin) > formatDate(today) && trip.coordinador?.confirmado ? 
                         
@@ -85,15 +91,21 @@ const TripPage = () => {
                                 authToken={authToken}
                             />
 
-                            <p className='p-post'>¡También puedes subir un post a nuestra comunidad valorando tu experiencia!</p>
-
-                            <button className='btn-sube-post'onClick={() => window.location.href = `/viaje/${viajeId}/loadpost`}> Sube un post </button>
-
                         </>
                         : 
                         <div>
                             <p className='p-post'>¡Cuando acabe el viaje podrás subir un post a nuestra comunidad valorando tu experiencia y/o votar aquí al coordinador del viaje!</p>
                         </div>
+                        }
+
+                        {formatDate(trip.tripData[0].fechaDeFin) > formatDate(today) ?
+                            <>
+                                <p className='p-post'>¡También puedes subir un post a nuestra comunidad valorando tu experiencia!</p>
+
+                                <button className='btn-sube-post'onClick={() => window.location.href = `/viaje/${viajeId}/loadpost`}> Sube un post </button>
+                            </>
+                            :
+                            console.log()
                         }
 
 

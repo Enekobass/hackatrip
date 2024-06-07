@@ -39,7 +39,7 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
             <a href='/destinos'>Destinos</a>
           </li>
           <li>
-            <a href='#comunidad'>Comunidad</a>
+            <a href='/community'>Comunidad</a>
           </li>
           <li>
             <a href=''>Grupos de Edad</a>
@@ -74,15 +74,35 @@ const Header = ({ setTripsFiltrados, imgSrc }) => {
                   <NavLink to='/profile'>{authUser.username}</NavLink>
                 </button>
               </li>
+              {authUser?.role != 'admin' ? (
+                <>
+                  <li>
+                    <button>
+                      <NavLink to='/reservas'>Viajes disfrutados</NavLink>
+                    </button>
+                  </li>
+                </>
+                ) : (
+                  console.log()
+                )}
               <li>
                 <button onClick={authLogout}>Cerrar sesión</button>
               </li>
             </>
           )}
           {authUser?.role === 'admin' ? (
-            <button>
-              <NavLink to='/admin'>Crear Viaje</NavLink>
-            </button>
+            <>
+              <li>
+                <button>
+                  <NavLink to='/admin'>Crear Viaje</NavLink>
+                </button>
+              </li>
+              <li>
+                <button>
+                <NavLink to='/users'>Lista de Usuarios</NavLink>
+                </button>
+              </li>
+            </>
           ) : (
             console.log()
           )}

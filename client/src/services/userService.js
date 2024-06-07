@@ -75,6 +75,18 @@ export const getPrivateProfileService = async (authToken) => {
   return body.data?.user;
 };
 
+export const selectUsersService = async (authToken) => {
+  const res = await fetch(`${VITE_API_URL}/allusers`, {
+    headers: {
+      Authorization: authToken,
+    },
+  });
+
+  const body = await res.json();
+
+  return body.data?.users;
+};
+
 export const recoverPassword = async (email) => {
   const res = await fetch(`${VITE_API_URL}/users/password/recover`, {
     method: 'post',
@@ -171,4 +183,21 @@ export const updateAvatarService = async (photo, authToken) => {
     message: body.message,
     avatarName: body.data.avatar.name,
   };
+};
+
+export const promocionarACoordinador = async (userId, authToken) => {
+  const res = await fetch(`${VITE_API_URL}/users/role/${userId}`, {
+    method: 'put',
+    headers: {
+      Authorization: authToken,
+    },
+  });
+
+  const body = await res.json();
+
+  if (body.status === 'error') {
+    throw new Error(body.message);
+  }
+
+  return body.message;
 };

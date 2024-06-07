@@ -2,7 +2,7 @@ import getPool from '../../db/getPool.js';
 
 import { cantBeCoordinador } from '../../services/errorService.js';
 
-const insertCoordinadorModel = async (coordinadorId, viajeId) => {
+const insertCoordinadorModel = async (coordinadorId, viajeId, userId) => {
     const pool = await getPool();
 
     const [coordinador] = await pool.query(
@@ -10,8 +10,10 @@ const insertCoordinadorModel = async (coordinadorId, viajeId) => {
         [viajeId],
     );
 
-    if (coordinador[0]) {
-        cantBeCoordinador();
+    for (let i = 0; i < coordinador.length; i++) {
+        if (coordinador[i].userId === userId) {
+            cantBeCoordinador();
+        }
     }
 
     await pool.query(

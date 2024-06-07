@@ -10,7 +10,7 @@ const selectCoordinadorModel = async (viajeId) => {
         FROM users u
         LEFT JOIN coordinadorviajes c ON c.userId = u.id
         LEFT JOIN coordinadorvotes cv ON c.viajeId = cv.viajeId
-        WHERE c.viajeId = ?
+        WHERE c.viajeId = ? AND c.confirmado = 1
         `,
         [viajeId],
     );

@@ -1,21 +1,22 @@
 import getPool from '../../db/getPool.js';
 
-const selectRatedCoordinadorModel = async () => {
+const selectCoordinadoresTripModel = async (viajeId) => {
     const pool = await getPool();
 
     const [coordinadores] = await pool.query(
         `
         SELECT 
-            username, avatar, AVG(cv.value) as media
+            u.id, username, avatar
         FROM users u
         LEFT JOIN coordinadorviajes c ON c.userId = u.id
         LEFT JOIN coordinadorvotes cv ON c.viajeId = cv.viajeId
-        WHERE cv.coordinadorId = u.id
+        WHERE c.viajeId = ?
         GROUP BY u.id
         `,
+        [viajeId],
     );
 
     return coordinadores;
 };
 
-export default selectRatedCoordinadorModel;
+export default selectCoordinadoresTripModel;

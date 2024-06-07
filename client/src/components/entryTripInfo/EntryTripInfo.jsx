@@ -3,7 +3,7 @@ import './EntryTripInfo.css';
 
 const { VITE_API_URL, VITE_GOOGLE_MAPS_API_KEY, VITE_MAP_ID } = import.meta.env;
 
-import { bookTripService } from '../../services/tripService';
+import { bookTripService, applyAsCoordinador } from '../../services/tripService';
 
 import toast from 'react-hot-toast';
 
@@ -33,6 +33,9 @@ const TripInfo = ({
   confirmado,
   id,
   authToken,
+  authUser,
+  viajeId,
+  reservedByMe,
 }) => {
   const handleClick = async (e) => {
     try {
@@ -41,6 +44,18 @@ const TripInfo = ({
       const book = await bookTripService(id, authToken);
 
       toast.success(book);
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
+  const handleClick2 = async (e) => {
+    try {
+      e.preventDefault();
+
+      const coordinador = await applyAsCoordinador(viajeId, authUser?.id, authToken);
+
+      toast.success(coordinador);
     } catch (err) {
       toast.error(err.message);
     }
@@ -69,9 +84,16 @@ const TripInfo = ({
             </p>
             <p className='recuerdos'>Recuerdos para toda la vida</p>
             <div className='button-container'></div>
-            <button onClick={handleClick} className='signup-button'>
-              Apuntarme
-            </button>
+            {reservedByMe ?
+              <button className='signup-button'>
+                ¡Gracias por confiar en nosotros!
+              </button>
+            :
+              <button onClick={handleClick} className='signup-button'>
+                Apuntarme
+              </button>}
+            {authUser?.role === "coordinador" ? 
+              <button onClick={handleClick2} className='signup-button'> Apuntarme como coordinador </button> : console.log()}
           </div>
         </div>
 
@@ -159,6 +181,8 @@ TripInfo.propTypes = {
   confirmado: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   authToken: PropTypes.string,
+  authUser: PropTypes.object,
+  viajeId: PropTypes.string,
 };
 
 export default TripInfo;

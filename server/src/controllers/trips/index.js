@@ -10,6 +10,8 @@ import userViewTripController from './userViewTripController.js';
 import modifyTripController from './modifyTripController.js';
 import confirmedTripsController from './confirmedTripsController.js';
 import selectRatedCoordinador from './selectRatedCoordinador.js';
+import coordinadoresTripController from './coordinadoresTripController.js';
+import getAllPostsController from './getAllPosts.js';
 
 export {
     voteCoordinadorController,
@@ -24,4 +26,6 @@ export {
     modifyTripController,
     confirmedTripsController,
     selectRatedCoordinador,
+    coordinadoresTripController,
+    getAllPostsController,
 };

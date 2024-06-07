@@ -18,6 +18,8 @@ const voteCoordinadorController = async (req, res, next) => {
             req.user.id,
         );
 
+        console.log(votesAvg);
+
         res.status(201).send({
             status: 'ok',
             message: 'Coordinador Votado',

@@ -18,7 +18,7 @@ const insertCoordinadorVoteModel = async (value, viajeId, userId) => {
     }
 
     const [coordinadorId] = await pool.query(
-        `SELECT userId FROM coordinadorviajes WHERE viajeId = ?`,
+        `SELECT userId, confirmado FROM coordinadorviajes WHERE viajeId = ?`,
         [viajeId],
     );
 
@@ -31,17 +31,21 @@ const insertCoordinadorVoteModel = async (value, viajeId, userId) => {
         cantVoteCoordinadorAgain();
     }
 
-    await pool.query(
-        `INSERT INTO coordinadorvotes (value, coordinadorId, viajeId, userId) VALUES (?, ?, ?, ?)`,
-        [value, coordinadorId[0].userId, viajeId, userId],
-    );
+    for (let i = 0; i < coordinadorId.length; i++) {
+        if (coordinadorId[i].confirmado) {
+            await pool.query(
+                `INSERT INTO coordinadorvotes (value, coordinadorId, viajeId, userId) VALUES (?, ?, ?, ?)`,
+                [value, coordinadorId[i].userId, viajeId, userId],
+            );
 
-    const [votesAvg] = await pool.query(
-        `SELECT AVG(value) AS avg FROM coordinadorvotes WHERE coordinadorId = ?`,
-        [coordinadorId[0].userId],
-    );
+            const [votesAvg] = await pool.query(
+                `SELECT AVG(value) AS avg FROM coordinadorvotes WHERE coordinadorId = ?`,
+                [coordinadorId[i].userId],
+            );
 
-    return Number(votesAvg[0].avg);
+            return Number(votesAvg[0].avg);
+        }
+    }
 };
 
 export default insertCoordinadorVoteModel;

@@ -7,6 +7,7 @@ import editUserRoleController from './editUserRoleController.js';
 import editUserController from './editUserController.js';
 import editUserAvatarController from './editUserAvatarController.js';
 import getOwnUserController from './getOwnUserController.js';
+import getAllUsersController from './getAllUsersController.js';
 
 export {
     newUserController,
@@ -18,4 +19,5 @@ export {
     editUserController,
     editUserAvatarController,
     getOwnUserController,
+    getAllUsersController,
 };

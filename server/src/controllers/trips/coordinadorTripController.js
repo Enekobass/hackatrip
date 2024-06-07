@@ -10,7 +10,7 @@ const coordinadorTripController = async (req, res, next) => {
 
         const { viajeId, coordinadorId } = req.params;
 
-        await insertCoordinadorModel(coordinadorId, viajeId);
+        await insertCoordinadorModel(coordinadorId, viajeId, req.user?.id);
 
         res.status(201).send({
             status: 'ok',

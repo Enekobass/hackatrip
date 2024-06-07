@@ -7,11 +7,6 @@ import "./TripListItem.css"
 
 const { VITE_API_URL } = import.meta.env;
 
-const formatDate = (dateString) => {
-  const options = { day: 'numeric', month: 'short' };
-  return new Date(dateString).toLocaleDateString('es-ES', options);
-};
-
 const today = new Date();
 
 function TripListItem(sixTrips, {loading}) {
