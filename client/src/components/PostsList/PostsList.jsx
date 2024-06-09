@@ -1,9 +1,6 @@
 const { VITE_API_URL } = import.meta.env;
 
 const PostsList = ({ posts }) => {
-
-    console.log(posts);
-
     return (
         posts?.map((post, index) => (
             <>
