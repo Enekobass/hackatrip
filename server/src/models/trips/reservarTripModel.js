@@ -4,10 +4,12 @@ import { cantJoinTrip } from '../../services/errorService.js';
 
 import confirmarTripModel from './confirmarTripModel.js';
 
+import sendMailUtil from '../../utils/sendMailUtil.js';
+
 const reservarTripModel = async (userId, viajeId) => {
     const pool = await getPool();
 
-    const [user] = await pool.query(
+    const [userApuntado] = await pool.query(
         `SELECT userId FROM viajesreservados WHERE userId = ? AND viajeId = ?`,
         [userId, viajeId],
     );
@@ -17,7 +19,7 @@ const reservarTripModel = async (userId, viajeId) => {
         [viajeId],
     );
 
-    if (user[0]) {
+    if (userApuntado[0]) {
         cantJoinTrip();
     }
 
@@ -40,6 +42,37 @@ const reservarTripModel = async (userId, viajeId) => {
     if (plazasMin[0].plazasMinimas === inscritos.length) {
         confirmarTripModel(viajeId);
     }
+
+    const [viaje] = await pool.query(
+        `
+            SELECT
+                v.titulo
+            FROM viajes v
+            WHERE id = ?
+        `,
+        [viajeId],
+    );
+
+    const [user] = await pool.query(
+        `
+            SELECT
+                u.id,
+                u.email
+            FROM users u
+            WHERE id = ?
+        `,
+        [userId],
+    );
+
+    const emailSubject = 'Viaje reservado';
+
+    const emailBody = `
+            ¡Has reservado el viaje ${viaje[0].titulo}, gracias por confiar en nosotros!
+
+            Saludos, Hack a Trip.
+        `;
+
+    await sendMailUtil(user[0].email, emailSubject, emailBody);
 };
 
 export default reservarTripModel;

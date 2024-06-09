@@ -10,6 +10,16 @@ const confirmarTripModel = async (viajeId) => {
         viajeId,
     ]);
 
+    const [viaje] = await pool.query(
+        `
+            SELECT
+                v.titulo
+            FROM viajes v
+            WHERE id = ?
+        `,
+        [viajeId],
+    );
+
     const [inscritos] = await pool.query(
         `
             SELECT
@@ -37,13 +47,13 @@ const confirmarTripModel = async (viajeId) => {
     const emailSubject = 'Viaje confirmado';
 
     const emailBody = `
-            ¡Hemos confirmado el viaje al que estás apuntado, en unos días os enviaremos los detalles necesarios para la salida!
+            ¡Hemos confirmado el viaje ${viaje[0].titulo} al que estás apuntado, en unos días os enviaremos los detalles necesarios para la salida!
 
             Saludos, Hack a Trip.
         `;
 
     const emailBodyCoordinador = `
-            ¡Hemos confirmado el viaje al que estás apuntado como coordinador, en unos días te enviaremos los detalles necesarios para la salida!
+            ¡Hemos confirmado el viaje ${viaje[0].titulo} al que estás apuntado como coordinador, en unos días te enviaremos los detalles necesarios para la salida!
 
             Saludos, Hack a Trip.
         `;
@@ -52,9 +62,9 @@ const confirmarTripModel = async (viajeId) => {
         await sendMailUtil(inscritos[i].email, emailSubject, emailBody);
     }
 
-    for (let i = 0; i < coordinador.length; i++) {
+    if (coordinador[0]) {
         await sendMailUtil(
-            coordinador[i].email,
+            coordinador[0].email,
             emailSubject,
             emailBodyCoordinador,
         );

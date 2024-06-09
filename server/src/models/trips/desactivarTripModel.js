@@ -19,6 +19,16 @@ const desactivarTripModel = async (viajeId) => {
         [viajeId],
     );
 
+    const [viaje] = await pool.query(
+        `
+            SELECT
+                v.titulo
+            FROM viajes v
+            WHERE id = ?
+        `,
+        [viajeId],
+    );
+
     const [coordinador] = await pool.query(
         `
             SELECT
@@ -34,13 +44,13 @@ const desactivarTripModel = async (viajeId) => {
     const emailSubject = 'Viaje suspendido';
 
     const emailBody = `
-            Hemos visto que no hay suficientes participantes para el viaje al que estás apuntado, por tanto hemos decidido suspenderlo por ahora, si conseguimos llenar plazas os notificaremos de nuevo.
+            Hemos visto que no hay suficientes participantes para el viaje ${viaje[0].titulo} al que estás apuntado, por tanto hemos decidido suspenderlo por ahora, si conseguimos llenar plazas os notificaremos de nuevo.
 
             Perdonamos las molestias, Hack a Trip.
         `;
 
     const emailBodyCoordinador = `
-            Hemos visto que no hay suficientes participantes para el viaje al que estás apuntado como coordinador, por tanto hemos decidido suspenderlo por ahora, si conseguimos llenar plazas te notificaremos de nuevo.
+            Hemos visto que no hay suficientes participantes para el viaje ${viaje[0].titulo} al que estás apuntado como coordinador, por tanto hemos decidido suspenderlo por ahora, si conseguimos llenar plazas te notificaremos de nuevo.
 
             Perdonamos las molestias, Hack a Trip.
         `;
