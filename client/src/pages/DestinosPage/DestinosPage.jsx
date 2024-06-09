@@ -10,10 +10,20 @@ const DestinosPage = ({ setTripsFiltrados }) => {
 
     const { trips, loading } = useTrips(setTripsFiltrados);
 
+    let viajesNoCumplidos = [];
+
+    const today = new Date();
+
+  for (let i = 0; i < trips?.length; i++) {
+    let fechaDeInicio = new Date(trips[i].fechaDeInicio);
+    if(fechaDeInicio > today)
+    viajesNoCumplidos.push(trips[i]);
+  }
+
   return (
     <main>
         <Header imgSrc={imgSrc}/>
-        <FilterTrips loading={loading} trips={trips}/>
+        <FilterTrips loading={loading} trips={viajesNoCumplidos}/>
     </main>
   );
 };

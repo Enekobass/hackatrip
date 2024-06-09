@@ -141,7 +141,7 @@
 }
 
 /* Estilos para las descripciones */
-.description {
+.descripcion {
   margin: 20px 40% 20px 5%; /* Ajuste para dispositivos móviles */
   display: block;
   font-size: larger;

@@ -7,8 +7,6 @@ const CoordinadoresPage = ({ setTripsFiltrados }) => {
 
     const { trips, loading } = useTrips(setTripsFiltrados);
 
-    console.log(trips);
-
   return (
     <>
       <Header imgSrc={'/Home.jpg' } />
