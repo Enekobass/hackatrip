@@ -316,7 +316,7 @@ export const LoadPostService = async (
 
   formData.append('description', description);
 
-  formData.append('photo', photo[0]);
+  formData.append('photo', photo);
 
   formData.append('value', value);
 
