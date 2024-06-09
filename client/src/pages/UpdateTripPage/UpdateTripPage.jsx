@@ -13,7 +13,7 @@ const UpdateTripPage = () => {
 
     return (
         <>
-            <main>
+            <main className='admin'>
                 {trip && (
                         <>
                             <UpdateTripForm trip={trip} />

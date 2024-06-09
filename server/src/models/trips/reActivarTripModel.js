@@ -19,6 +19,16 @@ const reActivarTripModel = async (viajeId) => {
         [viajeId],
     );
 
+    const [viaje] = await pool.query(
+        `
+            SELECT
+                v.titulo
+            FROM viajes v
+            WHERE id = ?
+        `,
+        [viajeId],
+    );
+
     const [coordinador] = await pool.query(
         `
             SELECT
@@ -34,13 +44,13 @@ const reActivarTripModel = async (viajeId) => {
     const emailSubject = 'Viaje activo';
 
     const emailBody = `
-            Hemos decidido activar de nuevo el viaje al que estás apuntado, pronto confirmaremos el viaje y os mandaremos más detalles.
+            Hemos decidido activar de nuevo el viaje ${viaje[0].titulo} al que estás apuntado, pronto confirmaremos el viaje y os mandaremos más detalles.
 
             Hack a Trip.
         `;
 
     const emailBodyCoordinador = `
-            Hemos decidido activar de nuevo el viaje al que estás apuntado como coordinador, pronto confirmaremos el viaje y te mandaremos más detalles.
+            Hemos decidido activar de nuevo el viaje ${viaje[0].titulo} al que estás apuntado como coordinador, pronto confirmaremos el viaje y te mandaremos más detalles.
 
             Hack a Trip.
         `;
