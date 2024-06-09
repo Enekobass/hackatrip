@@ -23,12 +23,7 @@ const TripPage = () => {
     const { viajeId } = useParams();
 
     const { trip, addTripVote } = useTrip(viajeId);
-
-    const formatDate = (dateString) => {
-        const options = { day: 'numeric', month: 'short' };
-        return new Date(dateString).toLocaleDateString('es-ES', options);
-    };
-
+        
     const today = new Date();
 
     const listaPaises = ["africa", "americadelnorte", "asia", "egipto", "europa", "indonesia", "islandia", "japón", "laos", "latinoamerica", "méxico", "nuevayork", "rep.dominicana", "rep.dominicana2", "singapur" , "tailandia", "tanzania", "vietnam"]; // Añadir aquí la imagen de cada país que se añade
@@ -78,7 +73,7 @@ const TripPage = () => {
                             :
                             console.log()}
 
-                        {formatDate(trip.tripData[0].fechaDeFin) > formatDate(today) && trip.coordinador?.confirmado ? 
+                        {new Date(trip.tripData[0].fechaDeFin) < new Date(today) && trip.coordinador?.confirmado ? 
                         
                         <>
                             <AddVoteForm
@@ -98,7 +93,7 @@ const TripPage = () => {
                         </div>
                         }
 
-                        {formatDate(trip.tripData[0].fechaDeFin) > formatDate(today) ?
+                        {new Date(trip.tripData[0].fechaDeFin) < new Date(today) ?
                             <>
                                 <p className='p-post'>¡También puedes subir un post a nuestra comunidad valorando tu experiencia!</p>
 

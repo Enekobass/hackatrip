@@ -74,7 +74,7 @@ const handlePhotoChange = (e) => {
   {/* Muestra la vista previa de la imagen dentro del contenedor si existe */}
   {imagePreview && (
     <div className='imagen-container'>
-      <img src={imagePreview} alt="Vista previa de la imagen" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+      <img src={imagePreview} alt="Vista previa de la imagen"/>
     </div>
   )}
       <label htmlFor="tittle">Título:</label>
