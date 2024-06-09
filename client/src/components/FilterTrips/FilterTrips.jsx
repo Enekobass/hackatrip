@@ -18,14 +18,11 @@ const formatDate = (dateString) => {
   const dateDifferenceInDays = (dateInitial, dateFinal) =>
     (dateFinal - dateInitial) / 86_400_000;
 
-  const today = new Date();
-
 const FilterTrips = ({trips, loading}) => {
 
     return (
         <Grid container flexDirection="column">
             {(loading ? Array.from(new Array(5)) : trips).map((trip, index) => (
-                new Date(trip?.fechaDeInicio) > new Date(today) ?
                 <Box className="box" key={index}>
                 {trip ? (
                    <>
@@ -48,9 +45,9 @@ const FilterTrips = ({trips, loading}) => {
                    </div>
                </>
                 ) : (
-                    <Skeleton variant="rectangular" width={210} height={118} />
+                    console.log()
                 )}
-                </Box> : console.log()
+                </Box>
             ))}
         </Grid>
     );

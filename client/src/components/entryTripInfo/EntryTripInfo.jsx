@@ -113,7 +113,7 @@ const TripInfo = ({
       </div>
 
       <ul className='entry-details'>
-        <li className='description'>
+        <li className='descripcion'>
           <strong></strong> {descripcion}
         </li>
 

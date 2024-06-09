@@ -19,16 +19,26 @@ import imgSrc from '/Home.jpg';
 const HomePage = ({ setTripsFiltrados, tripsFiltrados }) => {
   const { trips, setSearchParams, loading } = useTrips(setTripsFiltrados);
 
+  let viajesNoCumplidos = [];
+
+  const today = new Date();
+
+  for (let i = 0; i < trips?.length; i++) {
+    let fechaDeInicio = new Date(trips[i].fechaDeInicio);
+    if(fechaDeInicio > today)
+    viajesNoCumplidos.push(trips[i]);
+  }
+
   let sixTrips = [];
 
   for (let i = 0; i < 6; i++) {
-    sixTrips.push(trips[i]);
+    sixTrips.push(viajesNoCumplidos[i]);
   }
 
   let tenTrips = [];
 
   for (let i = 0; i < 10; i++) {
-    tenTrips.push(trips[i]);
+    tenTrips.push(viajesNoCumplidos[i]);
   }
 
   return (
