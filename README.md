@@ -101,3 +101,4 @@
 ## ⚙ Inicialización
 
 Para inicializar la aplicación, siga los pasos descritos en el archivo Readme en las carpetas Backend y Frontend.
+# hackatrip
